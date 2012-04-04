@@ -1,3 +1,12 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.home-page {
+    h1 {
+        width:1000px;
+        height:414px;
+        display:block;
+        line-height:414px;
+        text-indent:1000px;
+        overflow:hidden;
+        background-image:url(/assets/voze.png);
+        margin:200px auto auto auto;
+    }
+}
