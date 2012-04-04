@@ -1,0 +1,1 @@
+AppConfig = YAML.load_file(File.expand_path("config/app_config.yml", Rails.root))[Rails.env] or raise "Couldn't load application configuration from config/app_config.yml"

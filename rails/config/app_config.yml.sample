@@ -1,0 +1,5 @@
+development:
+  secret_token: # generate with SecureRandom.hex(32) and paste here
+
+test:
+  # ...
