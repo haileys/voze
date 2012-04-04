@@ -1,15 +1,21 @@
 $mainTextColor: #191919;
-$mainBackgroundColor: #D2D2D2;
+$mainBackgroundColor: #F1F1F1;
+
+html, body {
+  margin:0;
+  padding:0;
+}
 
 html {
+  width:  100%;
+  height: 100%;
+  
 	color: $mainTextColor;
 	font: {
-		size: 0.8em;
+		size: 1.1em;
 		family: sans-serif;
 	}
 	background: {
 		color: $mainBackgroundColor;
 	}
 }
-
-@import "voze.skin.default.scss"

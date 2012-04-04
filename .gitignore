@@ -14,4 +14,4 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
-public/res/css/*
+design/public/res/css/*
