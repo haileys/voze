@@ -15,3 +15,5 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 design/public/res/css/*
+*.sublime-project
+*.sublime-workspace

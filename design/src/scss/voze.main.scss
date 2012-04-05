@@ -1,21 +1,76 @@
 $mainTextColor: #191919;
 $mainBackgroundColor: #F1F1F1;
 
+$inputBackgroundColor: #FFFFFF;
+$inputBorderColor: #E5E5E5;
+
+$containerBackgroundColor: #F8F8F8;
+$containerBorderColor: #E5E5E5;
+
 html, body {
   margin:0;
   padding:0;
-}
-
-html {
   width:  100%;
   height: 100%;
-  
+}
+
+body {
 	color: $mainTextColor;
 	font: {
-		size: 1.1em;
+		size: 13px;
 		family: sans-serif;
 	}
 	background: {
 		color: $mainBackgroundColor;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 10px;
+}
+
+input {
+	padding: 5px;
+	background: {
+		color: $inputBackgroundColor;
+	}
+	border: {
+		width: 1px;
+		style: solid;
+		color: $inputBorderColor;
+		radius: 2px;
+	}
+
+	&[type=submit] {
+        font-weight: bold;
+    }
+}
+
+.container {
+	padding: 10px;
+	background: {
+		color: $containerBackgroundColor;
+	}
+	border: {
+		width: 1px;
+		style: solid;
+		color: $containerBorderColor;
+		radius: 4px;
+	}
+}
+
+#outer-login-container {
+	margin-top: 200px;
+	img {
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+#login-container {
+	width: 300px;
+	margin: 0 auto;
+	input {
+		width: 100%;
 	}
 }
