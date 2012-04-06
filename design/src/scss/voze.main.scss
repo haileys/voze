@@ -25,10 +25,10 @@ $mainFontSize: 13px;
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
 html, body {
-  margin:0;
-  padding:0;
-  width:  100%;
-  height: 100%;
+    margin:0;
+    padding:0;
+    width:  100%;
+    height: 100%;
 }
 
 body {
@@ -308,11 +308,9 @@ body.login #primary-container {
 
 #login-container {
     width: 300px;
-    margin: 20px auto;
+    margin-top: 20px;
 
     box-sizing: border-box;
-
-
 
     overflow: hidden;
 
