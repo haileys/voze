@@ -11,7 +11,7 @@ deploy:
 
 prod-deploy:
 	git pull --rebase
-	bundle install
+	sudo bundle install
 	bundle exec rake assets:precompile RAILS_ENV=production
 	bundle exec rake db:migrate RAILS_ENV=production
 	touch tmp/restart.txt
