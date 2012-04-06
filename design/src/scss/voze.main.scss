@@ -12,7 +12,7 @@ $containerBorderColor: #E2E2E2;
 $avatarBorderColor: #CFCFCF;
 
 $aNormalColor: #226CB2;
-$aHoverColor: #579CDD;
+$aHoverColor: #3E87CC;
 $aRedColor: #B22222;
 
 $blueAlternativeColor: #226CB2;
@@ -253,10 +253,13 @@ input {
 }
 
 #nav {
-    display: inline-block;
+    display: block;
+    padding-left: 4px;
+    margin-top: 2px;
 
     ul li {
         display: inline-block;
+        margin-right: 10px;
     }
 }
 
