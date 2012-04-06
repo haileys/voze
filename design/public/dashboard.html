@@ -5,25 +5,111 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="res/css/normalize.css" rel="stylesheet">
         <link href="res/css/voze.main.css" rel="stylesheet">
-        <title>Voze : Dashboard</title>
+        <title>VOZE : Dashboard</title>
     </head>
     <body>
         <div role="main" id="primary-container">
-            <div id="header">
-                <div id="logo"></div>
+            <div class="container primary" id="header">
+                <div id="logo">
+                    <a href="#">
+                        <img src="res/img/homepage_logo.png" alt="VOZE">
+                    </a>
+                </div>
                 <div id="nav">
                     <ul>
-                        <li><a href="#">Dashboard<a></li>
-                        <li><a href="#">Torrents<a></li>
-                        <li><a href="#">Forum<a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Torrents</a></li>
+                        <li><a href="#">Forums</a></li>
+                        <li><a href="#">These</a></li>
+                        <li><a href="#">Links</a></li>
+                        <li><a href="#">Should</a></li>
+                        <li><a href="#">Go</a></li>
+                        <li><a href="#">Under</a></li>
+                        <li><a href="#">The</a></li>
+                        <li><a href="#">Logo</a></li>
                     </ul>
                 </div>
-            </div>
-            <div id="content">
+                <div class="container" id="user-tag">
+                    <div id="user-picture">
+                        <a href="#">
+                            <img src="res/img/seb.jpg" alt="">
+                        </a>
+                    </div>
+                    <div id="user-menu">
+                        <a id="user-name" href="#">SebastianPonyLover</a>                        
+                        <ul id="user-links">
+                            <li><a href="#">Inbox</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a class="sign-out" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                    <div id="user-info">
+                        <ul id="user-stats">
+                            <li><span class="stat-title">Down</span>: <span class="stat-data">230.3GB</span></li>
+                            <li><span class="stat-title">Up</span>: <span class="stat-data">25.7GB</span></li>
+                            <li><span class="stat-title">U/D Ratio</span>: <span class="stat-data ratio bad">11%</span></li>
+                            <li><span class="stat-title">Required</span>: <span class="stat-data ratio good">52%</span></li>
+                        </ul>
+                        <!--<table>
+                            <tbody>
+                                <tr>
+                                    <td>Down:</td>
+                                    <td>lol</td>
+                                </tr>
+                                <tr>
+                                    <td>Up:</td>
+                                    <td>sss</td>
+                                </tr>
+                                <tr>
+                                    <td>U/D Ratio:</td>
+                                    <td>asdf</td>
+                                </tr>
+                                <tr>
+                                    <td>Required:</td>
+                                    <td>asda45</td>
+                                </tr>
+                            </tbody>
+                        </table>-->
 
+                    </div>
+                </div>
+            </div>
+            <div class="container primary" id="content">
+                <div id="sidebar">
+                    <div id="activity">
+                        <div id="recent-uploads">
+                            <ul>
+                                <li>Sebastian sent you a message: "This should not be a social network"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="stats">
+                        <h2>Today</h2>
+                        <dl>
+                            <dt>Downloaded</dt>
+                            <dd>50GB</dd>
+                            <dt>Uploaded</dt>
+                            <dd>50GB</dd>
+                        </dl>
+                        <h2>This Month</h2>
+                        <dl>
+                            <dt>Downloaded</dt>
+                            <dd>50GB</dd>
+                            <dt>Uploaded</dt>
+                            <dd>50GB</dd>
+                        </dl>
+                        <h2>Forever</h2>
+                        <dl>
+                            <dt>Downloaded</dt>
+                            <dd>50GB</dd>
+                            <dt>Uploaded</dt>
+                            <dd>50GB</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
             <div id="footer">
-                <p>"Shut the fuck up or I'll put a footer up your ass" - Red</p>
+                <p>Harry Potter does not exist</p>
             </div>
         </div>
         <script src="res/js/lib/jquery-1.7.2.min.js"></script>
