@@ -1,10 +1,83 @@
-* {
-    margin:0;
-    padding:0px;
-}
+@import "helpers.css.scss";
+
+// font (might include it in the resources instead)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
 html, body {
-    background-color:#f6f6fc;
-    width:100%;
-    height:100%;
+  margin:0;
+  padding:0;
+  width:  100%;
+  height: 100%;
+}
+
+body {
+    color: $mainTextColor;
+    font: {
+        size: 13px;
+        family: 'PT Sans',helvetica,arial,tahoma,sans-serif;
+    }
+    background: {
+        color: $mainBackgroundColor;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+}
+
+a {
+    color: $aNormalColor;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        color: $aHoverColor;
+    }
+}
+
+// Pretty rough - needs to be fixed up with proper scss
+input {
+    @include box-sizing(border-box);
+    padding: 5px;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    font: inherit;
+    color: inherit;
+    background-color: $inputBackgroundColor;
+    border: {
+        width: 1px;
+        style: solid;
+        color: $inputBorderColor;
+        radius: 2px;
+    }
+
+    &[type=submit] {
+        font-weight: bold;
+        cursor: pointer;
+        background: #2E7EC9;
+        border: 1px solid #1360A9;
+        color: white;
+
+
+        &:hover {
+            @include vertical-gradient(#3288d8, #2e7fca);
+            box-shadow: inset 0px -1px 1px rgba(0,0,0,.1);
+            //text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+        }
+
+        &:active {
+            @include vertical-gradient(#1380e5, #286eb0);
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,.2);
+            //text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+        }
+    }
+}
+
+.container {
+    padding: 10px;
+    background-color: $containerBackgroundColor;
+    border: 1px solid $containerBorderColor;
+    border-radius: 4px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,.05);
 }

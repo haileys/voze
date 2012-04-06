@@ -1,0 +1,44 @@
+@import "helpers.css.scss";
+
+#outer-login-container {
+    margin-top: 200px;
+
+    img {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+#login-container {
+    width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    @include box-sizing(border-box);
+
+    h2 {
+        margin-top: 0;
+    }
+
+    input {
+        width: 100%;
+        margin-top: 4px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &#user_session_submit {
+            width: 82px;
+            float: right;
+        }
+    }
+
+    a {
+        vertical-align: middle;
+        display: inline-block;
+        height: 35px;
+        line-height: 35px;
+        margin-top: 5px;
+        margin-left: 1px;
+    }
+}
