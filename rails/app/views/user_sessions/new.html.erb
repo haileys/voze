@@ -2,10 +2,10 @@
     <%= image_tag "voze_small.png", alt: "Voze" %>
     <div class="container" id="login-container">
         <h2>Sign in</h2>
-        <% if @user_session.errors.any? %>
+        <% if @failed_login %>
             <p>Couldn't log in or some shit, gab can you make this look pretty?</p>
         <% end %>
-        <%= form_for @user_session do |f| %>
+        <%= form_for :user_session, url: user_sessions_path do |f| %>
             <%= f.text_field :login %>
             <%= f.password_field :password %>
             <%= link_to "I forgot my password", "/TODO" %>

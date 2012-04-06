@@ -2,13 +2,12 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require File.expand_path(File.dirname(__FILE__) + '/blueprints')
 require 'rails/test_help'
-require 'authlogic/test_case'
 
 class ActiveSupport::TestCase
   fixtures :all
-  setup :activate_authlogic
   
-  def login(opts = {})
-    UserSession.create User.make!(opts)
+  def login(user = {})
+    user = User.make! user if user.is_a? Hash
+    @controller.session[:user_id] = user.id
   end
 end

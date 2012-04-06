@@ -9,7 +9,7 @@ protected
   
   def forbidden
     if current_user
-      # uh show an unauthorized page or something
+      render "home/error", status: :forbidden
     else
       redirect_to new_user_sessions_path
     end

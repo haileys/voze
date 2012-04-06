@@ -3,6 +3,8 @@ source "https://rubygems.org"
 gem "rails",          "=  3.2.3"
 gem "mysql2",         "~> 0.3.11"
 gem "jquery-rails",   "~> 2.0.2"
+gem "bcrypt-ruby"
+gem "cancan",         "~> 1.6.7"
 
 group :assets do
   gem "sass-rails",   "~> 3.2.3"
@@ -14,5 +16,6 @@ group :test do
   gem "machinist",    "~> 2.0.0"
 end
 
-gem "authlogic",      "~> 3.1.0"
-gem "cancan",         "~> 1.6.7"
+group :development, :test do
+  gem "pry"
+end
