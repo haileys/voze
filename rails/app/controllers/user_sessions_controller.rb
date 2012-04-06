@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  authorize_resource
+  
   def new
     @user_session = UserSession.new
   end
