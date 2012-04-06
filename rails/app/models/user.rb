@@ -7,10 +7,10 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class User < ActiveRecord::Base
-  attr_accessible :login, :password, :password_confirmation, :email
-  attr_readonly :login
+  attr_accessible :username, :password, :password_confirmation, :email
+  attr_readonly :username
   
-  validates :login, length: { in: 2..32 }, uniqueness: true
+  validates :username, length: { in: 2..32 }, uniqueness: true
   validates :password, length: { minimum: 4 }, confirmation: true
   validates :email, length: { in: 5..100 }, email: true, uniqueness: true
   

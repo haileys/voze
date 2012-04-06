@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
   
   def create
     authorize! :create, :user_session
-    if user = User.find_by_login(params[:user_session][:login]).try(:authenticate, params[:user_session][:password])
+    if user = User.find_by_username(params[:user_session][:username]).try(:authenticate, params[:user_session][:password])
       session[:user_id] = user.id
       redirect_to root_path
     else

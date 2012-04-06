@@ -14,14 +14,14 @@ class UserSessionsControllerTest < ActionController::TestCase
   
   test "can log in with correct credentials" do
     user = User.make! password: "password", password_confirmation: "password"
-    post :create, user_session: { login: user.login, password: "password" }
+    post :create, user_session: { username: user.username, password: "password" }
     assert_response :redirect
     assert_equal user, @controller.current_user
   end
   
   test "can't log in with incorrect credentials" do
     user = User.make! password: "not lol", password_confirmation: "not lol"
-    post :create, user_session: { login: user.login, password: "lol" }
+    post :create, user_session: { username: user.username, password: "lol" }
     refute @controller.current_user
   end
 end
