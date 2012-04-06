@@ -18,3 +18,4 @@ pickle-email-*.html
 design/public/res/css/*
 *.sublime-project
 *.sublime-workspace
+automatic.sh

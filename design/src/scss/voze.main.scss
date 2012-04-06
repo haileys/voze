@@ -111,6 +111,12 @@ input {
         color: $placeholderTextColor;
     }
 
+    &:focus {
+        border-color: $aHoverColor;
+    }
+
+    outline: none;
+
     &[type=submit] {
         font-weight: bold;
         cursor: pointer;
@@ -163,6 +169,7 @@ input {
 #primary-container {
     width: 960px;
     margin: 0 auto;
+    overflow: auto;
 }
 
 .container {
@@ -274,8 +281,24 @@ input {
 }
 
 // Login
+body.login #primary-container {
+    height: 238px;
+    width: 300px;
+
+    position: relative;
+
+    left: 50%;
+    top: 50%;
+
+    margin-left: -150px;
+    margin-top: -119px;
+}
+
 #outer-login-container {
-    margin-top: 200px;
+    height: 238px;
+    width: 300px;
+
+
 
     img {
         margin: 0 auto;
@@ -285,7 +308,7 @@ input {
 
 #login-container {
     width: 300px;
-    margin: 0 auto;
+    margin: 20px auto;
 
     box-sizing: border-box;
 
