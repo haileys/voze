@@ -78,6 +78,10 @@ table {
     border-spacing:0;
 }
 
+p {
+    margin: 0 0 10px 0;
+}
+
 // Pretty rough - needs to be fixed up with proper scss
 input {
     box-sizing: border-box;
@@ -171,7 +175,7 @@ input {
     box-shadow: 0px 1px 10px rgba(0,0,0,.05);
 }
 
-#header {
+#header, #footer {
     background: transparent;
     border: none;
     border-radius: 0;
@@ -179,6 +183,12 @@ input {
     padding: 0;
     overflow: hidden;
     margin: 10px 0 5px 0;
+}
+
+#footer {
+    p {
+        padding-left: 4px;
+    }
 }
 
 #logo {
