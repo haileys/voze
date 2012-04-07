@@ -3,7 +3,9 @@
     <div class="container" id="login-container">
         <h2>Sign in</h2>
         <% if @failed_login %>
-            <p>Couldn't log in or some shit, gab can you make this look pretty?</p>
+            <div class="errors">
+                Incorrect username or password
+            </div>
         <% end %>
         <%= form_for :session, url: sessions_path do |f| %>
             <%= f.text_field :username, placeholder: "Username" %>

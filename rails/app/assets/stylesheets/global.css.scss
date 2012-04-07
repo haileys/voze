@@ -48,6 +48,13 @@ p {
     margin: 0 0 10px 0;
 }
 
+.errors {
+    background:#fed6dc;
+    padding:4px 8px;
+    border-radius:2px;
+    border:1px solid #fdb5c1;
+}
+
 // Pretty rough - needs to be fixed up with proper scss
 input {
     @include box-sizing(border-box);
