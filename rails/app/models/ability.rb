@@ -4,9 +4,9 @@ class Ability
   def initialize(user)
     if user
       can :index, :home
-      can :destroy, :user_session
+      can :destroy, :session
     else
-      can :create, :user_session
+      can :create, :session
     end
   end
 end

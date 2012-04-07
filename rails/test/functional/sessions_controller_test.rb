@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserSessionsControllerTest < ActionController::TestCase
+class SessionsControllerTest < ActionController::TestCase
   test "can visit when logged out" do
     get :new
     assert_response :success
@@ -14,14 +14,14 @@ class UserSessionsControllerTest < ActionController::TestCase
   
   test "can log in with correct credentials" do
     user = User.make! password: "password", password_confirmation: "password"
-    post :create, user_session: { username: user.username, password: "password" }
+    post :create, session: { username: user.username, password: "password" }
     assert_response :redirect
     assert_equal user, @controller.current_user
   end
   
   test "can't log in with incorrect credentials" do
     user = User.make! password: "not lol", password_confirmation: "not lol"
-    post :create, user_session: { username: user.username, password: "lol" }
+    post :create, session: { username: user.username, password: "lol" }
     refute @controller.current_user
   end
 end
