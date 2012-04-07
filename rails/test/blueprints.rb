@@ -5,4 +5,5 @@ User.blueprint do
   email                 { "#{sn}@gmail.com" }
   password              { "password" }
   password_confirmation { "password" }
+  invite_code           { Invite.create.code }
 end

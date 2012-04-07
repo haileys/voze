@@ -13,4 +13,24 @@ class UsersControllerTest < ActionController::TestCase
     get :show, id: user.username
     assert response.body.include? user.username
   end
+  
+  test "can't create new user when logged in" do
+    login
+    assert_no_difference "User.count" do
+      post :create, user: User.make.attributes.slice(:username, :password, :password_confirmation, :email, :invite_code)
+      assert_response :forbidden
+    end
+  end
+  
+  test "can show registration page when not logged in" do
+    get :new
+    assert_response :success
+  end
+  
+  test "can't register without a valid invite code" do
+    assert_no_difference "User.count" do
+      post :create, user: User.make.attributes.slice(:username, :password, :password_confirmation, :email)
+      assert_select ".errors"
+    end
+  end
 end

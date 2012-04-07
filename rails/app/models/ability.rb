@@ -6,9 +6,10 @@ class Ability
       can :index, :home
       can :destroy, :session
       can :read, User
-      can :manage, User, id: user.id
+      can :edit, User, id: user.id
     else
       can :create, :session
+      can :create, User
     end
   end
 end

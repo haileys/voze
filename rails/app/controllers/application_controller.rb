@@ -14,4 +14,9 @@ protected
       redirect_to new_sessions_path
     end
   end
+  
+  def current_user=(user)
+    session[:user_id] = user && user.id
+    @current_user = user
+  end
 end

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120407043809) do
+ActiveRecord::Schema.define(:version => 20120407055709) do
+
+  create_table "invites", :force => true do |t|
+    t.string   "code",       :null => false
+    t.integer  "inviter_id"
+    t.integer  "invitee_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "invites", ["code"], :name => "index_invites_on_code", :unique => true
+  add_index "invites", ["invitee_id"], :name => "index_invites_on_invitee_id", :unique => true
+  add_index "invites", ["inviter_id"], :name => "index_invites_on_inviter_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

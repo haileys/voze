@@ -1,20 +1,32 @@
-class EmailValidator < ActiveModel::EachValidator
-  def validate_each(record, attribute, value)
-    unless value.include? "@"
-      record.errors[attribute] << "doesn't look like a valid email address"
-    end
-  end
-end
-
 class User < ActiveRecord::Base
-  attr_accessible :username, :password, :password_confirmation, :email
-  attr_readonly :username
+  attr_accessor :invite_code
   
-  validates :username, length: { in: 2..32 }, uniqueness: true
-  validates :password, length: { minimum: 4 }, confirmation: true
-  validates :email, length: { in: 5..100 }, email: true, uniqueness: true
+  attr_accessible :username, :password, :password_confirmation, :email, :invite_code
+  attr_readonly :username, :invite_code
   
   has_secure_password
+  
+  validates :username, length: { in: 2..32 }, uniqueness: true
+  validates :password, length: { minimum: 4 }
+  validates :email, length: { in: 5..100 }, email: true, uniqueness: true
+  
+  validate :check_invite_code, on: "create"
+  before_create :set_invite_according_to_invite_code
+  
+  has_many :invites, foreign_key: "inviter_id"
+  has_many :invitees, through: :invites
+  has_one :invite, foreign_key: "invitee_id"
+  has_one :inviter, through: :invite
+  
+  def check_invite_code
+    unless Invite.unused.find_by_code invite_code
+      errors[:invite_code] << "is not valid"
+    end
+  end
+  
+  def set_invite_according_to_invite_code
+    self.invite = Invite.unused.find_by_code invite_code
+  end
   
   def to_param
     username

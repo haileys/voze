@@ -1,0 +1,23 @@
+<div id="outer-login-container">
+    <%= image_tag "voze_small.png", alt: "Voze" %>
+    <div class="container" id="login-container">
+        <h2>Register</h2>
+        <% if @errors %>
+            <div class="errors">
+                <ul>
+                    <% @errors.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <%= form_for @user do |f| %>
+            <%= f.text_field :username, placeholder: "Username" %>
+            <%= f.text_field :email, placeholder: "Email" %>
+            <%= f.password_field :password, placeholder: "Password" %>
+            <%= f.password_field :password_confirmation, placeholder: "Password (confirm)" %>
+            <%= f.text_field :invite_code, placeholder: "Invite code" %>
+            <%= f.submit "Register", id: "session_submit" %>
+        <% end %>
+    </div>
+</div>

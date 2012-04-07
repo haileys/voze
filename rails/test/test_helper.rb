@@ -8,7 +8,7 @@ class ActiveSupport::TestCase
   
   def login(user = {})
     user = User.make! user if user.is_a? Hash
-    @controller.session[:user_id] = user.id
+    @controller.send :current_user=, user
   end
   
   def assert_redirected_to_login

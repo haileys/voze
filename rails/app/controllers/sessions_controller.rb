@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     authorize! :create, :session
     if user = User.find_by_username(params[:session][:username]).try(:authenticate, params[:session][:password])
-      session[:user_id] = user.id
+      self.current_user = user
       redirect_to root_path
     else
       @failed_login = true
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   
   def destroy
     authorize! :destroy, :session
-    session[:user_id] = nil
+    self.current_user = nil
     redirect_to root_path
   end
 end
