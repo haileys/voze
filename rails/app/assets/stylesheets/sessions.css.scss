@@ -1,6 +1,7 @@
 @import "helpers.css.scss";
 
 #outer-login-container {
+
     margin-top: 200px;
 
     img {
@@ -11,28 +12,27 @@
 
 #login-container {
     width: 300px;
-    margin: 0 auto;
+    
+    margin: 20px auto;
+
+    box-sizing: border-box;
+
     overflow: hidden;
-    @include box-sizing(border-box);
 
     h2 {
         margin-top: 0;
     }
 
-    .field_with_errors {
-        margin-top:4px;
-    }
-
     input {
         width: 100%;
-        margin-top: 4px;
+        margin-top: 5px;
 
-        &:first-child {
+        &#session_username {
             margin-top: 0;
         }
 
         &#session_submit {
-            width: 82px;
+            width: 100px;
             float: right;
         }
     }

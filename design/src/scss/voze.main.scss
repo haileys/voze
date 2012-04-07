@@ -155,6 +155,16 @@ input {
     }
 }
 
+
+dl {
+    display: inline-block;
+    margin: 0;
+    dt, dd {
+        display: inline;
+        margin: 0;
+    }    
+}
+
 // Generic stuff
 .clearfix {
     clear: both;
