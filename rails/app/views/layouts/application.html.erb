@@ -33,10 +33,22 @@
                 </div>
                 <div id="user-info">
                     <ul id="user-stats">
-                        <li><span class="stat-title">Down</span>: <span class="stat-data">230.3GB</span></li>
-                        <li><span class="stat-title">Up</span>: <span class="stat-data">25.7GB</span></li>
-                        <li><span class="stat-title">U/D Ratio</span>: <span class="stat-data ratio bad">11%</span></li>
-                        <li><span class="stat-title">Required</span>: <span class="stat-data ratio good">52%</span></li>
+                        <li>
+                            <span class="stat-title">Down</span>:
+                            <span class="stat-data"><%= number_to_human_size current_user.download %></span>
+                        </li>
+                        <li>
+                            <span class="stat-title">Up</span>:
+                            <span class="stat-data"><%= number_to_human_size current_user.upload %></span>
+                        </li>
+                        <li>
+                            <span class="stat-title">Ratio</span>:
+                            <span class="stat-data ratio"><%= number_with_precision current_user.ratio, precision: 2 %></span>
+                        </li>
+                        <li>
+                            <span class="stat-title">Required</span>:
+                            <span class="stat-data ratio"><%= number_with_precision current_user.required_ratio, precision: 2 %></span>
+                        </li>
                     </ul>
                 </div>
             </div>

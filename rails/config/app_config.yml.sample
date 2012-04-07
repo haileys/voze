@@ -1,5 +1,12 @@
 development:
   secret_token: # generate with SecureRandom.hex(32) and paste here
-
+  required_ratio:
+    # new users get 5GB free download:
+    free_download: 5
+    # the required ratio stops increasing after 400GB downloaded:
+    capped_at: 400
+    # the maximum required ratio is 1
+    max: 1
+  
 test:
   # ...

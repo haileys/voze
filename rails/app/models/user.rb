@@ -25,4 +25,25 @@ class User < ActiveRecord::Base
       url << "?size=#{size}" if size
     end
   end
+  
+  def ratio
+    return 0 if download.zero?
+    upload.to_f / download.to_f
+  end
+  
+  def required_ratio
+    free_download = AppConfig.required_ratio.free_download
+    capped_at = AppConfig.required_ratio.capped_at
+    max = AppConfig.required_ratio.max
+    
+    gb_down = download / 1.gigabyte.to_f
+    
+    if gb_down < free_download
+      0
+    elsif gb_down < capped_at
+      max * Math.sqrt(2 * capped_at * gb_down - gb_down ** 2) / capped_at
+    else
+      max
+    end
+  end
 end
