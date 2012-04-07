@@ -21,7 +21,7 @@
             
             <div class="container" id="user-tag">
                 <div id="user-picture">
-                    <%= link_to image_tag(current_user.gravatar_url), current_user %>
+                    <%= link_to image_tag(current_user.gravatar_url 80), current_user %>
                 </div>
                 <div id="user-menu">
                     <%= link_to current_user.username, current_user, id: "user-name" %>
