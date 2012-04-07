@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   
   has_secure_password
   
-  validates :username, length: { in: 2..32 }, uniqueness: true
+  validates :username, length: { in: 2..32 }, format: { with: /\A[a-z0-9_ ]*\z/, message: "may only contain letters, numbers, spaces and underscores" }, uniqueness: true
   validates :password, length: { minimum: 4 }, if: "password"
   validates :email, length: { in: 5..100 }, email: true, uniqueness: true
   
