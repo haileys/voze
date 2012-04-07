@@ -10,8 +10,9 @@ html, body {
 
 body {
     color: $mainTextColor;
+    line-height: 21px;
     font: {
-        size: 13px;
+        size: $mainFontSize;
         family: 'PT Sans',helvetica,arial,tahoma,sans-serif;
     }
     background: {
@@ -20,17 +21,31 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 10px;
+    margin-bottom: 0 0 10px 0;
 }
 
 a {
     color: $aNormalColor;
-    font-weight: bold;
     text-decoration: none;
 
     &:hover {
         color: $aHoverColor;
     }
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+p {
+    margin: 0 0 10px 0;
 }
 
 // Pretty rough - needs to be fixed up with proper scss
@@ -77,10 +92,123 @@ input {
     }
 }
 
+.clearfix {
+    clear: both;
+    &.left {
+        clear: left;
+    }
+    &.right {
+        clear: right;
+    }
+}
+
+#primary-container {
+    width: 960px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
 .container {
     padding: 10px;
     background-color: $containerBackgroundColor;
     border: 1px solid $containerBorderColor;
     border-radius: 4px;
     box-shadow: 0px 1px 10px rgba(0,0,0,.05);
+}
+
+#header, #footer {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    overflow: hidden;
+    margin: 10px 0 5px 0;
+}
+
+#footer {
+    p {
+        padding-left: 4px;
+    }
+}
+
+#logo {
+    display: inline-block;
+    width: 245px;
+    height: 74px;
+}
+
+#user-tag {
+    overflow: hidden;
+    float: right;
+
+    //border-radius: 2px;
+
+    #user-picture, #user-menu, #user-info {
+        float: left;
+        
+    }
+
+    #user-menu, #user-picture {
+        margin-right: 15px;
+    }
+
+    #user-menu, #user-info {
+        margin-top: -3px; // Filthy hack eww
+    }
+
+    #user-picture {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border: 1px solid $avatarBorderColor;
+        img {
+            border: 1px solid white;
+            box-sizing: border-box;
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    a#user-name {
+        color: $mainTextColor;
+        font-weight: bold;
+
+        &:hover {
+            color: $lighterTextColor;
+        }
+    }
+}
+
+.stat-title {
+    //font-weight: bold;
+    //color: $lighterTextColor;
+}
+
+.stat-data {
+    color: $lighterTextColor;
+    //font-weight: bold;
+}
+
+// Should we use happy colors for ratios?
+.ratio {
+    //font-weight: bold;
+    &.bad {
+        color: $redAlternativeColor;
+    }
+    &.good {
+        color: $greenAlternativeColor;
+    }
+}
+
+#nav {
+    display: block;
+    padding-left: 4px;
+    margin-top: 2px;
+
+    ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
 }

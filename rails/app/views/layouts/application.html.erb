@@ -8,7 +8,7 @@
             Voze
         <% end %>
     </title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 </head>
@@ -21,16 +21,14 @@
             
             <div class="container" id="user-tag">
                 <div id="user-picture">
-                    <a href="#">
-                        <img src="res/img/seb.jpg" alt="">
-                    </a>
+                    <%= link_to image_tag(current_user.gravatar_url), current_user %>
                 </div>
                 <div id="user-menu">
-                    <a id="user-name" href="#">Sebastian</a>                        
+                    <%= link_to current_user.username, current_user, id: "user-name" %>
                     <ul id="user-links">
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a class="sign-out" href="#">Sign out</a></li>
+                        <li><%= link_to "Inbox", "/TODO messages path" %></li>
+                        <li><%= link_to "Settings", "/TODO settings path" %></li>
+                        <li><%= link_to "Sign out", sessions_path, method: :delete %></li>
                     </ul>
                 </div>
                 <div id="user-info">
@@ -45,9 +43,9 @@
 
             <div id="nav">
                 <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Torrents</a></li>
-                    <li><a href="#">Forums</a></li>
+                    <li><%= link_to "Dashboard", root_path %></li>
+                    <li><%= link_to "Torrents", "/TODO torrent path" %></li>
+                    <li><%= link_to "Forums", "/TODO forums path" %></li>
                 </ul>
             </div>
         </div>
@@ -55,7 +53,7 @@
         <%= yield %>
         
         <div class="container primary" id="footer">
-            <p>2012 © This is most probably not a footer</p>
+            <p>&copy; <%= Time.now.year %> This is most probably not a footer. Powered by <%= link_to "Voze", "http://www.voze.org/" %></p>
         </div>
     </div>
 </body>

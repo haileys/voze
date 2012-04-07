@@ -1,4 +1,6 @@
 $mainTextColor: #191919;
+$lighterTextColor: #484848;
+$placeholderTextColor: #B7B7B7;
 $mainBackgroundColor: #F1F1F1;
 
 $inputBackgroundColor: #FFFFFF;
@@ -7,8 +9,17 @@ $inputBorderColor: #DCDCDC;
 $containerBackgroundColor: #F8F8F8;
 $containerBorderColor: #E2E2E2;
 
+$avatarBorderColor: #CFCFCF;
+
 $aNormalColor: #226CB2;
-$aHoverColor: #3D8DD9;
+$aHoverColor: #3E87CC;
+$aRedColor: #B22222;
+
+$blueAlternativeColor: #226CB2;
+$redAlternativeColor: #B22222;
+$greenAlternativeColor: #69B222;
+
+$mainFontSize: 13px;
 
 @mixin vertical-gradient($from, $to) {
     background: $from; /* Old browsers */
