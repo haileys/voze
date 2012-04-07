@@ -12,4 +12,11 @@ class UserTest < ActiveSupport::TestCase
     refute new_user.save
     assert new_user.errors[:invite_code]
   end
+  
+  test "invalid invite can't be used" do
+    user = User.make
+    user.invite_code = "lol"
+    refute user.save
+    assert user.errors[:invite_code]
+  end
 end
