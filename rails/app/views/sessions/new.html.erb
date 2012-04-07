@@ -10,7 +10,7 @@
         <%= form_for :session, url: sessions_path do |f| %>
             <%= f.text_field :username, placeholder: "Username" %>
             <%= f.password_field :password, placeholder: "Password" %>
-            <%= link_to "I forgot my password", "/TODO" %>
+            <%= link_to "I forgot my password", new_password_reset_path %>
             <%= f.submit "Sign in", id: "session_submit" %>
         <% end %>
     </div>

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   validates :username, length: { in: 2..32 }, uniqueness: true
-  validates :password, length: { minimum: 4 }
+  validates :password, length: { minimum: 4 }, if: "password"
   validates :email, length: { in: 5..100 }, email: true, uniqueness: true
   
   validate :check_invite_code, on: "create"
@@ -26,6 +26,11 @@ class User < ActiveRecord::Base
   
   def set_invite_according_to_invite_code
     self.invite = Invite.unused.find_by_code invite_code
+  end
+  
+  def generate_password_reset_token!
+    self.password_reset_token = SecureRandom.hex 24
+    save!
   end
   
   def to_param

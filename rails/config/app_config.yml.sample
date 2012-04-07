@@ -1,4 +1,7 @@
 development:
+  site_name: Voze
+  default_url_options:
+    host: www.mysite.com
   secret_token: # generate with SecureRandom.hex(32) and paste here
   required_ratio:
     # new users get 5GB free download:
