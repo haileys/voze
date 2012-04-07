@@ -4,7 +4,7 @@ PRODUCTION_DIR=/srv/http/voze/rails
 
 deploy:
 	ssh $(PRODUCTION_USER)@$(PRODUCTION_HOST) \
-		'cd $(PRODUCTION_DIR) && git pull --rebase && make prod-deploy'
+		'cd $(PRODUCTION_DIR) && git reset --hard HEAD && git pull && make prod-deploy'
 
 # all targets starting with prod- are intended to be run automatically on the
 # production machine. do not run them manually
