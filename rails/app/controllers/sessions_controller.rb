@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   skip_authorization_check
   
+  layout "sessions"
+  
   def new
     authorize! :new, :session
   end

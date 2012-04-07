@@ -51,6 +51,11 @@ input {
         color: $inputBorderColor;
         radius: 2px;
     }
+    outline: none;
+    
+    &:focus {
+        border-color: $aHoverColor;
+    }
 
     &[type=submit] {
         font-weight: bold;
