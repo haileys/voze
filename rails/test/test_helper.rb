@@ -10,4 +10,8 @@ class ActiveSupport::TestCase
     user = User.make! user if user.is_a? Hash
     @controller.session[:user_id] = user.id
   end
+  
+  def assert_redirected_to_login
+    assert_redirected_to controller: "sessions", action: "new"
+  end
 end

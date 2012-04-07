@@ -15,4 +15,14 @@ class User < ActiveRecord::Base
   validates :email, length: { in: 5..100 }, email: true, uniqueness: true
   
   has_secure_password
+  
+  def to_param
+    username
+  end
+  
+  def gravatar_url(size = nil)
+    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest email}".tap do |url|
+      url << "?size=#{size}" if size
+    end
+  end
 end
