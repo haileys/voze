@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408105841) do
+ActiveRecord::Schema.define(:version => 20120408123448) do
 
   create_table "invites", :force => true do |t|
     t.string   "code",       :null => false
@@ -24,6 +24,36 @@ ActiveRecord::Schema.define(:version => 20120408105841) do
   add_index "invites", ["code"], :name => "index_invites_on_code", :unique => true
   add_index "invites", ["invitee_id"], :name => "index_invites_on_invitee_id", :unique => true
   add_index "invites", ["inviter_id"], :name => "index_invites_on_inviter_id"
+
+  create_table "peers", :force => true do |t|
+    t.integer  "torrent_id",              :null => false
+    t.integer  "user_id",                 :null => false
+    t.string   "peer_id",                 :null => false
+    t.string   "ip",                      :null => false
+    t.integer  "port",                    :null => false
+    t.integer  "uploaded",   :limit => 8, :null => false
+    t.integer  "downloaded", :limit => 8, :null => false
+    t.integer  "left",       :limit => 8, :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "peers", ["left"], :name => "index_peers_on_left"
+  add_index "peers", ["peer_id"], :name => "index_peers_on_peer_id"
+  add_index "peers", ["torrent_id"], :name => "index_peers_on_torrent_id"
+
+  create_table "torrents", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "user_id",    :null => false
+    t.string   "info_hash",  :null => false
+    t.text     "info_json",  :null => false
+    t.text     "comment",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "torrents", ["info_hash"], :name => "index_torrents_on_info_hash", :unique => true
+  add_index "torrents", ["user_id"], :name => "index_torrents_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
