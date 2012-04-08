@@ -6,7 +6,7 @@ class PasswordResetsController < ApplicationController
     user = User.find_by_username(params[:password_reset][:username]) || User.find_by_email(params[:password_reset][:username])
     if user
       user.generate_password_reset_token!
-      PasswordResetsMailer.reset_email(user).deliver
+      UserMailer.password_reset_email(user).deliver
     end
   end
   
