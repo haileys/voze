@@ -22,6 +22,11 @@ class UsersControllerTest < ActionController::TestCase
     end
   end
   
+  test "registration page can be prefilled with invite code" do
+    get :new, invite_code: "dfg45s2df57gs2df5g"
+    assert_select "#user_invite_code[value=dfg45s2df57gs2df5g]"
+  end
+  
   test "can show registration page when not logged in" do
     get :new
     assert_response :success

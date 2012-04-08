@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource find_by: :username
   
   def new
+    @user.invite_code = params[:invite_code]
     render layout: "sessions"
   end
   
