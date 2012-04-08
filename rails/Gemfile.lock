@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    bencode (0.7.0)
     builder (3.0.0)
     cancan (1.6.7)
     coderay (1.0.5)
@@ -110,6 +111,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
+  bencode (~> 0.7.0)
   cancan (~> 1.6.7)
   jquery-rails (~> 2.0.2)
   machinist (~> 2.0.0)
