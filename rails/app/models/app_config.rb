@@ -14,6 +14,10 @@ class AppConfigAccessor
       self[sym]
     end
   end
+  
+  def as_hash
+    Hash[@opts.map { |k,v| [k.intern, v] }]
+  end
 end
 
 filename = File.expand_path("config/app_config.yml", Rails.root)
