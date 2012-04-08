@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120407072920) do
+ActiveRecord::Schema.define(:version => 20120408105841) do
 
   create_table "invites", :force => true do |t|
     t.string   "code",       :null => false
@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(:version => 20120407072920) do
     t.integer  "upload",               :limit => 8, :default => 0, :null => false
     t.integer  "download",             :limit => 8, :default => 0, :null => false
     t.string   "password_reset_token"
+    t.string   "auth_token"
   end
 
+  add_index "users", ["auth_token"], :name => "index_users_on_auth_token"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["password_reset_token"], :name => "index_users_on_password_reset_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_login", :unique => true

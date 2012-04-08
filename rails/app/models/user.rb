@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 4 }, if: "password"
   validates :email, length: { in: 5..100 }, email: true, uniqueness: true
   
+  before_create :set_auth_token
+  
   validate :check_invite_code, on: "create"
   before_create :set_invite_according_to_invite_code
   
@@ -31,6 +33,10 @@ class User < ActiveRecord::Base
   def generate_password_reset_token!
     self.password_reset_token = SecureRandom.hex 24
     save!
+  end
+  
+  def set_auth_token
+    self.auth_token = SecureRandom.hex 16
   end
   
   def to_param
