@@ -4,8 +4,6 @@ require File.expand_path(File.dirname(__FILE__) + '/blueprints')
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
-  fixtures :all
-  
   def login(user = {})
     user = User.make! user if user.is_a? Hash
     @controller.send :current_user=, user
