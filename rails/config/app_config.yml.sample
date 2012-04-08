@@ -1,5 +1,9 @@
 development:
   site_name: Voze
+  mail:
+    from: voze@voze.org
+    smtp:
+      # ...
   default_url_options:
     host: www.mysite.com
   secret_token: # generate with SecureRandom.hex(32) and paste here
