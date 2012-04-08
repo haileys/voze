@@ -1,1 +1,1 @@
-Voze::Application.config.action_mailer.default_url_options = AppConfig[:default_url_options] # use [] syntax so we get a hash
+Voze::Application.config.action_mailer.default_url_options = Hash[AppConfig[:default_url_options].map { |k,v| [k.intern, v] }]

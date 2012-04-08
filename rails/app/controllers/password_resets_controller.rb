@@ -12,17 +12,10 @@ class PasswordResetsController < ApplicationController
   
   def show
     @user = User.find_by_password_reset_token! params[:id]
-  end
-  
-  def update
-    @user = User.find_by_password_reset_token! params[:id]
-    @user.password = params[:user][:password]
     @user.password_reset_token = nil
-    if @user.save
-      self.current_user = @user
-    else
-      @errors = @user.errors.full_messages
-      render "edit"
-    end
+    self.current_user = @user
+    # @TODO - the idea is we'll log the user in here and redirect them to the
+    # change password page in their account settings
+    redirect_to root_path
   end
 end

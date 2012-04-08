@@ -3,5 +3,5 @@ Voze::Application.routes.draw do
   
   resource :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:show, :new, :create]
-  resources :password_resets, only: [:new, :create, :show, :update]
+  resources :password_resets, only: [:new, :create, :show]
 end
