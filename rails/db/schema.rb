@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408123448) do
+ActiveRecord::Schema.define(:version => 20120409052024) do
 
   create_table "invites", :force => true do |t|
     t.string   "code",       :null => false
@@ -39,17 +39,17 @@ ActiveRecord::Schema.define(:version => 20120408123448) do
   end
 
   add_index "peers", ["left"], :name => "index_peers_on_left"
-  add_index "peers", ["peer_id"], :name => "index_peers_on_peer_id"
+  add_index "peers", ["peer_id"], :name => "peer_id"
   add_index "peers", ["torrent_id"], :name => "index_peers_on_torrent_id"
 
   create_table "torrents", :force => true do |t|
-    t.string   "name",       :null => false
-    t.integer  "user_id",    :null => false
-    t.string   "info_hash",  :null => false
-    t.text     "info_json",  :null => false
-    t.text     "comment",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",          :null => false
+    t.integer  "user_id",       :null => false
+    t.string   "info_hash",     :null => false
+    t.binary   "info_bencoded", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.text     "comment",       :null => false
   end
 
   add_index "torrents", ["info_hash"], :name => "index_torrents_on_info_hash", :unique => true

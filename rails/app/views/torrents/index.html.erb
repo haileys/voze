@@ -1,0 +1,9 @@
+<div class="primary container">
+    <h2>All Torrents</h2>
+
+    <ul>
+        <% @torrents.each do |torrent| %>
+            <li><%= link_to torrent.name, torrent %></li>
+        <% end %>
+    </ul>
+</div>

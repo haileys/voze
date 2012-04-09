@@ -1,0 +1,27 @@
+<div class="primary container">
+    <h2>New Torrent</h2>
+    
+    <% if @errors %>
+        <div class="errors">
+            <ul>
+                <% @errors.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+        
+    <%= form_for @torrent do |f| %>    
+        <div>
+            <%= f.label :torrent_file %>
+            <%= f.file_field :torrent_file %>
+        </div>
+        
+        <div>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+        
+        <%= f.submit "Upload" %>
+    <% end %>
+</div>
