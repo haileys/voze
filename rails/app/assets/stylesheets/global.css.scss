@@ -13,6 +13,23 @@ html, body {
 .center-container {
     width: 940px;
     margin: 0 auto;
+    
+    &.main-content {
+        /* @TODO gab you can make this pretty and shit */
+        width: 916px;
+        background:#f4f4f4;
+        font-size:14px;
+        padding:12px;
+        
+        h1, h2 {
+            font-size:24px;
+            font-weight:bold;
+            margin-bottom:12px;
+        }
+        h2 {
+            font-size:18px;
+        }
+    }
 }
 
 #header {
