@@ -11,6 +11,9 @@
 /log/*.log
 /tmp
 
+# ignore coverage reports
+/coverage
+
 # ignore config files that have samples in place 
 /config/app_config.yml
 /config/database.yml
