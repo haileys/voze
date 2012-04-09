@@ -34,7 +34,7 @@
                         </div>
                         <div class="column bandwidth">
                             <div class="bandwidth-up"><span>Up:</span><span><%= number_to_human_size current_user.upload %></span></div>
-                            <div class="bandwidth-down"><span>Down:</span><span><%= number_to_human_size current_user.upload %></span></div>
+                            <div class="bandwidth-down"><span>Down:</span><span><%= number_to_human_size current_user.download %></span></div>
                         </div>
                         <div class="column ratio">
                             <div class="ratio-current"><span>Ratio:</span><span class="good"><%= number_with_precision current_user.ratio, precision: 2 %></span></div>
