@@ -1,5 +1,5 @@
 class Torrent < ActiveRecord::Base
-  attr_accessor :torrent_file
+  attr_accessor :torrent_file, :expected_announce
   attr_accessible :torrent_file, :name
   
   validates :name, length: { in: 2..60 }
@@ -16,7 +16,12 @@ class Torrent < ActiveRecord::Base
   
   def torrent_file_is_valid
     if torrent_file
-      unless BEncode.load(torrent_file.read)["info"]
+      data = BEncode.load(torrent_file.read)
+      if data["info"]
+        if expected_announce and expected_announce != data["announce"]
+          errors[:torrent_file] << "has an incorrect announce URL"
+        end
+      else
         errors[:torrent_file] << "is not valid"
       end
     else

@@ -11,6 +11,7 @@ class TorrentsController < ApplicationController
   
   def create
     @torrent = Torrent.new params[:torrent]
+    @torrent.expected_announce = personal_announce_url
     @torrent.user = current_user
     if @torrent.save
       redirect_to @torrent
@@ -23,7 +24,10 @@ class TorrentsController < ApplicationController
   def show
     respond_to do |f|
       f.html    { render }
-      f.torrent { render text: @torrent.torrent_file_with(announce_url auth_token: current_user.auth_token) }
+      f.torrent { render text: @torrent.torrent_file_with(personal_announce_url) }
     end
   end
+  
+private
+  include TorrentsHelper
 end

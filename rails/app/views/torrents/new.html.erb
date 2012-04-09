@@ -12,7 +12,7 @@
     <% end %>
     
     <p style="padding:12px; background:#fdf2e2; border:1px solid #f6c983; margin-bottom:12px;">
-        Please use this announce URL when creating your .torrent: <b><%= announce_url auth_token: current_user.auth_token %></b>
+        Please use this announce URL when creating your .torrent: <b><%= personal_announce_url %></b>
     </p>
     
     <%= form_for @torrent do |f| %>    
