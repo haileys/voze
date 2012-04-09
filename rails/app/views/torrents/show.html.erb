@@ -1,5 +1,9 @@
 <div class="center-container main-content">
     <h1><%= @torrent.name %></h1>
+    
+    <p>
+        <%= @torrent.seeders.count %> seeders, <%= @torrent.leechers.count %> leechers
+    </p>
 
-    <%= link_to "Download .torrent file", torrent_path(@torrent, "torrent") %>
+    <%= link_to "Download .torrent file", torrent_path(@torrent, "torrent", auth_token: current_user.auth_token) %>
 </div>
