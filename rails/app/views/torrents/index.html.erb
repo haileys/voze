@@ -1,5 +1,5 @@
-<div class="primary container">
-    <h2>All Torrents</h2>
+<div class="center-container main-content">
+    <h1>All Torrents (<%= link_to "upload", new_torrent_path %>)</h1>
 
     <ul>
         <% @torrents.each do |torrent| %>
