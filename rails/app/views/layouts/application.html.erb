@@ -1,72 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>
-        <% if content_for? :title %>
-            <%= content_for :title %> &mdash; Voze
-        <% else %>
-            Voze
-        <% end %>
-    </title>
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-</head>
-<body>
-    <div role="main" id="primary-container">
-        <div class="container primary" id="header">
-            <div id="logo">
-                <%= link_to image_tag("voze_homepage.png", alt: "Voze"), root_path %>
-            </div>
-            
-            <div class="container" id="user-tag">
-                <div id="user-picture">
-                    <%= link_to image_tag(current_user.gravatar_url 80), current_user %>
-                </div>
-                <div id="user-menu">
-                    <%= link_to current_user.username, current_user, id: "user-name" %>
-                    <ul id="user-links">
-                        <li><%= link_to "Inbox", "/TODO messages path" %></li>
-                        <li><%= link_to "Settings", "/TODO settings path" %></li>
-                        <li><%= link_to "Sign out", sessions_path, method: :delete %></li>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            <% if content_for? :title %>
+                <%= content_for :title %> &mdash; Voze
+            <% else %>
+                Voze
+            <% end %>
+        </title>
+        <%= stylesheet_link_tag "application", media: "all" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div id="header">
+            <div id="header-container">
+                <div class="center-container">
+                    <a class="logo" href="#"><div class="logo"></div></a>
+                    <ul id="nav">
+                        <li><a href="#"><%= link_to "Torrents", "/TODO torrents path" %></a></li>
+                        <li><a href="#"><%= link_to "Requests", "/TODO requests path" %></a></li>
+                        <li><a href="#"><%= link_to "Collections", "/TODO collections path" %></a></li>
+                        <li><a href="#"><%= link_to "Forums", "/TODO forums path" %></a></li>
+                        <li><a href="#"><%= link_to "Wiki", "/TODO wiki path" %></a></li>
                     </ul>
+                    <div id="user">
+                        <div class="dropdown"></div>
+                        <div class="avatar"><%= link_to image_tag(current_user.gravatar_url 80), current_user %></div>
+                        <div class="column welcome">
+                            <div class="message">Welcome,</div>
+                            <div class="username"><a href="#"><%= link_to current_user.username, current_user, id: "user-name" %></a></div>
+                        </div>
+                        <div class="column bandwidth">
+                            <div class="bandwidth-up"><span>Up:</span><span><%= number_to_human_size current_user.upload %></span></div>
+                            <div class="bandwidth-down"><span>Down:</span><span><%= number_to_human_size current_user.upload %></span></div>
+                        </div>
+                        <div class="column ratio">
+                            <div class="ratio-current"><span>Ratio:</span><span class="good"><%= number_with_precision current_user.ratio, precision: 2 %></span></div>
+                            <div class="ratio-required"><span>Req:</span><span class="bad"><%= number_with_precision current_user.required_ratio, precision: 2 %></span></div>
+                        </div>
+                    </div>
                 </div>
-                <div id="user-info">
-                    <ul id="user-stats">
-                        <li>
-                            <span class="stat-title">Down</span>:
-                            <span class="stat-data"><%= number_to_human_size current_user.download %></span>
-                        </li>
-                        <li>
-                            <span class="stat-title">Up</span>:
-                            <span class="stat-data"><%= number_to_human_size current_user.upload %></span>
-                        </li>
-                        <li>
-                            <span class="stat-title">Ratio</span>:
-                            <span class="stat-data ratio"><%= number_with_precision current_user.ratio, precision: 2 %></span>
-                        </li>
-                        <li>
-                            <span class="stat-title">Required</span>:
-                            <span class="stat-data ratio"><%= number_with_precision current_user.required_ratio, precision: 2 %></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="nav">
-                <ul>
-                    <li><%= link_to "Dashboard", root_path %></li>
-                    <li><%= link_to "Torrents", "/TODO torrent path" %></li>
-                    <li><%= link_to "Forums", "/TODO forums path" %></li>
-                </ul>
             </div>
         </div>
-        
+        <div id="breadcrumbs">
+            <div id="breadcrumbs-container">
+                <div class="center-container">
+                    <form id="search"><div class="icon"></div><input type="text" placeholder="Search"></form>
+                </div>
+        </div>
         <%= yield %>
-        
-        <div class="container primary" id="footer">
-            <p>&copy; <%= Time.now.year %> This is most probably not a footer. Powered by <%= link_to "Voze", "http://www.voze.org/" %></p>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

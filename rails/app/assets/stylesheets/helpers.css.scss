@@ -1,38 +1,97 @@
-$mainTextColor: #191919;
-$lighterTextColor: #484848;
-$placeholderTextColor: #B7B7B7;
-$mainBackgroundColor: #F1F1F1;
-
-$inputBackgroundColor: #FFFFFF;
-$inputBorderColor: #DCDCDC;
-
-$containerBackgroundColor: #F8F8F8;
-$containerBorderColor: #E2E2E2;
-
-$avatarBorderColor: #CFCFCF;
-
-$aNormalColor: #226CB2;
-$aHoverColor: #3E87CC;
-$aRedColor: #B22222;
-
-$blueAlternativeColor: #226CB2;
-$redAlternativeColor: #B22222;
-$greenAlternativeColor: #69B222;
-
-$mainFontSize: 13px;
-
-@mixin vertical-gradient($from, $to) {
-    background: $from; /* Old browsers */
-    background: -moz-linear-gradient(top, $from 0%, $to 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, $from 0%,$to 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, $from 0%,$to 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, $from 0%,$to 100%); /* IE10+ */
-    background: linear-gradient(top, $from 0%,$to 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=0 ); /* IE6-9 */
+@mixin transition($args) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
 }
 
-@mixin box-sizing($what) {
-    box-sizing: $what;
-    -moz-box-sizing: $what;
+@mixin text-shadow($arg) {
+    -webkit-text-shadow: $arg;
+    -moz-text-shadow: $arg;
+    text-shadow: $arg;
+}
+
+@mixin text-overflow($arg) {
+    text-overflow: $arg;
+    -o-text-overflow: $arg;
+    -icab-text-overflow: $arg;
+    -khtml-text-overflow: $arg;
+    -moz-text-overflow: $arg;
+    -webkit-text-overflow: $arg; 
+}
+
+@mixin user-select(){
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin box-shadow($arg) {
+    -webkit-box-shadow: $arg;
+    -moz-box-shadow: $arg;
+    box-shadow: $arg;
+}
+
+@mixin border-radius($arg) {
+    -webkit-border-radius: $arg;
+    -moz-border-radius: $arg;
+    -khtml-border-radius: $arg;
+    border-radius: $arg;
+}
+
+@mixin box-shadow($arg1, $arg2) {
+    -webkit-box-shadow: $arg1, $arg2;
+    -moz-box-shadow: $arg1, $arg2;
+    box-shadow: $arg1, $arg2;
+}
+@mixin box-shadow($arg1, $arg2, $arg3) {
+    -webkit-box-shadow: $arg1, $arg2, $arg3;
+    -moz-box-shadow: $arg1, $arg2, $arg3;
+    box-shadow: $arg1, $arg2, $arg3;
+}
+
+@mixin box-shadow($arg1, $arg2, $arg3, $arg4) {
+    -webkit-box-shadow: $arg1, $arg2, $arg3, $arg4;
+    -moz-box-shadow: $arg1, $arg2, $arg3, $arg4;
+    box-shadow: $arg1, $arg2, $arg3, $arg4;
+}
+
+@mixin box-sizing(){
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin vertical-gradient($start, $stop) {
+    background-color: $start;
+    background-image: linear-gradient(top, $start 0%, $stop 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
+    background-image: -webkit-linear-gradient($start, $stop);
+    background-image: -moz-linear-gradient(center top, $start 0%, $stop 100%);
+    background-image: -moz-gradient(center top, $start 0%, $stop 100%);
+    background-image: -ms-linear-gradient(top, $start 0%, $stop 100%);
+    background-image: -khtml-gradient(linear, left top, left bottom, from($start), to($stop));
+    background-image: -o-linear-gradient(top, ${start} 0%, ${stop} 100%);
+    filter: progid:DXImageTransform@mixin Microsoft@mixin gradient(startColorstr='$start', endColorstr='$stop', GradientType=0);
+}
+
+@mixin selection($back: inherit, $fore: inherit){
+    &::selection {
+        background-color: $back;
+        color: $fore;
+    }
+    &::-moz-selection {
+        background-color: $back;
+        color: $fore;
+    }
+}
+
+@mixin opacity($opacity){
+    opacity: $opacity;
+    -moz-opacity: $opacity;
+    -webkit-opacity: $opacity;
 }

@@ -4,227 +4,147 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
 html, body {
-  margin:0;
-  padding:0;
+    background-color: #101010;
+    min-height: 100%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
 }
 
-body {
-    color: $mainTextColor;
-    line-height: 21px;
-    font: {
-        size: $mainFontSize;
-        family: 'PT Sans',helvetica,arial,tahoma,sans-serif;
-    }
-    background: {
-        color: $mainBackgroundColor;
-    }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 10px 0;
-}
-
-a {
-    color: $aNormalColor;
-    text-decoration: none;
-
-    &:hover {
-        color: $aHoverColor;
-    }
-}
-
-ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-p {
-    margin: 0 0 10px 0;
-}
-
-.errors {
-    background:#fed6dc;
-    padding:4px 8px;
-    border-radius:2px;
-    border:1px solid #fdb5c1;
-}
-
-// Pretty rough - needs to be fixed up with proper scss
-input {
-    @include box-sizing(border-box);
-    padding: 5px;
-    display: inline-block;
-    height: 35px;
-    line-height: 35px;
-    font: inherit;
-    color: inherit;
-    background-color: $inputBackgroundColor;
-    border: {
-        width: 1px;
-        style: solid;
-        color: $inputBorderColor;
-        radius: 2px;
-    }
-    outline: none;
-    
-    &:focus {
-        border-color: $aHoverColor;
-    }
-
-    &[type=submit] {
-        font-weight: bold;
-        cursor: pointer;
-        background: #2E7EC9;
-        border: 1px solid #1360A9;
-        color: white;
-
-
-        &:hover {
-            @include vertical-gradient(#3288d8, #2e7fca);
-            box-shadow: inset 0px -1px 1px rgba(0,0,0,.1);
-            //text-shadow: 0px -1px 0px rgba(0,0,0,.5);
-        }
-
-        &:active {
-            @include vertical-gradient(#1380e5, #286eb0);
-            box-shadow: inset 0px 1px 1px rgba(0,0,0,.2);
-            //text-shadow: 0px -1px 0px rgba(0,0,0,.5);
-        }
-    }
-}
-
-dl {
-    display: inline-block;
-    margin: 0;
-    dt, dd {
-        display: inline;
-        margin: 0;
-    }    
-}
-
-.clearfix {
-    clear: both;
-    &.left {
-        clear: left;
-    }
-    &.right {
-        clear: right;
-    }
-}
-
-#primary-container {
-    width: 960px;
+.center-container {
+    width: 940px;
     margin: 0 auto;
-    overflow: auto;
 }
 
-.container {
-    padding: 10px;
-    background-color: $containerBackgroundColor;
-    border: 1px solid $containerBorderColor;
-    border-radius: 4px;
-    box-shadow: 0px 1px 10px rgba(0,0,0,.05);
-}
-
-#header, #footer {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
-    overflow: hidden;
-    margin: 10px 0 5px 0;
-}
-
-#footer {
-    p {
-        padding-left: 4px;
+#header {
+    .vertical-gradient(#424242, #232323);
+    height: 51px;
+    border-bottom: 1px solid #646464;
+    #header-container {
+        height: 50px;
+        border-bottom: 1px solid #1b1b1b;
     }
-}
-
-#logo {
-    display: inline-block;
-    width: 245px;
-    height: 74px;
-}
-
-#user-tag {
-    overflow: hidden;
-    float: right;
-
-    //border-radius: 2px;
-
-    #user-picture, #user-menu, #user-info {
+    a.logo {
         float: left;
-        
-    }
-
-    #user-menu, #user-picture {
-        margin-right: 15px;
-    }
-
-    #user-menu, #user-info {
-        margin-top: -3px; // Filthy hack eww
-    }
-
-    #user-picture {
-        display: inline-block;
-        width: 80px;
-        height: 80px;
-        border: 1px solid $avatarBorderColor;
-        img {
-            border: 1px solid white;
-            box-sizing: border-box;
-            float: left;
+        display: block;
+        height: 50px;
+        width: 120px;
+        border-right: 1px solid #1e1e1e;
+        div.logo {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../img/logo.png');
+            height: 50px;
             width: 100%;
-            height: 100%;
         }
     }
-
-    a#user-name {
-        color: $mainTextColor;
-        font-weight: bold;
-
-        &:hover {
-            color: $lighterTextColor;
+    ul#nav {
+        li {
+            float: left;
+            border-right: 1px solid #1d1d1d;
+            height: 50px;
+            a {
+                text-decoration: none;
+                color: #cfcfcf;
+                font-weight: bold;
+                .text-shadow(0 -1px 0 rgba(0,0,0,0.75));
+                line-height: 50px;
+                height: 50px;
+                padding: 0 22px;
+                display: block;
+                &:hover { .vertical-gradient(darken(#424242, 2%), darken(#232323, 2%)); }
+                &:active { .vertical-gradient(darken(#424242, 4%), darken(#232323, 4%)); }
+            }
+        }
+    }
+    #user {
+        float: right;
+        color: #cfcfcf;
+        .text-shadow(0 -1px 0 rgba(0,0,0,0.75));
+        .avatar, .column {
+            float: left;
+            margin-top: 10px;
+        }
+        .avatar {
+            border: 1px solid rgba(235, 235, 235, 0.05);
+            img {
+                display: block;
+                height: 28px;
+                width: 28px;
+                border: 1px solid #272727;
+            }
+        }
+        .column {
+            line-height: 15px;
+            margin-left: 15px;
+            &:first-child { margin-left: 10px; }
+            div span:first-child {
+                display: block;
+                float: left;
+                width: 40px;
+            }
+        }
+        .welcome {
+            .username a {
+                color: inherit;
+                text-decoration: none;
+                &:hover { text-decoration: underline; }
+            }
+        }
+        .bandwidth {
+            color: darken(#cfcfcf, 10%);
+        }
+        .ratio {
+            .bad { color: #9c4040; }
+            .good { color: #6e8467; }
+        }
+        .welcome .username, .column div span:first-child {
+            font-weight: bold;
         }
     }
 }
 
-.stat-title {
-    //font-weight: bold;
-    //color: $lighterTextColor;
-}
-
-.stat-data {
-    color: $lighterTextColor;
-    //font-weight: bold;
-}
-
-// Should we use happy colors for ratios?
-.ratio {
-    //font-weight: bold;
-    &.bad {
-        color: $redAlternativeColor;
+#breadcrumbs {
+    background-color: #4b4b4b;
+    height: 33px;
+    border-bottom: 1px solid #2a2a2a;
+    #breadcrumbs-container {
+        height: 32px;
+        border-bottom: 1px solid #191919;
     }
-    &.good {
-        color: $greenAlternativeColor;
+    #search {
+        float: right;
+        margin: 6px 0;
+        position: relative;
+        .icon {
+            float: left;
+            width: 15px;
+            height: 15px;
+            background-image: url('../img/search-icon.png');
+            position: absolute;
+            left: 5px;
+            top: 3px;
+        }
+        input {
+            .box-shadow(0 1px 0 #5b5b5b);
+            .box-sizing();
+            .vertical-gradient(#424242, #4d4d4d);
+            .border-radius(9px);
+            .text-shadow(0 -1px 0 rgba(0,0,0,0.5));
+            color: #cfcfcf;
+            width: 160px;
+            line-height: 18px;
+            padding-left: 22px;
+            padding-right: 9px;
+            height: 20px;
+            border: 1px solid #2e2e2e;
+            display: block;
+            float: left;
+            &::-webkit-input-placeholder { color: darken(#cfcfcf, 10%); }
+            &::-moz-placeholder { color: darken(#cfcfcf, 10%); }
+            &.placeholder { color: darken(#cfcfcf, 10%); }
+            &:focus { outline: 0; }
+        }
     }
 }
 
-#nav {
-    display: block;
-    padding-left: 4px;
-    margin-top: 2px;
-
-    ul li {
-        display: inline-block;
-        margin-right: 10px;
-    }
-}
+.clear { clear: both; }
