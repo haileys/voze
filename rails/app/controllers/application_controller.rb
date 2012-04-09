@@ -11,6 +11,7 @@ protected
     if current_user
       render "home/error", status: :forbidden
     else
+      flash[:redirect_to] = request.path
       redirect_to new_sessions_path
     end
   end
