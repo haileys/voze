@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require global.css.scss
- *= require_tree .
+ *= require users.css.scss
 */
 
 html {

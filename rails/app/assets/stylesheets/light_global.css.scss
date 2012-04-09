@@ -1,0 +1,230 @@
+@import "light_helpers.css.scss";
+
+// font (might include it in the resources instead)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+html, body {
+  margin:0;
+  padding:0;
+}
+
+body {
+    color: $mainTextColor;
+    line-height: 21px;
+    font: {
+        size: $mainFontSize;
+        family: 'PT Sans',helvetica,arial,tahoma,sans-serif;
+    }
+    background: {
+        color: $mainBackgroundColor;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 10px 0;
+}
+
+a {
+    color: $aNormalColor;
+    text-decoration: none;
+
+    &:hover {
+        color: $aHoverColor;
+    }
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+.errors {
+    background:#fed6dc;
+    padding:4px 8px;
+    border-radius:2px;
+    border:1px solid #fdb5c1;
+}
+
+// Pretty rough - needs to be fixed up with proper scss
+input {
+    @include box-sizing(border-box);
+    padding: 5px;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    font: inherit;
+    color: inherit;
+    background-color: $inputBackgroundColor;
+    border: {
+        width: 1px;
+        style: solid;
+        color: $inputBorderColor;
+        radius: 2px;
+    }
+    outline: none;
+    
+    &:focus {
+        border-color: $aHoverColor;
+    }
+
+    &[type=submit] {
+        font-weight: bold;
+        cursor: pointer;
+        background: #2E7EC9;
+        border: 1px solid #1360A9;
+        color: white;
+
+
+        &:hover {
+            @include vertical-gradient(#3288d8, #2e7fca);
+            box-shadow: inset 0px -1px 1px rgba(0,0,0,.1);
+            //text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+        }
+
+        &:active {
+            @include vertical-gradient(#1380e5, #286eb0);
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,.2);
+            //text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+        }
+    }
+}
+
+dl {
+    display: inline-block;
+    margin: 0;
+    dt, dd {
+        display: inline;
+        margin: 0;
+    }    
+}
+
+.clearfix {
+    clear: both;
+    &.left {
+        clear: left;
+    }
+    &.right {
+        clear: right;
+    }
+}
+
+#primary-container {
+    width: 960px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.container {
+    padding: 10px;
+    background-color: $containerBackgroundColor;
+    border: 1px solid $containerBorderColor;
+    border-radius: 4px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,.05);
+}
+
+#header, #footer {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    overflow: hidden;
+    margin: 10px 0 5px 0;
+}
+
+#footer {
+    p {
+        padding-left: 4px;
+    }
+}
+
+#logo {
+    display: inline-block;
+    width: 245px;
+    height: 74px;
+}
+
+#user-tag {
+    overflow: hidden;
+    float: right;
+
+    //border-radius: 2px;
+
+    #user-picture, #user-menu, #user-info {
+        float: left;
+        
+    }
+
+    #user-menu, #user-picture {
+        margin-right: 15px;
+    }
+
+    #user-menu, #user-info {
+        margin-top: -3px; // Filthy hack eww
+    }
+
+    #user-picture {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border: 1px solid $avatarBorderColor;
+        img {
+            border: 1px solid white;
+            box-sizing: border-box;
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    a#user-name {
+        color: $mainTextColor;
+        font-weight: bold;
+
+        &:hover {
+            color: $lighterTextColor;
+        }
+    }
+}
+
+.stat-title {
+    //font-weight: bold;
+    //color: $lighterTextColor;
+}
+
+.stat-data {
+    color: $lighterTextColor;
+    //font-weight: bold;
+}
+
+// Should we use happy colors for ratios?
+.ratio {
+    //font-weight: bold;
+    &.bad {
+        color: $redAlternativeColor;
+    }
+    &.good {
+        color: $greenAlternativeColor;
+    }
+}
+
+#nav {
+    display: block;
+    padding-left: 4px;
+    margin-top: 2px;
+
+    ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
