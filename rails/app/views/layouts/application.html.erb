@@ -17,7 +17,9 @@
         <div id="header">
             <div id="header-container">
                 <div class="center-container">
-                    <a class="logo" href="#"><div class="logo"></div></a>
+                    <%= link_to root_path, class: "logo" do %>
+                        <div class="logo"></div>
+                    <% end %>
                     <ul id="nav">
                         <li><%= link_to "Torrents", torrents_path %></li>
                         <li><%= link_to "Requests", "/TODO requests path" %></li>
