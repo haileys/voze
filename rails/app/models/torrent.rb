@@ -8,9 +8,15 @@ class Torrent < ActiveRecord::Base
   
   before_create :load_data_from_torrent_file, if: "torrent_file"
   
-  has_many :peers
-  has_many :seeders,  class_name: "Peer", conditions: "`left` = 0"
-  has_many :leechers, class_name: "Peer", conditions: "`left` > 0"
+  has_many :peers, conditions: proc { ["updated_at > ?", 30.minutes.ago] }
+  
+  def seeders
+    peers.where "`left` = 0"
+  end
+  
+  def leechers
+    peers.where "`left` > 0"
+  end
   
   belongs_to :user
   
