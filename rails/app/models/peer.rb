@@ -1,8 +1,8 @@
 class Peer < ActiveRecord::Base
-  attr_accessible :torrent, :user, :peer_id, :ip, :port, :uploaded, :downloaded, :left
+  attr_accessible :version, :user, :peer_id, :ip, :port, :uploaded, :downloaded, :left
   
   belongs_to :user
-  belongs_to :torrent
+  belongs_to :version
   
   after_update :update_users_uploaded_downloaded
   

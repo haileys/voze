@@ -1,0 +1,169 @@
+<section class="torrent-single-view">
+    <div class="container">
+        <div class="center-container">
+            <section>
+                <header>
+                    <figure><%= image_tag("artwork.jpg") %></figure>
+                    <div class="left">
+                        <h2><%= @torrent.name %></h2>
+                        <p><a href="#">Lemaitre</a> - Album</p>
+                    </div>
+                </header>
+                <div class="clear"></div>
+
+                <h3 class="about">About</h3>
+                <p><%= @torrent.about %></p>
+
+<%
+=begin
+%>
+
+... so i'm not sure how we should go about this? ...
+
+                <h3>Track listing</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;"></th>
+                            <th>Name</th>
+                            <th>Artist</th>
+                            <th style="width: 8%;">Length</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Appreciate</td>
+                            <td><a href="#">Lemaitre</a></td>
+                            <td>3:23</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Coffee Table</td>
+                            <td><a href="#">Lemaitre</a></td>
+                            <td>3:20</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sceptics</td>
+                            <td><a href="#">Lemaitre</a></td>
+                            <td>4:12</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>The End</td>
+                            <td><a href="#">Lemaitre</a></td>
+                            <td>6:02</td>
+                        </tr>
+                    </tbody>
+                </table>
+<%
+=end
+%>
+                <h3>Version requests</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Format</th>
+                            <th>Requested by</th>
+                            <th>Bounty</th>
+                            <th>Filled by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">FLAC</a></td>
+                            <td><a href="#">sebmck</a></td>
+                            <td>51.5 MB <a href="#">Add</a></td>
+                            <td><a href="#">charliesome</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">MP3 (256kbps)</a></td>
+                            <td><a href="#">charliesome</a></td>
+                            <td>80.1 GB <a href="#">Add</a></td>
+                            <td>Not filled yet. <a href="#">Fill</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Apple Lossless</a></td>
+                            <td><a href="#">charliesome</a></td>
+                            <td>90.5 GB <a href="#">Add</a></td>
+                            <td><a href="#">filiped</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Reviews</h3>
+                <div class="clear"></div>
+
+                <h3>Comments</h3>
+            </section>
+            <div id="seperator"></div>
+            <aside>
+                <header>
+                    <div class="left">
+                        <h3>Version</h3>
+                        <div class="dropdown">
+                            <span><%= @version.name %></span>
+                            <div class="icon"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a class="report" href="#">Report</a>
+                        <a class="download" href="#"><%= link_to "Download", torrent_version_path(@torrent, @version, "torrent", auth_token: current_user.auth_token) %></a>
+                    </div>
+                </header>
+
+                <figure><%= image_tag("artwork.jpg") %></figure>
+                <div class="clear"></div>
+
+                <h3 class="details">Details for selected version</h3>
+                <table class="metadata">
+                    <tr>
+                        <td style="width: 35%;">Uploaded by</td>
+                        <td style="width: 65%;"><%= link_to @version.user.username, @version.user %></td>
+                    </tr>
+                    <tr>
+                        <td>Date uploaded</td>
+                        <td><%= @version.created_at %></td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td><%= number_to_human_size @version.size %></td>
+                    </tr>
+                    <tr>
+                        <td>Seeders</td>
+                        <td><%= @version.seeders.count %></td>
+                    </tr>
+                    <tr>
+                        <td>Leechers</td>
+                        <td><%= @version.leechers.count %></td>
+                    </tr>
+                    <tr>
+                        <td>File types</td>
+                        <td><%= @version.filetypes.join ", " %></td>
+                    </tr>
+                </table>
+                <h3>File listing for selected version</h3>
+                <table class="file-listing">
+                    <thead>
+                        <tr>
+                            <th style="width: 60%;">Name</th>
+                            <th style="width: 20%;">Ext</th>
+                            <th style="width: 20%;">Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @version.files.each do |name,size| %>
+                            <tr>
+                                <td><%= File.basename name, ".*" %></td>
+                                <td><%= name.split(".").last %></td>
+                                <td><%= number_to_human_size size %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </aside>
+        </div>
+     </div>
+    <div class="clear"></div>
+</section>

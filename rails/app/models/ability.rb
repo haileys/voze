@@ -8,8 +8,8 @@ class Ability
       can :read, User
       can :edit, User, id: user.id
       can :announce, :announces
-      can [:read, :create], Torrent
-      can :edit, Torrent, user_id: user.id
+      can [:read, :create], [Torrent, Version]
+      can :edit, Version, user_id: user.id
     else
       can :create, :session
       can :create, User

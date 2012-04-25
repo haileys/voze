@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409052024) do
+ActiveRecord::Schema.define(:version => 20120425063126) do
 
   create_table "invites", :force => true do |t|
     t.string   "code",       :null => false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20120409052024) do
   add_index "invites", ["inviter_id"], :name => "index_invites_on_inviter_id"
 
   create_table "peers", :force => true do |t|
-    t.integer  "torrent_id",              :null => false
+    t.integer  "version_id",              :null => false
     t.integer  "user_id",                 :null => false
     t.string   "peer_id",                 :null => false
     t.string   "ip",                      :null => false
@@ -39,21 +39,15 @@ ActiveRecord::Schema.define(:version => 20120409052024) do
   end
 
   add_index "peers", ["left"], :name => "index_peers_on_left"
-  add_index "peers", ["peer_id"], :name => "index_peers_on_peer_id"
-  add_index "peers", ["torrent_id"], :name => "index_peers_on_torrent_id"
+  add_index "peers", ["peer_id"], :name => "peer_id"
+  add_index "peers", ["version_id"], :name => "index_peers_on_torrent_id"
 
   create_table "torrents", :force => true do |t|
-    t.string   "name",          :null => false
-    t.integer  "user_id",       :null => false
-    t.string   "info_hash",     :null => false
-    t.binary   "info_bencoded", :null => false
-    t.text     "comment",       :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "about"
   end
-
-  add_index "torrents", ["info_hash"], :name => "index_torrents_on_info_hash", :unique => true
-  add_index "torrents", ["user_id"], :name => "index_torrents_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -71,5 +65,20 @@ ActiveRecord::Schema.define(:version => 20120409052024) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["password_reset_token"], :name => "index_users_on_password_reset_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_login", :unique => true
+
+  create_table "versions", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "torrent_id"
+    t.string   "info_hash"
+    t.binary   "info_bencoded"
+    t.text     "comment"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "versions", ["info_hash"], :name => "index_versions_on_info_hash", :unique => true
+  add_index "versions", ["torrent_id"], :name => "index_versions_on_torrent_id"
+  add_index "versions", ["user_id"], :name => "index_versions_on_user_id"
 
 end
