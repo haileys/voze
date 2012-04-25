@@ -2,7 +2,7 @@ class AnnouncesController < ApplicationController
   def announce
     authorize! :announce, :announces
     
-    @torrent = Torrent.find_by_info_hash! to_hex(params[:info_hash])
+    @torrent = Torrent.find_by_info_hash! to_hex(params[:info_hash] || "")
     peer_id = to_hex params[:peer_id]
     args = { ip: request.remote_addr }
     args.merge! params.slice(:port, :uploaded, :downloaded, :left, :ip)
