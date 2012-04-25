@@ -69,7 +69,7 @@
         float: left;
         width: 1px;
         height: 600px;
-        background-image: url('../img/torrent-seperator.png');
+        background-image: url(image_path("torrent-seperator.png"));
         @include box-shadow(0 0 5px rgba(0, 0, 0, 0.58));
     }
     aside {
