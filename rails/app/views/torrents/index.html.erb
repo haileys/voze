@@ -1,9 +1,28 @@
-<div class="center-container main-content">
-    <h1>All Torrents (<%= link_to "upload", new_torrent_path %>)</h1>
+<section class="torrent-single-view">
+    <div class="container">
+        <div class="center-container">
+        <h1>All Torrents (<%= link_to "upload", new_torrent_path %>)</h1>
 
-    <ul>
-        <% @torrents.each do |torrent| %>
-            <li><%= link_to torrent.name, torrent %></li>
-        <% end %>
-    </ul>
+        <ul>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Seeders</td>
+                        <td>Leechers</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @torrents.each do |torrent| %>
+                        <tr>
+                            <td><%= link_to torrent.name, torrent %></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </ul>
+       </div>
+    </div>
 </div>

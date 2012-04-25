@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   layout "sessions"
   
   def new
-    authorize! :new, :session
+    
   end
   
   def create

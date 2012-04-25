@@ -14,44 +14,117 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <div id="header">
-            <div id="header-container">
+        <div id="overlay"></div>
+        <header>
+            <div class="container">
                 <div class="center-container">
-                    <%= link_to root_path, class: "logo" do %>
-                        <div class="logo"></div>
-                    <% end %>
-                    <ul id="nav">
-                        <li><%= link_to "Torrents", torrents_path %></li>
-                        <li><%= link_to "Requests", "/TODO requests path" %></li>
-                        <li><%= link_to "Collections", "/TODO collections path" %></li>
-                        <li><%= link_to "Forums", "/TODO forums path" %></li>
-                        <li><%= link_to "Wiki", "/TODO wiki path" %></li>
-                    </ul>
+                    <h1><%= link_to root_path, {}, :class => 'logo' %></h1>
+                    <nav>
+                        <ul>
+                            <li><%= link_to "Torrents", torrents_path %></li>
+                            <li><%= link_to "Requests", "/TODO requests path" %></li>
+                            <li><%= link_to "Collections", "/TODO collections path" %></li>
+                            <li><%= link_to "Forums", "/TODO forums path" %></li>
+                            <li><%= link_to "Wiki", "/TODO wiki path" %></li>
+                        </ul>
+                    </nav>
                     <div id="user">
                         <div class="dropdown"></div>
                         <div class="avatar"><%= link_to image_tag(current_user.gravatar_url 80), current_user %></div>
                         <div class="column welcome">
                             <div class="message">Welcome,</div>
-                            <div class="username"><a href="#"><%= link_to current_user.username, current_user, id: "user-name" %></a></div>
+                            <div class="username"><%= link_to current_user.username, current_user, id: "user-name" %></div>
                         </div>
                         <div class="column bandwidth">
-                            <div class="bandwidth-up"><span>Up:</span><span><%= number_to_human_size current_user.upload %></span></div>
-                            <div class="bandwidth-down"><span>Down:</span><span><%= number_to_human_size current_user.download %></span></div>
+                            <p><span>Up:</span><span><%= number_to_human_size current_user.upload %></span></p>
+                            <p><span>Down:</span><span><%= number_to_human_size current_user.download %></span></p>
                         </div>
                         <div class="column ratio">
-                            <div class="ratio-current"><span>Ratio:</span><span class="good"><%= number_with_precision current_user.ratio, precision: 2 %></span></div>
-                            <div class="ratio-required"><span>Req:</span><span class="bad"><%= number_with_precision current_user.required_ratio, precision: 2 %></span></div>
+                            <p><span>Req:</span><span class="good"><%= number_with_precision current_user.required_ratio, precision: 2 %></span></p>
+                            <p><span>Ratio:</span><span class="bad"><%= number_with_precision current_user.ratio, precision: 2 %></span></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="breadcrumbs">
-            <div id="breadcrumbs-container">
+        </header>
+        <nav>
+            <div class="container">
                 <div class="center-container">
-                    <form id="search"><div class="icon"></div><input type="text" placeholder="Search"></form>
+                    <ul>
+                        <li>
+                            <a href="#">Torrents</a>
+                            <div class="icon"></div>
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#">Top</a></li>
+                                    <li><a href="#">Freeleech</a></li>
+                                    <li><a href="#">Search</a></li>
+                                    <li><a href="#">Categories</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Categories</a>
+                            <div class="icon"></div>
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#">Games</a></li>
+                                    <li><a href="#">Movies</a></li>
+                                    <li><a href="#">Music</a></li>
+                                    <li><a href="#">Programs</a></li>
+                                    <li><a href="#">TV Shows</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Music</a>
+                            <div class="icon"></div>
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#">Top</a></li>
+                                    <li><a href="#">Freeleech</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Lemaitre</a>
+                            <div class="icon"></div>
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#">Albums</a></li>
+                                    <li><a href="#">EPs</a></li>
+                                    <li><a href="#">Singles</a></li>
+                                    <li><a href="#">Compiliations</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Albums</a>
+                            <div class="icon"></div>
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#">The Friendly Sound EP</a></li>
+                                    <li><a href="#">Lemaitre</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="last-child"><span>Relativity 1</span></li>
+                    </ul>
+                    <form>
+                        <input type="text" placeholder="Search" required>
+                       <input type="submit" value="Search" class="icon">
+                    </form>
                 </div>
-        </div>
+            </div>
+        </nav>
         <%= yield %>
+        <footer>
+            <div class="container">
+                <div class="center-container">
+                    <p>Powered by <a href="#">Voze</a></p>
+                    <p>Developed by <a href="http://charliesomerville.com/">Charlie Somerville</a>, <a href="http://www.gabrielecirulli.com/">Gabreiele Cirulli</a>, <a href="http://www.fildob.com/">Filipe Dobreia</a>, and <a href="#">Sebastian McKenzie</a>.</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

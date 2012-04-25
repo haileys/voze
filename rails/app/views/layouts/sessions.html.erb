@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>
-        <% if content_for? :title %>
-            <%= content_for :title %> &mdash; Voze
-        <% else %>
-            Voze
-        <% end %>
-    </title>
-    <%= stylesheet_link_tag "light", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-</head>
-<body>
-    <div role="main" class="sessions" id="primary-container">
-        <%= yield %>
-    </div>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            <% if content_for? :title %>
+                <%= content_for :title %> &mdash; Voze
+            <% else %>
+                Voze
+            <% end %>
+        </title>
+        <%= stylesheet_link_tag "application", media: "all" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <section class="sessions">
+            <header>
+                <h1><%= link_to root_path, {}, :class => 'logo' %></h1>
+            </header>
+            <section>
+                <%= yield %>
+            </section>
+            <footer>
+
+            </footer>
+        </section>
+    </body>
 </html>

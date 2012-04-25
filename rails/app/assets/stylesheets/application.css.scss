@@ -1,0 +1,344 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_this
+ *= require_tree .
+*/
+
+@import "helpers.css.scss";
+
+html, body {
+    background-color: #101010;
+    min-height: 100%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.center-container {
+    width: 942px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: block;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: url(image_path('logo.png'));
+    height: 50px;
+    width: 108px;
+    text-indent: -99999999px;
+}
+
+body > header {
+    @include vertical-gradient(#424242, #232323);
+    height: 51px;
+    border-bottom: 1px solid #646464;
+    > .container {
+        height: 50px;
+        border-bottom: 1px solid #1b1b1b;
+    }
+    h1 {
+        float: left;
+        display: block;
+        height: 50px;
+        width: 108px;
+        border-right: 1px solid #1e1e1e;
+    }
+    nav ul {
+        li {
+            float: left;
+            border-right: 1px solid #1d1d1d;
+            height: 50px;
+            a {
+                color: #cfcfcf;
+                font-weight: bold;
+                @include text-shadow(0 -1px 0 rgba(0,0,0,0.75));
+                line-height: 50px;
+                height: 50px;
+                padding: 0 22px;
+                display: block;
+                @include vertical-gradient(#424242, #232323);
+                &:hover {
+                    @include vertical-gradient(#4f4f4f, #2a2a2a);
+                    @include box-shadow(inset -1px -1px 0 rgba(245, 245, 245, 0.02), inset 1px 1px 0 rgba(245, 245, 245, 0.02));
+                    color: #fff;
+                }
+                &:active {
+                    @include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.6));
+                    @include vertical-gradient(#2d2d2d, #181818);
+                    color: #8e8e8e;
+                    margin: 0 -1px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-top: none;
+                }
+            }
+        }
+    }
+    #user {
+        float: right;
+        color: #cfcfcf;
+        @include text-shadow(0 -1px 0 rgba(0,0,0,0.75));
+        .avatar, .column {
+            float: left;
+            margin-top: 10px;
+        }
+        .dropdown {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            background-image: url(image_path('sprites.png'));
+            float: left;
+            margin: 17px 0;
+            @include sprite-map(1, 4);
+        }
+        .avatar {
+            border: 1px solid rgba(235, 235, 235, 0.05);
+            img {
+                display: block;
+                height: 28px;
+                width: 28px;
+                border: 1px solid #272727;
+            }
+        }
+        .column {
+            line-height: 15px;
+            margin-left: 15px;
+            p span:first-child {
+                display: block;
+                float: left;
+                width: 40px;
+            }
+        }
+        .welcome {
+            margin-left: 10px;
+            .username a {
+                color: inherit;
+                &:hover { text-decoration: underline; }
+            }
+        }
+        .bandwidth {
+            color: darken(#cfcfcf, 10%);
+        }
+        .ratio {
+            .bad { color: #9c4040; }
+            .good { color: #6e8467; }
+        }
+        .welcome .username, .column p span:first-child {
+            font-weight: bold;
+        }
+    }
+}
+
+body > nav {
+    background-color: #4b4b4b;
+    height: 36px;
+    border-bottom: 1px solid #2a2a2a;
+    margin-bottom: 33px;
+    > .container {
+        @include box-sizing();
+        height: 36px;
+        padding-top: 5px;
+        border-bottom: 1px solid #191919;
+    }
+    .center-container > ul {
+        float: left;
+        margin-left: 3px;
+        overflow: hidden;
+        @include border-radius(3px);
+        @include box-shadow(0 1px #5b5b5b);
+        > li {
+            @include box-sizing();
+            float: left;
+            border: 1px solid #313131;
+            border-right: none;
+            position: relative;
+            @include text-shadow(0 -1px 0 rgba(0,0,0,0.75));
+            @include vertical-gradient(#454545, #393939);
+            color: #cfcfcf;
+            height: 24px;
+            line-height: 22px;
+            font-weight: bold;
+            &:hover {
+                @include vertical-gradient(#505050, #454545);
+            }
+            &:active, &.active {
+                @include vertical-gradient(#3c3c3c, #2e2e2e);
+            }
+            > a {
+                @include box-sizing();
+                float: left;
+                display: block;
+                color: inherit;
+                padding-left: 10px;
+            }
+            span {
+                display: block;
+                padding-right: 10px;
+            }
+            &:first-child { @include border-radius(3px 0 0 3px); }
+            &.last-child {
+                border-right: 1px solid #313131;
+                @include border-radius(0 3px 3px 0);
+                background: #4b4b4b;
+                padding-left: 10px;
+            }
+            .icon {
+                @include sprite-map(1, 4);
+                margin: 3px 2px;
+                float: right;
+                cursor: pointer;
+            }
+            .container {
+                position: absolute;
+                top: 22px;
+                left: -1px;
+                right: -1px;
+                display: none;
+                z-index: 10;
+                ul {
+                    border: 1px solid #2c2c2c;
+                    @include border-radius(0 0 2px 2px);
+                    li {
+                        background-color: #454545;
+                        display: block;
+                        height: 23px;
+                        border-bottom: 1px solid #505050;
+                        a {
+                            height: 22px;
+                            border-bottom: 1px solid #3e3e3e;
+                            padding: 0 10px;
+                            color: inherit;
+                            display: block;
+                        }
+                        &:last-child {
+                            @include border-radius(0 0 1px 1px);
+                            &, a { border-bottom: none; }
+                        }
+                        &:hover {
+                            @include vertical-gradient(#5b5b5b, #535353);
+                            margin-top: -1px;
+                            border-top: 1px solid #646464;
+                            border-bottom: 1px solid #505050;
+                            a {  border-bottom: 1px solid #4a4a4a; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    form {
+        float: right;
+        position: relative;
+        overflow: hidden;
+        @include border-radius(21px);
+        @include box-shadow(0 1px 0 #5b5b5b);
+        input {
+            display: block;
+            float: left;
+            &[type=submit] {
+                cursor: pointer;
+                text-indent: -99999999px;
+                border: none;
+                position: absolute;
+                right: 8px;
+                top: 5px;
+                @include sprite-map(1, 1);
+                &:hover { @include sprite-map(1, 2); }
+                &:active { @include sprite-map(1, 3); }
+            }
+            &[type=text] {
+                @include vertical-gradient(#424242, #4d4d4d);
+                @include border-radius(12px);
+                @include text-shadow(0 -1px 0 rgba(0,0,0,0.5));
+                color: #cfcfcf;
+                width: 220px;
+                line-height: 18px;
+                padding: 5px 25px 3px 10px;
+                height: 24px - 2px - 5px - 3px;
+                border: 1px solid #2e2e2e;
+                color: #f5f5f5;
+                &.placeholder, &::-webkit-input-placeholder, &::-moz-placeholder { color: darken(#cfcfcf, 20%); }
+                &:focus { outline: 0; }
+            }
+        }
+    }
+}
+
+body > section {
+    color: #5d5d5d;
+    margin-bottom: 33px;
+    line-height: 21px;
+    a {
+        color: #3f77a8;
+        &:hover { color: lighten(#3f77a8, 10%); }
+    }
+}
+
+footer {
+    clear: both;
+    margin: 25px 0;
+    color: #5d5d5d;
+    p {
+        line-height: 20px;
+        text-align: center;
+        @include text-shadow(0 -1px darken(#5d5d5d, 30%));
+        a {
+            color: darken(#5d5d5d, 10%);
+            text-decoration: underline;
+            &:hover { color: darken(#5d5d5d, 20%); }
+        }
+    }
+}
+
+a { text-decoration: none; }
+
+table {
+    width: 100%;
+    tr {
+        td, th {
+            padding: 0 5px;
+        }
+    }
+    thead tr th {
+        color: #acacac;
+        font-weight: bold;
+    }
+    tbody tr {
+        vertical-align: top;
+        &:nth-child(even) {
+            background-color: #181818;
+        }
+    }
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    background: none;
+    background-image: url(image_path('sprites.png'));
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+.left { float: left; }
+.right { float: right; } 
+.clear { clear: both; }
