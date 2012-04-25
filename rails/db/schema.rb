@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425063126) do
+ActiveRecord::Schema.define(:version => 20120425072731) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
   create_table "invites", :force => true do |t|
     t.string   "code",       :null => false
@@ -43,11 +51,14 @@ ActiveRecord::Schema.define(:version => 20120425063126) do
   add_index "peers", ["version_id"], :name => "index_peers_on_torrent_id"
 
   create_table "torrents", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",        :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.text     "about"
+    t.integer  "category_id"
   end
+
+  add_index "torrents", ["category_id"], :name => "index_torrents_on_category_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

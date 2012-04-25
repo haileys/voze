@@ -7,6 +7,7 @@ Voze::Application.routes.draw do
   resources :torrents, only: [:index, :show, :new, :create] do
     resources :versions, only: [:show, :new, :create]
   end
+  resources :categories, only: [:index, :show]
   
   match "/announce", to: "announces#announce", as: :announce
 end
