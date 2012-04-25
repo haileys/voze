@@ -1,3 +1,23 @@
+<% content_for :breadcrumb do %>
+<ul>
+    <li>
+        <%= link_to "Torrents", torrents_path, class: "no-drop-down" %>
+    </li>
+    <li>
+        <%= link_to @torrent.category.name, @torrent.category %>
+        <div class="icon"></div>
+        <div class="container">
+            <ul>
+                <% Category.all.each do |category| %>
+                    <li><%= link_to category.name, category %></li>
+                <% end %>
+            </ul>
+        </div>
+    </li>
+    <li class="last-child"><span><%= @torrent.name %></span></li>
+</ul>
+<% end %>
+
 <section class="torrent-single-view">
     <div class="container">
         <div class="center-container">
@@ -60,6 +80,10 @@
 <%
 =end
 %>
+
+<%
+=begin TODO for when we have requests:
+%>
                 <h3>Version requests</h3>
                 <table>
                     <thead>
@@ -91,6 +115,9 @@
                         </tr>
                     </tbody>
                 </table>
+<%
+=end
+%>
 
                 <h3>Reviews</h3>
                 <div class="clear"></div>
