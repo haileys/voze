@@ -32,19 +32,19 @@ $(function() {
     }).blur();
 
     // dropdown
-    $('body > nav .icon').click(function(ev) {
+    $('.dropdown .icon, .dropdown.entire-button').click(function(ev) {
         ev.preventDefault();
-    	$('body > nav ul li.active').removeClass('active');
-    	$('body > nav ul li .container').hide();
-    	$(this).parent().addClass('active');
+    	$('.dropdown.active').removeClass('active');
+    	$('.dropdown .container').hide();
+	    $(this).parent().addClass('active');
+	    console.log($(this).parent().children('.container'));
     	$(this).parent().children('.container').show();
-    	//$('#overlay').show();
     	return false;
     });
 
     $('body').click(function() {
-    	$('body > nav ul li.active').removeClass('active');
-    	$('body > nav ul li .container').hide();
+    	$('.dropdown.active').removeClass('active');
+    	$('.dropdown .container').hide();
     	//$(this).hide();
     });
 

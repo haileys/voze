@@ -86,7 +86,7 @@
                     float: left;
                 }
                 .dropdown {
-                    overflow: hidden;
+//                    overflow: hidden;
                     font-weight: bold;
                     color: #cfcfcf;
                     border: 1px solid #1d1d1d;
@@ -99,6 +99,12 @@
                     @include border-radius(3px);
                     @include vertical-gradient(#454545, #383838);
                     @include box-shadow(0 1px #272727);
+                    &:hover {
+                        @include vertical-gradient(#505050, #454545);
+                    }
+                    &.active {
+                        @include vertical-gradient(#3c3c3c, #2e2e2e);
+                    }
                     span, .icon {
                         float: left;
                     }

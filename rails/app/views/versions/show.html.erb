@@ -3,7 +3,7 @@
     <li>
         <%= link_to "Torrents", torrents_path, class: "no-drop-down" %>
     </li>
-    <li>
+    <li class="dropdown">
         <%= link_to @torrent.category.name, @torrent.category %>
         <div class="icon"></div>
         <div class="container">
@@ -129,9 +129,16 @@
                 <header>
                     <div class="left">
                         <h3>Version</h3>
-                        <div class="dropdown">
+                        <div class="dropdown entire-button">
                             <span><%= @version.name %></span>
                             <div class="icon"></div>
+                            <div class="container">
+                                <ul>
+                                    <% @torrent.versions.each do |version| %>
+                                        <li><%= link_to version.name, [@torrent, version] %></li>
+                                    <% end %>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="right">
