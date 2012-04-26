@@ -27,7 +27,7 @@ class Version < ActiveRecord::Base
   def files
     data = BEncode.load info_bencoded
     if data["files"]
-      Hash[data["files"].map { |f| [f["name"], f["length"]] }]
+      Hash[data["files"].map { |f| [f["path"].join("/"), f["length"]] }]
     else
       { data["name"] => data["length"] }
     end
@@ -39,6 +39,7 @@ class Version < ActiveRecord::Base
   
   def torrent_file_is_valid
     if torrent_file
+      torrent_file.rewind
       data = BEncode.load(torrent_file.read)
       if data["info"]
         if expected_announce and expected_announce != data["announce"]

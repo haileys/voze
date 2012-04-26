@@ -1,0 +1,21 @@
+<h3>Track listing</h3>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 5%;"></th>
+            <th>Name</th>
+            <th>Artist</th>
+            <th style="width: 8%;">Length</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% metadata.track_listing.each_with_index do |track, index| %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= track["name"] %></td>
+                <td><%= track["artist"] %></td>
+                <td><%= track["length"] %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
