@@ -1,1 +1,0 @@
-Mime::Type.register "application/x-bittorrent", :torrent
