@@ -147,3 +147,24 @@
         }
     }
 }
+
+#new_torrent {
+    @include clear-fix;
+    .main-section {
+        width:620px;
+        float:left;
+        input[type=text], textarea {
+            width:480px;
+        }
+        textarea {
+            height:72px;
+        }
+    }
+    aside {
+        width:300px;
+        height:300px;
+        border:6px dashed #222222;
+        @include border-radius(24px);
+        float:right;
+    }
+}

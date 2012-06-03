@@ -84,3 +84,11 @@
 @mixin sprite-map($row, $col, $size: 16px){
     background-position: (($col * $size - $size) * -1) (($row * $size - $size) * -1);
 }
+
+@mixin clear-fix {
+    &:after {
+        content:"";
+        display:block;
+        clear:both;
+    }
+}

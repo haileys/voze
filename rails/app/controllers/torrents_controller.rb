@@ -6,7 +6,7 @@ class TorrentsController < ApplicationController
   end
   
   def new
-    render text: "TODO"
+    render
   end
   
   def create

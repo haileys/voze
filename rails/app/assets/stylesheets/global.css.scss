@@ -21,6 +21,18 @@ html, body {
     width: 942px;
     margin: 0 auto;
     padding: 0 20px;
+    
+    h2 {
+        color:#e1e1e1;
+        font-size:23px;
+        margin-bottom:32px;
+        font-weight:700;
+    }
+    h3 {
+        color:#e1e1e1;
+        margin-bottom:20px;
+        font-weight:700;
+    }
 }
 
 .logo {
@@ -331,3 +343,32 @@ em { font-style: italic; }
 .left { float: left; }
 .right { float: right; } 
 .clear { clear: both; }
+
+form {
+    .row {
+        margin-bottom:12px;
+        label {
+            display:block;
+            float:left;
+            color:#acacac;
+            width:90px;
+        }
+        input[type=text], textarea {
+            display:block;
+            float:left;
+        }
+        @include clear-fix;
+    }
+    input[type=text], textarea {
+        @include box-shadow(inset 1px 1px 4px rgba(0, 0, 0, 0.41), 0px 0px 5px rgba(0, 0, 0, 0.50));
+        border:1px solid rgba(0, 0, 0, 0.25);
+        background-color:#363636;
+        color:#a7a7a7;
+        @include text-shadow(0px 1px rgba(0, 0, 0, 0.84));
+        @include border-radius(2px);
+        padding:2px 4px;
+        &:active {
+            border-color:#2d6ea5;
+        }
+    }
+}
