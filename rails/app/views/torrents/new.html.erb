@@ -1,20 +1,22 @@
-<div class="center-container main-content">
-    <h2>Upload a torrent</h2>
-    
-    <%= form_for @torrent do |f| %>
-        <h3>About the torrent</h3>
-        <div class="main-section">
-            <div class="row">
-                <%= f.label :name %>
-                <%= f.text_field :name %>
+<section>
+    <div class="container">
+        <h2>Upload a torrent</h2>
+        
+        <%= form_for @torrent do |f| %>
+            <h3>About the torrent</h3>
+            <div class="main-section">
+                <div class="row">
+                    <%= f.label :name %>
+                    <%= f.text_field :name %>
+                </div>
+                <div class="row">
+                    <%= f.label :description %>
+                    <%= f.text_area :description %>
+                </div>
             </div>
-            <div class="row">
-                <%= f.label :description %>
-                <%= f.text_area :description %>
-            </div>
-        </div>
-        <aside>
-            lol
-        </aside>
-    <% end %>
-</div>
+            <aside>
+                lol
+            </aside>
+        <% end %>
+    </div>
+</section>
