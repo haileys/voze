@@ -14,41 +14,5 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(function() {
-
-    // placeholder polyfill
-    $('[placeholder]').focus(function() {
-    	var input = $(this);
-    	if (input.val() == input.attr('placeholder')) {
-    		input.val('');
-    		input.removeClass('placeholder');
-    	}
-    }).blur(function() {
-    	var input = $(this);
-    	if (input.val() == '' || input.val() == input.attr('placeholder')) {
-    		input.addClass('placeholder');
-    		input.val(input.attr('placeholder'));
-    	}
-    }).blur();
-
-    // dropdown
-    $('.dropdown .icon, .dropdown.entire-button').click(function(ev) {
-        ev.preventDefault();
-    	$('.dropdown.active').removeClass('active');
-    	$('.dropdown .container').hide();
-	    $(this).parent().addClass('active');
-	    console.log($(this).parent().children('.container'));
-    	$(this).parent().children('.container').show();
-    	return false;
-    });
-
-    $('body').click(function() {
-    	$('.dropdown.active').removeClass('active');
-    	$('.dropdown .container').hide();
-    	//$(this).hide();
-    });
-
-    // dud links
-    $('a[href=#]').click(function(){ return false; });
-
-});
+// dud links
+$('a[href=#]').click(function(){ return false; });

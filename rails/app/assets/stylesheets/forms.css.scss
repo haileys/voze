@@ -1,0 +1,99 @@
+@import "helpers.css.scss";
+@import "variables.css.scss";
+
+button, .button, input, textarea {
+    font-family: inherit;
+}
+
+form {
+    .row {
+        margin-bottom: $form-row-margin-bottom;
+        .input {
+            margin-left: $form-input-margin-left;
+        }
+    }
+}
+
+button, .button, input[type=submit] {
+    @include gradient($button-back-from, $button-back-to);
+    border: $button-border;
+    border-radius: $button-border-radius;
+    box-shadow: $button-box-shadow;
+    color: $button-color;
+    text-shadow: $button-text-shadow;
+    line-height: $button-line-height;
+    padding: $button-padding;
+    cursor: pointer;
+    font-weight: $button-font-weight;
+    &:hover {
+        @include gradient($button-hover-back-from, $button-hover-back-to);
+        color: $button-hover-color;
+        box-shadow: $button-hover-box-shadow;
+        border: $button-hover-border;
+    }
+    &:active {
+        @include gradient($button-active-back-from, $button-active-back-to);
+        color: $button-active-color;
+        box-shadow: $button-active-box-shadow;
+        border: $button-active-border;
+    }
+    &.blue {
+        @include gradient($button-blue-back-from, $button-blue-back-to);
+        box-shadow: $button-blue-box-shadow;
+        &:hover {
+            @include gradient($button-blue-hover-back-from, $button-blue-hover-back-to);
+            color: $button-blue-hover-color;
+            box-shadow: $button-blue-hover-box-shadow;
+            border: $button-blue-hover-border;
+        }
+        &:active {
+            @include gradient($button-blue-active-back-from, $button-blue-active-back-to);
+            color: $button-blue-active-color;
+            box-shadow: $button-blue-active-box-shadow;
+            border: $button-blue-active-border;
+        }
+    }
+}
+
+input[type=text], input[type=password], textarea {
+    @include box-sizing;
+	color: $input-text-color;
+	border: $input-text-border;
+	background-color: $input-text-back;
+	border-radius: $input-text-border-radius;
+	text-shadow: $input-text-text-shadow;
+    box-shadow: $input-text-box-shadow;
+	resize: none;
+	&:focus {
+		outline: none;
+		box-shadow: $input-text-focus-box-shadow;
+	}
+	&.error {
+		&:focus {
+			box-shadow: $input-text-focus-error-box-shadow;
+		}
+	}
+}
+
+input[type=text], input[type=password] {
+	line-height: $input-text-line-height;
+	padding: $input-text-padding;
+    height: $input-text-height;
+    &::-webkit-input-placeholder, &::-moz-placeholder {
+        line-height: $input-text-placeholder-line-height;
+        text-shadow: $input-text-placeholder-text-shadow;
+        color: $input-text-placeholder-color;
+    }
+}
+
+textarea {
+	padding: $input-textarea-padding;
+	line-height: $input-textarea-line-height;
+	height: $input-textarea-height;
+}
+
+label {
+	float: left;
+	display: block;
+	width: $form-label-width;
+}

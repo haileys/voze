@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
     <head>
         <meta charset="utf-8">
         <title>
@@ -15,6 +15,8 @@
     <body>
         <button id="toggle-grid">Toggle Grid</button>
         <div id="grid"></div>
+        <button id="toggle-design">Toggle Design</button>
+        <div id="design"></div>
         <header>
             <div class="container">
                 <h1><%= link_to 'VOZE', root_path %></h1>
@@ -30,29 +32,34 @@
                 <div class="right">
                     <div class="user">
                         <div class="avatar"><%= link_to image_tag(current_user.gravatar_url 80), current_user %></div>
-                        <div class="username"><%= link_to current_user.username, current_user, id: "user-name" %></div>
+                        <div class="username">charliesome</div>
+                        <!--<div class="username"><%= link_to current_user.username, current_user, id: "user-name" %></div>-->
                         <div class="icon dropdown-arrow"></div>
                     </div>
                     <div class="bandwidth">
                         <div class="icon download"></div>
-                        <div class="download"><%= number_to_human_size current_user.download %></div>
+                        <div class="download">60.3 GB</div>
+                        <!--<div class="download"><%= number_to_human_size current_user.download %></div>-->
                         <div class="icon upload"></div>
-                        <div class="upload"><%= number_to_human_size current_user.upload %></div>
+                        <div class="upload">13.2 GB</div>
+                        <!--<div class="upload"><%= number_to_human_size current_user.upload %></div>-->
                     </div>
                     <div class="ratio">
                         <div class="icon current_ratio"></div>
-                        <div class="bad current_ratio"><%= number_with_precision current_user.ratio, precision: 2 %></div>
+                        <div class="bad current_ratio">0.21</div>
+                        <!--<div class="bad current_ratio"><%= number_with_precision current_user.ratio, precision: 2 %></div>-->
                         <div class="icon required_ratio"></div>
-                        <div class="good required_ratio"><%= number_with_precision current_user.required_ratio, precision: 2 %></div>
+                        <div class="good required_ratio">0.47</div>
+                        <!--<div class="good required_ratio"><%= number_with_precision current_user.required_ratio, precision: 2 %></div>-->
                     </div>
                 </div>
             </div>
         </header>
         <nav>
             <div class="container">
-                    <% if content_for? :breadcrumb %>
-                        <%= content_for :breadcrumb %>
-                    <% end %>
+                <% if content_for? :breadcrumb %>
+                    <%= content_for :breadcrumb %>
+                <% end %>
             </div>
         </nav>
         <%= yield %>

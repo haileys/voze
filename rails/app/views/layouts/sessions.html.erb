@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
     <head>
         <meta charset="utf-8">
         <title>
@@ -10,20 +10,17 @@
             <% end %>
         </title>
         <%= stylesheet_link_tag "application", media: "all" %>
-        <%= javascript_include_tag "application" %>
         <%= csrf_meta_tags %>
     </head>
     <body>
         <section class="sessions">
             <header>
-                <h1><%= link_to root_path, {}, :class => 'logo' %></h1>
+                <h1><%= link_to 'VOZE', root_path %></h1>
             </header>
             <section>
                 <%= yield %>
             </section>
-            <footer>
-
-            </footer>
         </section>
+        <%= javascript_include_tag "application" %>
     </body>
 </html>

@@ -1,21 +1,39 @@
-<section>
+<section class="new-torrent">
     <div class="container">
         <h2>Upload a torrent</h2>
         
         <%= form_for @torrent do |f| %>
-            <h3>About the torrent</h3>
             <div class="main-section">
+                <strong>About the torrent</strong>
                 <div class="row">
-                    <%= f.label :name %>
-                    <%= f.text_field :name %>
+                    <label>Name</label>
+                    <div class="input">
+                        <input type="text">
+                    </div>
                 </div>
                 <div class="row">
-                    <%= f.label :description %>
-                    <%= f.text_area :description %>
+                    <label>Description</label>
+                    <div class="input">
+                        <textarea></textarea>
+                        <p><a href="#">Markdown</a> is supported. <a href="#">Display preview</a></p>
+                    </div>
                 </div>
+                <strong>Torrent file</strong>
+                <p>Your announce URL is <a href="#">http://www.voze.org/announce?auth_token=6825c3943d153fcba1ae4d2483804430</a></p>
+                <div class="row">
+                    <label>Torrent file</label>
+                    <div class="input">
+                        <input type="file">
+                    </div>
+                </div>
+                <strong>Metadata</strong>
+                <div class="row">
+
+                </div>
+                <strong>Tracks</strong>
             </div>
             <aside>
-                lol
+                
             </aside>
         <% end %>
     </div>

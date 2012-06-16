@@ -1,0 +1,121 @@
+@import "helpers.css.scss";
+@import "variables.css.scss";
+
+header, body > nav {
+    @include box-sizing;
+}
+
+header {
+    @include gradient($header-back-from, $header-back-to);
+    @include clear-fix;
+    border-bottom: $header-border-bottom;
+    height: $header-height;
+    line-height: $header-height;
+    font-weight: $header-font-weight;
+    // Probably slow as balls but it's easier! Browsers are fast! //
+    h1, nav, * > * > * {
+        display: block;
+        float: left;
+    }
+    h1 {
+        text-indent: -9999999px;
+        background-image: url($header-logo-path);
+        margin-top: $header-logo-margin-top;
+        margin-right: $header-logo-margin-right;
+        &, a {
+            width: $header-logo-width;
+            height: $header-logo-height;
+        }
+    }
+    nav, .right .user .username {
+        color: $nav-color;
+    }
+    nav {
+        box-shadow: $nav-box-shadow;
+        line-height: $nav-item-height;
+        ul li {
+            &:last-child a {
+                border-right: $nav-item-border;
+            }
+            a {
+                text-shadow: $nav-text-shadow;
+                padding: 0 $nav-item-padding;
+                border-left: $nav-item-border;
+                box-shadow: $nav-item-box-shadow;
+                &:hover {
+                    box-shadow: $nav-item-hover-box-shadow;
+                    @include gradient($nav-item-hover-back-from, $nav-item-hover-back-to);
+                }
+                &:active {
+                    box-shadow: $nav-item-active-box-shadow;
+                    @include gradient($nav-item-active-back-from, $nav-item-active-back-to);
+                }
+            }
+        }
+    }
+    .right {
+        color: $header-user-color;
+        text-shadow: $header-user-text-shadow;
+        .icon {
+            @include vertical-center($icon-size, $header-height);
+        }
+        .user {
+            .avatar {
+                border: $header-user-avatar-border-outer;
+                margin-top: $header-user-avatar-margin-top;
+                margin-right: $header-user-avatar-margin-right;
+                img {
+                    border: $header-user-avatar-border;
+                    display: block;
+                    @include box($header-user-avatar-size);
+                }
+            }
+            .dropdown-arrow {
+                cursor: pointer;
+            }
+        }
+        .bandwidth {
+            .download {
+
+            }
+            .upload {
+
+            }
+        }
+        .ratio {
+            .bad {
+                color: $header-user-ratio-bad-color;
+            }
+            .good {
+                color: $header-user-ratio-good-color;
+            }
+            .current_ratio {
+
+            }
+            .required_ratio {
+
+            }
+        }
+    }
+}
+
+body > nav {
+    background-color: $breadcrumbs-back;
+    height: $breadcrumbs-height;
+    line-height: $breadcrumbs-height;
+    border-bottom: $breadcrumbs-border-bottom;
+    box-shadow: $breadcrumbs-box-shadow;
+}
+
+body > section, footer {
+    a {
+        color: $link-color;
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+}

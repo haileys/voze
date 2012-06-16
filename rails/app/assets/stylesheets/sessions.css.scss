@@ -1,2 +1,61 @@
 @import "helpers.css.scss";
 @import "variables.css.scss"; 
+
+section.sessions {
+    display: none;
+    margin: 0 auto;
+    width: $sessions-width;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    margin-left: ($sessions-width / 2) * -1;
+    box-shadow: $sessions-box-shadow;
+    header {
+        @include gradient($sessions-header-back-from, $sessions-header-back-to);
+        box-shadow: $sessions-header-box-shadow;
+        border: $sessions-header-border;
+        border-bottom: $sessions-header-border-bottom;
+        height: $sessions-header-height;
+        margin-bottom: $sessions-header-margin-bottom;
+        h1 {
+            margin-left: $sessions-header-logo-margin-left;
+            margin-top: $sessions-header-logo-margin-top;
+        }
+    }
+    strong {
+        display: block;
+        margin-bottom: $sessions-title-margin-bottom;
+    }
+    .input {
+        margin-left: 0;
+        position: relative;
+    }
+    .icon-container {
+        border-right: $sessions-input-icon-border-right;
+        box-shadow: $sessions-input-icon-box-shadow;
+        position: absolute;
+        padding: $sessions-input-icon-padding;
+        @include vertical-center($icon-size, $input-text-height);
+    }
+    input[type=text], input[type=password] {
+        padding-left: $sessions-input-text-padding-left;
+        width: 100%;
+        margin-bottom: $sessions-input-text-margin-bottom;
+        &.actual {
+            display: none;
+        }
+    }
+    section {
+        padding: $sessions-content-padding;
+        background-color: $sessions-content-back;
+        border: $sessions-content-border;
+        border-radius: $sessions-content-border-radius;
+        border-top: $sessions-content-border-top;
+    }
+    footer {
+        @include clear-fix;
+        margin-top: $sessions-footer-margin-top;
+        line-height: $input-text-height;
+    }
+}

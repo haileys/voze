@@ -1,15 +1,34 @@
 /* Main */
 
 $body-font-family: 'PT Sans';
-$body-font-color: #acacac;
+$body-color: #acacac;
 $body-font-size: 13px;
 $body-back: #1a1a1a;
 
-$link-color: #3f77a8;
+$bold-font-weight: 700;
 
+// Link //
+
+$link-color: #3f77a8;
+$link-hover-color: #3884c6;
+
+// Icon //
+
+$icon-path: image_path('sprites.png');
 $icon-size: 16px;
 
+// Container //
+
 $container-width: 940px;
+
+/* Headings */
+
+// Heading 2 //
+
+$h2-font-family: 'Open Sans';
+$h2-font-size: 23px;
+$h2-font-weight: $bold-font-weight;
+$h2-margin-bottom: 29px;
 
 /* Header */
 
@@ -17,28 +36,28 @@ $header-height: 48px;
 $header-back-from: #424242;
 $header-back-to: #232323;
 $header-border-bottom: 1px solid #1b1b1b;
+$header-font-weight: $bold-font-weight;
 
 // Navigation //
 
-$nav-shadow-color: rgba(255, 255, 255, 0.04);
-$nav-shadow: -1px 0 $nav-shadow-color, 1px 0 $nav-shadow-color;
-$nav-font-weight: 700;
-$nav-font-color: #cfcfcf;
-$nav-font-shadow: 0 -1px rgba(0, 0, 0, 0.6);
+$nav-box-shadow-color: rgba(255, 255, 255, 0.04);
+$nav-box-shadow: -1px 0 $nav-box-shadow-color, 1px 0 $nav-box-shadow-color;
+$nav-color: #cfcfcf;
+$nav-text-shadow: 0 -1px rgba(0, 0, 0, 0.6);
 
 $nav-item-height: $header-height - 1px;
 $nav-item-padding: 20px;
-$nav-item-shadow: inset -1px 0 $nav-shadow-color, inset 1px 0 $nav-shadow-color;
+$nav-item-box-shadow: inset -1px 0 $nav-box-shadow-color, inset 1px 0 $nav-box-shadow-color;
 $nav-item-border: $header-border-bottom;
 
 $nav-item-hover-back-from: #4f4f4f;
 $nav-item-hover-back-to: #2a2a2a;
 $nav-item-hover-shadow-color: rgba(245, 245, 245, 0.09);
-$nav-item-hover-shadow: inset 1px -1px 0 $nav-item-hover-shadow-color, inset -1px 0 0 $nav-item-hover-shadow-color;
+$nav-item-hover-box-shadow: inset 1px -1px 0 $nav-item-hover-shadow-color, inset -1px 0 0 $nav-item-hover-shadow-color;
 
 $nav-item-active-back-from: #2d2d2d;
 $nav-item-active-back-to: #181818;
-$nav-item-active-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
+$nav-item-active-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
 
 // User Info //
 
@@ -48,12 +67,11 @@ $header-logo-height: 25px;
 $header-logo-margin-top: 11px;
 $header-logo-margin-right: 20px;
 
-$header-user-font-color: #a7a7a7;
-$header-user-font-shadow: 0 -1px rgba(0, 0, 0, 0.75);
-
-$header-user-name-weight: 700;
+$header-user-color: #a7a7a7;
+$header-user-text-shadow: 0 -1px rgba(0, 0, 0, 0.75);
 
 $header-user-avatar-margin-top: 8px;
+$header-user-avatar-margin-right: 6px;
 $header-user-avatar-size: 28px;
 $header-user-avatar-border: 1px solid #272727;
 $header-user-avatar-border-outer: 1px solid rgba(235, 235, 235, 0.05);
@@ -61,25 +79,118 @@ $header-user-avatar-border-outer: 1px solid rgba(235, 235, 235, 0.05);
 $header-user-ratio-good-color: #6e8467;
 $header-user-ratio-bad-color: #9c4040;
 
-$header-user-icon-margin-left: 6px;
-$header-user-icon-margin-right: 1px;
-
 /* Breadcrumbs */
 
 $breadcrumbs-height: 32px;
 $breadcrumbs-back: #494949;
-$breadcrumbs-shadow: inset 0 -1px #232323, inset 0 1px #646464;
+$breadcrumbs-box-shadow: inset 0 -1px #232323, inset 0 1px #646464;
 $breadcrumbs-border-bottom: 1px solid #262626;
 
-/* UI Elements */
+/* Forms */
 
-$input-text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
-$input-font-color: #a7a7a7;
-$input-padding: 10px;
-$input-line-height: 10px;
-$input-back: #363636;
-$input-border-radius: 1px;
-$input-border: 1px solid #111111;
+$form-row-margin-bottom: 13px;
+$form-label-width: 90px;
+$form-input-margin-left: $form-label-width;
+
+$button-color: #9c9c9c;
+$button-text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
+$button-back-from: #393939;
+$button-back-to: #2e2e2e;
+$button-border: 1px solid rgba(0, 0, 0, 0.8);
+$button-border-radius: 3px;
+$button-box-shadow: inset 0 1px #494949;
+$button-line-height: 25px;
+$button-padding: 0 10px;
+$button-font-weight: $bold-font-weight;
+
+$button-hover-color: #e1e1e1;
+$button-hover-back-from: #444444;
+$button-hover-back-to: #373737;
+$button-hover-border: 1px solid rgba(0, 0, 0, 0.7);
+$button-hover-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), inset 0 0 3px rgba(255, 255, 255, 0.2);
+
+$button-active-color: #868686;
+$button-active-back-from: #2e2e2e;
+$button-active-back-to: #252525;
+$button-active-border: $button-border;
+$button-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
+
+$button-blue-back-from: #1f405c;
+$button-blue-back-to: #143551;
+$button-blue-box-shadow: inset 0 1px #314f69;
+
+$button-blue-hover-color: #e1e1e1;
+$button-blue-hover-back-from: #444444;
+$button-blue-hover-back-to: #373737;
+$button-blue-hover-border: 1px solid rgba(0, 0, 0, 0.7);
+$button-blue-hover-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), inset 0 0 3px rgba(255, 255, 255, 0.2);
+
+$button-blue-active-color: #868686;
+$button-blue-active-back-from: #2e2e2e;
+$button-blue-active-back-to: #252525;
+$button-blue-active-border: $button-border;
+$button-blue-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
+
+$input-text-text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
+$input-text-color: #a7a7a7;
+$input-text-padding: 0 9px;
+$input-text-line-height: 10px;
+$input-text-back: #363636;
+$input-text-border-radius: 3px;
+$input-text-border: 1px solid #111111;
+$input-text-height: 27px;
+$input-text-box-shadow: inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
+$input-text-focus-box-shadow-color: rgba(21, 110, 188, 0.65);
+$input-text-focus-box-shadow: inset -1px -1px $input-text-focus-box-shadow-color, inset 1px 1px $input-text-focus-box-shadow-color, $input-text-box-shadow;
+$input-text-focus-error-box-shadow-color: #7a2828;
+$input-text-focus-error-box-shadow: inset -1px -1px $input-text-focus-error-box-shadow-color, inset 1px 1px $input-text-focus-error-box-shadow-color;
+
+$input-text-placeholder-text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+$input-text-placeholder-color: #5d5d5d;
+$input-text-placeholder-line-height: $input-text-height / 1.5;
+
+$input-textarea-padding: 7px 9px;
+$input-textarea-line-height: 20px;
+$input-textarea-height: 85px;
 
 
-$input-height: 25px;
+/* Scrollbar (Webkit only) */
+
+$scrollbar-custom: true;
+$scrollbar-width: 8px;
+$scrollbar-track-back: rgba(0, 0, 0, 0.2);
+$scrollbar-track-border-radius: $scrollbar-width / 2;
+$scrollbar-thumb-back: rgba(0, 0, 0, 0.3);
+$scrollbar-thumb-border-radius: $scrollbar-track-border-radius;
+
+/* Page Specific */
+
+// Sessions //
+
+$sessions-width: 299px;
+$sessions-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+$sessions-title-margin-bottom: 14px;
+$sessions-footer-margin-top: 4px;
+
+$sessions-header-back-from: #414141;
+$sessions-header-back-to: #232323;
+$sessions-header-border: 1px solid #3a3a3a;
+$sessions-header-border-bottom: 1px solid #1b1b1b;
+$sessions-header-box-shadow: 0 1px #2e2e2e;
+$sessions-header-margin-bottom: 1px;
+
+$sessions-header-height: 47px;
+$sessions-header-logo-margin-left: 19px;
+$sessions-header-logo-margin-top: 9px;
+
+$sessions-content-back: #1b1b1b;
+$sessions-content-padding: 18px;
+$sessions-content-border: 1px solid #222222;
+$sessions-content-border-top: none;
+$sessions-content-border-radius: 0 0 2px 2px;
+
+$sessions-input-icon-padding: 0 3px;
+$sessions-input-icon-border-right: 1px solid #2e2e2e;
+$sessions-input-icon-box-shadow: 1px 0 #3d3d3d;
+$sessions-input-text-margin-bottom: 13px;
+$sessions-input-text-padding-left: 33px;

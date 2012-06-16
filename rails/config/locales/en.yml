@@ -6,3 +6,8 @@ en:
     attributes:
       user:
         password_digest: Password
+  number:
+    human:
+      storage_units:
+        units:
+          byte: B

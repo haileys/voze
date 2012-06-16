@@ -81,7 +81,7 @@
     -webkit-opacity: $opacity;
 }
 
-@mixin sprite-map($row, $col, $size: 16px){
+@mixin sprite($row, $col, $size: 16px){
     background-position: (($col * $size - $size) * -1) (($row * $size - $size) * -1);
 }
 
