@@ -38,6 +38,12 @@ button, .button, input[type=submit] {
         box-shadow: $button-active-box-shadow;
         border: $button-active-border;
     }
+    &[disabled] {
+        background: $button-disabled-back;
+        box-shadow: none;
+        text-shadow: none;
+        color: $button-disabled-color;
+    }
     &.blue {
         color: $button-blue-color;
         @include gradient($button-blue-back-from, $button-blue-back-to);
@@ -53,6 +59,12 @@ button, .button, input[type=submit] {
             color: $button-blue-active-color;
             box-shadow: $button-blue-active-box-shadow;
             border: $button-blue-active-border;
+        }
+        &[disabled] {
+            background: $button-blue-disabled-back;
+            box-shadow: none;
+            text-shadow: none;
+            color: $button-blue-disabled-color;
         }
     }
 }

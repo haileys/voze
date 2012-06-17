@@ -138,6 +138,9 @@ $button-active-back-to: #252525;
 $button-active-border: $button-border;
 $button-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
 
+$button-disabled-color: #616161;
+$button-disabled-back: #333333;
+
 $button-blue-color: #a0abb4;
 $button-blue-back-from: #1f405c;
 $button-blue-back-to: #143551;
@@ -154,6 +157,9 @@ $button-blue-active-back-from: #213f59;
 $button-blue-active-back-to: #16344e;
 $button-blue-active-border: $button-border;
 $button-blue-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
+
+$button-blue-disabled-color: #5a656d;
+$button-blue-disabled-back: #233748;
 
 $input-text-text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
 $input-text-color: #a7a7a7;

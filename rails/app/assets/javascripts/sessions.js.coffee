@@ -3,6 +3,8 @@ return false if not do $('section.sessions').size
 $('form.new').bind 'ajax:before', ->
     $('input[type=submit]').attr 'disabled', true
     do $('.icon.loading').show
+    $(".error").slideUp 100, ->
+        do $(this).remove
 
 $('form.new').bind 'ajax:success', (ev, response) ->
     do $('.icon.loading').hide
@@ -15,6 +17,5 @@ $('form.new').bind 'ajax:success', (ev, response) ->
                 Incorrect username or password.
             </div>
         """
-        $(error).hide().insertAfter('strong').slideDown(300).delay(5000).slideUp 300, ->
-            do $(this).remove
-        do $('form .input:first-child input').focus
+        $(error).hide().insertAfter('strong').slideDown 250
+        do $('form.new div.input:first input').focus
