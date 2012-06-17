@@ -4,7 +4,7 @@
         Incorrect username or password.
     </div>
 <% end %>
-<%= form_for :session, url: sessions_path do |f| %>
+<%= form_for :session, remote: true, html: { data: { type: "json" } }, url: sessions_path do |f| %>
     <div class="input">
         <div class="icon-container">
             <div class="icon user"></div>

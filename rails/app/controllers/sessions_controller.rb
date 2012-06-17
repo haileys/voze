@@ -11,10 +11,16 @@ class SessionsController < ApplicationController
     authorize! :create, :session
     if user = User.find_by_username(params[:session][:username]).try(:authenticate, params[:session][:password])
       self.current_user = user
-      redirect_to params[:redirect_to] || root_path
-    else
+      respond_to do |f|
+        f.html { redirect_to params[:redirect_to] || root_path }
+        f.json { render json: { success: true } }
+      end
+    else  
       @failed_login = true
-      render "new"
+      respond_to do |f|
+        f.html { render "new" }
+        f.json { render json: { success: false } }
+      end
     end
   end
   
