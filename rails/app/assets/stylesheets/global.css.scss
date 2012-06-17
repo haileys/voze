@@ -59,7 +59,7 @@ html, body {
 }
 
 #design {
-    opacity: 0.2;
+    opacity: 0.5;
     pointer-events: none;
     z-index: 1;
     display: none;
@@ -75,7 +75,8 @@ html, body {
 
 @if $scrollbar-custom {
     ::-webkit-scrollbar {
-        width: $scrollbar-width
+        width: $scrollbar-width;
+        background-color: $scrollbar-back;
     }
     ::-webkit-scrollbar-track {
         background-color: $scrollbar-track-back;
@@ -83,6 +84,6 @@ html, body {
     }
     ::-webkit-scrollbar-thumb {
         background-color: $scrollbar-thumb-back;
-        border-radius: $scrollbar-track-border-radius;
+        border-radius: $scrollbar-thumb-border-radius;
     }
 }

@@ -18,7 +18,7 @@ header {
         float: left;
     }
     h1 {
-        text-indent: -9999999px;
+        text-indent: -9999px;
         background-image: url($header-logo-path);
         margin-top: $header-logo-margin-top;
         margin-right: $header-logo-margin-right;
@@ -27,7 +27,7 @@ header {
             height: $header-logo-height;
         }
     }
-    nav, .right .user .username {
+    .right .user .username {
         color: $nav-color;
     }
     nav {
@@ -38,15 +38,18 @@ header {
                 border-right: $nav-item-border;
             }
             a {
+                color: $nav-color;
                 text-shadow: $nav-text-shadow;
                 padding: 0 $nav-item-padding;
                 border-left: $nav-item-border;
                 box-shadow: $nav-item-box-shadow;
                 &:hover {
+                    color: $nav-item-hover-color;
                     box-shadow: $nav-item-hover-box-shadow;
                     @include gradient($nav-item-hover-back-from, $nav-item-hover-back-to);
                 }
                 &:active {
+                    color: $nav-item-active-color;
                     box-shadow: $nav-item-active-box-shadow;
                     @include gradient($nav-item-active-back-from, $nav-item-active-back-to);
                 }
@@ -108,12 +111,7 @@ body > nav {
 }
 
 body > section, footer {
-    a {
-        color: $link-color;
-        &:hover {
-            color: $link-hover-color;
-        }
-    }
+    // <a> styling moved to typography.css.scss
 }
 
 footer {

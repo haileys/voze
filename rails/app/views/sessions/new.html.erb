@@ -1,7 +1,7 @@
 <strong>Sign in</strong>
 <% if @failed_login %>
     <div class="error">
-        Incorrect username or password
+        Incorrect username or password.
     </div>
 <% end %>
 <%= form_for :session, url: sessions_path do |f| %>

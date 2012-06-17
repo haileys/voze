@@ -15,6 +15,7 @@ section.sessions {
         @include gradient($sessions-header-back-from, $sessions-header-back-to);
         box-shadow: $sessions-header-box-shadow;
         border: $sessions-header-border;
+        border-top: $sessions-header-border-top;
         border-bottom: $sessions-header-border-bottom;
         height: $sessions-header-height;
         margin-bottom: $sessions-header-margin-bottom;
@@ -26,6 +27,10 @@ section.sessions {
     strong {
         display: block;
         margin-bottom: $sessions-title-margin-bottom;
+    }
+    .error {
+        margin-top: $sessions-error-margin-top;
+        margin-bottom: $sessions-error-margin-bottom;
     }
     .input {
         margin-left: 0;

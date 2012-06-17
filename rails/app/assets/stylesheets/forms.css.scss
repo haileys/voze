@@ -25,6 +25,7 @@ button, .button, input[type=submit] {
     padding: $button-padding;
     cursor: pointer;
     font-weight: $button-font-weight;
+    @include transition($button-transition);
     &:hover {
         @include gradient($button-hover-back-from, $button-hover-back-to);
         color: $button-hover-color;
@@ -38,6 +39,7 @@ button, .button, input[type=submit] {
         border: $button-active-border;
     }
     &.blue {
+        color: $button-blue-color;
         @include gradient($button-blue-back-from, $button-blue-back-to);
         box-shadow: $button-blue-box-shadow;
         &:hover {

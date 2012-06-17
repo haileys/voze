@@ -14,7 +14,16 @@ strong {
     font-weight: $bold-font-weight;
 }
 
+.error {
+    color: $error-color;
+}
+
 a {
-    color: inherit;
-    text-decoration: none;
+    color: $link-color;
+    text-decoration: $link-text-decoration;
+    @include transition($link-transition);
+    &:hover {
+    	color: $link-hover-color;
+    	text-decoration: $link-hover-text-decoration;
+    }
 }
