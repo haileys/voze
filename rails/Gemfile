@@ -8,7 +8,7 @@ gem "cancan",         "~> 1.6.7"
 gem "bencode",        "~> 0.7.0"
 
 group :assets do
-  gem "coffee-rails"
+  gem "coffee-rails", "~> 3.2.2"
   gem "sass-rails",   "~> 3.2.3"
   gem "therubyracer", "~> 0.10.0", platform: :ruby
   gem "uglifier",     "~> 1.2.4"
