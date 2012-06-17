@@ -27,6 +27,13 @@ html, body {
     &.lock { @include sprite(1, 11); }
 }
 
+a, input, textarea {
+    &:focus {
+        outline-color: $outline-color;
+    }
+}
+
+
 .left { float: left; }
 .right { float: right; }
 

@@ -15,12 +15,17 @@ $link-transition: color 200ms ease;
 $link-hover-color: #5094D0;
 $link-hover-text-decoration: none;
 
+// Outline //
+
+$outline-color: rgba(63, 119, 168, 0.9);
+
 // Icon //
 
 $icon-path: image_path('sprites.png');
 $icon-size: 16px;
 
 // Error //
+
 $error-color: #b12d2d;
 
 // Container //
@@ -150,7 +155,8 @@ $input-text-border-radius: 3px;
 $input-text-border: 1px solid #111111;
 $input-text-height: 27px;
 $input-text-box-shadow: inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
-$input-text-focus-box-shadow-color: rgba(21, 110, 188, 0.65);
+$input-text-transition: box-shadow 125ms ease;
+$input-text-focus-box-shadow-color: #255F91;
 $input-text-focus-box-shadow: inset -1px -1px $input-text-focus-box-shadow-color, inset 1px 1px $input-text-focus-box-shadow-color, $input-text-box-shadow;
 $input-text-focus-error-box-shadow-color: #7a2828;
 $input-text-focus-error-box-shadow: inset -1px -1px $input-text-focus-error-box-shadow-color, inset 1px 1px $input-text-focus-error-box-shadow-color;
