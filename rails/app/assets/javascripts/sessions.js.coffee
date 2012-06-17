@@ -1,3 +1,5 @@
+return false if not do $('section.sessions').size
+
 $('form.new').bind 'ajax:before', ->
     $('input[type=submit]').attr 'disabled', true
     do $('.icon.loading').show

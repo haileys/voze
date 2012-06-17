@@ -17,7 +17,7 @@ $link-hover-text-decoration: none;
 
 // Outline //
 
-$outline-color: rgba(63, 119, 168, 0.9);
+$focus-outline-color: rgba(63, 119, 168, 0.9);
 
 // Icon //
 
@@ -206,8 +206,7 @@ $sessions-header-back-from: #414141;
 $sessions-header-back-to: #232323;
 $sessions-header-border-bottom: 1px solid #1b1b1b;
 $sessions-header-box-shadow-side-color: rgba(255, 255, 255, 0.05);
-$sessions-header-box-shadow: inset 0px 1px $sessions-header-box-shadow-side-color, inset 1px 0px $sessions-header-box-shadow-side-color, inset -1px 0 $sessions-header-box-shadow-side-color, 0 1px #2e2e2e;
-$sessions-header-margin-bottom: 1px;
+$sessions-header-box-shadow: inset 0px 1px $sessions-header-box-shadow-side-color, inset 1px 0px $sessions-header-box-shadow-side-color, inset -1px 0 $sessions-header-box-shadow-side-color, inset 0 -1px #2e2e2e;
 
 $sessions-header-height: 48px;
 $sessions-header-logo-margin-left: 19px;

@@ -29,7 +29,7 @@ html, body {
 
 a, input, textarea {
     &:focus {
-        outline-color: $outline-color;
+        outline-color: $focus-outline-color;
     }
 }
 
