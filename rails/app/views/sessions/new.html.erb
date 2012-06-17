@@ -4,7 +4,7 @@
         Incorrect username or password.
     </div>
 <% end %>
-<%= form_for :session, remote: true, html: { data: { type: "json" } }, url: sessions_path do |f| %>
+<%= form_for :session, remote: true, html: { data: { type: "json" }, class: 'new' }, url: sessions_path do |f| %>
     <div class="input">
         <div class="icon-container">
             <div class="icon user"></div>
@@ -22,6 +22,7 @@
     <% end %>
     <footer>
         <%= f.submit "Sign in", { class: "blue left", id: "session_submit" } %>
+        <div class="icon loading left"></div>
         <%= link_to "Forgot your password?", new_password_reset_path, class: "right" %>
     </footer>
 <% end %>

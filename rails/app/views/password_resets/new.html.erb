@@ -1,10 +1,14 @@
-<div id="outer-login-container">
-    <div class="container" id="login-container">
-        <h2>Password reset</h2>
-        <%= form_for :password_reset, url: password_resets_path do |f| %>
-            <%= f.text_field :username, placeholder: "Username or email" %>
-            <%= link_to "Cancel", new_sessions_path %>
-            <%= f.submit "Reset", id: "session_submit" %>
-        <% end %>
+<strong>Password reset</strong>
+<%= form_for :password_reset, url: password_resets_path do |f| %>
+    <div class="input">
+        <div class="icon-container">
+            <div class="icon user"></div>
+        </div>
+        <%= f.text_field :username, placeholder: "Username or email" %>
     </div>
-</div>
+    <footer>
+        <%= f.submit "Reset", { class: "blue left", id: "session_submit" } %>
+        <div class="icon loading left"></div>
+        <%= link_to "Cancel", new_sessions_path, class: "right" %>
+    </footer>
+<% end %>

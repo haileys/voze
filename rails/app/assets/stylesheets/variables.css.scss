@@ -24,6 +24,12 @@ $outline-color: rgba(63, 119, 168, 0.9);
 $icon-path: image_path('sprites.png');
 $icon-size: 16px;
 
+/*
+// TODO //
+$icon-loading-path: ; // etc //
+$icon-background-size: 100% 100%;
+*/
+
 // Error //
 
 $error-color: #b12d2d;
@@ -80,6 +86,8 @@ $header-logo-height: 25px;
 $header-logo-margin-top: 11px;
 $header-logo-margin-right: 20px;
 
+$header-user-icon-margin-top: ($header-height - $icon-size) / 2;
+
 $header-user-color: #a7a7a7;
 $header-user-text-shadow: 0 -1px rgba(0, 0, 0, 0.75);
 
@@ -114,6 +122,7 @@ $button-border-radius: 3px;
 $button-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
 $button-transition: all 75ms ease;
 $button-line-height: 25px;
+$button-height: 27px;
 $button-padding: 0 10px;
 $button-font-weight: $bold-font-weight;
 
@@ -155,7 +164,7 @@ $input-text-border-radius: 3px;
 $input-text-border: 1px solid #111111;
 $input-text-height: 27px;
 $input-text-box-shadow: inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
-$input-text-transition: box-shadow 125ms ease;
+$input-text-transition: all 90ms ease;
 $input-text-focus-box-shadow-color: #255F91;
 $input-text-focus-box-shadow: inset -1px -1px $input-text-focus-box-shadow-color, inset 1px 1px $input-text-focus-box-shadow-color, $input-text-box-shadow;
 $input-text-focus-error-box-shadow-color: #7a2828;
@@ -168,7 +177,6 @@ $input-text-placeholder-line-height: $input-text-height / 1.5;
 $input-textarea-padding: 7px 9px;
 $input-textarea-line-height: 20px;
 $input-textarea-height: 85px;
-
 
 /* Scrollbar (Webkit only) (global.css.scss) */
 
@@ -185,6 +193,8 @@ $scrollbar-thumb-border-radius: $scrollbar-width / 2;
 // Sessions (sessions.css.scss) //
 
 $sessions-width: 299px;
+$sessions-margin: 0 auto;
+$sessions-margin-top: 15%;
 $sessions-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 $sessions-title-margin-bottom: 14px;
 $sessions-footer-margin-top: 4px;
@@ -194,8 +204,6 @@ $sessions-error-margin-bottom: $sessions-title-margin-bottom - 4;
 
 $sessions-header-back-from: #414141;
 $sessions-header-back-to: #232323;
-$sessions-header-border: none;
-$sessions-header-border-top: none;
 $sessions-header-border-bottom: 1px solid #1b1b1b;
 $sessions-header-box-shadow-side-color: rgba(255, 255, 255, 0.05);
 $sessions-header-box-shadow: inset 0px 1px $sessions-header-box-shadow-side-color, inset 1px 0px $sessions-header-box-shadow-side-color, inset -1px 0 $sessions-header-box-shadow-side-color, 0 1px #2e2e2e;
@@ -208,11 +216,15 @@ $sessions-header-logo-margin-top: 12px;
 $sessions-content-back: #1b1b1b;
 $sessions-content-padding: 18px;
 $sessions-content-border: 1px solid #222222;
-$sessions-content-border-top: none;
 $sessions-content-border-radius: 0 0 2px 2px;
 
 $sessions-input-icon-padding: 1px 3px 0 5px;
 $sessions-input-icon-border-right: 1px solid #2e2e2e;
 $sessions-input-icon-box-shadow: 1px 0 #3d3d3d;
+$sessions-input-icon-margin-top: 5.5px;
+
 $sessions-input-text-margin-bottom: 13px;
 $sessions-input-text-padding-left: 33px;
+
+$sessions-loading-icon-margin-top: ($button-height - $icon-size) / 2;
+$sessions-loading-icon-margin-left: $sessions-loading-icon-margin-top;

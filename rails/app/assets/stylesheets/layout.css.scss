@@ -12,8 +12,8 @@ header {
     height: $header-height;
     line-height: $header-height;
     font-weight: $header-font-weight;
-    // Probably slow as balls but it's easier! Browsers are fast! //
-    h1, nav, * > * > * {
+    // TODO: Fix this abomination //
+    h1, h1 a, nav, nav ul li, nav ul li a, .right > div, .right > div > div {
         display: block;
         float: left;
     }
@@ -60,7 +60,7 @@ header {
         color: $header-user-color;
         text-shadow: $header-user-text-shadow;
         .icon {
-            @include vertical-center($icon-size, $header-height);
+            margin-top: $header-user-icon-margin-top;
         }
         .user {
             .avatar {
@@ -108,10 +108,6 @@ body > nav {
     line-height: $breadcrumbs-height;
     border-bottom: $breadcrumbs-border-bottom;
     box-shadow: $breadcrumbs-box-shadow;
-}
-
-body > section, footer {
-    // <a> styling moved to typography.css.scss
 }
 
 footer {

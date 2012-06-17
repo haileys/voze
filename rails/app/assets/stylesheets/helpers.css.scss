@@ -94,10 +94,6 @@
     width: $w;
 }
 
-@mixin vertical-center($self, $parent){
-    margin: (($parent - $self) / 2) 0;
-}
-
 @mixin clear-fix {
     &:after {
         content: "";

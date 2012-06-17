@@ -1,10 +1,18 @@
-$('section.sessions').css
-    'margin-top': (do $('section.sessions').height / 2) * -1
-.fadeIn()
+$('form.new').bind 'ajax:before', ->
+    $('input[type=submit]').attr 'disabled', true
+    do $('.icon.loading').show
 
-$('section.sessions form').bind "ajax:success", (ev, response) ->
+$('form.new').bind 'ajax:success', (ev, response) ->
+    do $('.icon.loading').hide
+    $('input[type=submit]').attr 'disabled', false
     if response.success
-        alert "welcome!"
         location.href = "/"
     else
-        alert "bad password"
+        error = """
+            <div class="error">
+                Incorrect username or password.
+            </div>
+        """
+        $(error).hide().insertAfter('strong').slideDown(300).delay(5000).slideUp 300, ->
+            do $(this).remove
+        do $('form .input:first-child input').focus

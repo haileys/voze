@@ -1,23 +1,45 @@
-<div id="outer-login-container">
-    <div class="container" id="login-container">
-        <h2>Register</h2>
-        <% if @errors %>
-            <div class="errors">
-                <ul>
-                    <% @errors.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                </ul>
-            </div>
+<strong>Sign up</strong>
+<% if @errors %>
+    <ul class="error">
+        <% @errors.each do |message| %>
+            <li><%= message %></li>
         <% end %>
-        <%= form_for @user do |f| %>
-            <%= f.text_field :username, placeholder: "Username", autofocus: true, autocomplete: "off" %>
-            <%= f.text_field :email, placeholder: "Email", autocomplete: "off" %>
-            <%= f.password_field :password, placeholder: "Password", autocomplete: "off" %>
-            <%= f.password_field :password_confirmation, placeholder: "Password (confirm)", autocomplete: "off" %>
-            <%= f.text_field :invite_code, placeholder: "Invite code" %>
-            <%= link_to "Already have an account?", new_sessions_path %>
-            <%= f.submit "Register", id: "session_submit" %>
-        <% end %>
+    </ul>
+<% end %>
+<%= form_for @user do |f| %>
+<div class="input">
+        <div class="icon-container">
+            <div class="icon user"></div>
+        </div>
+        <%= f.text_field :username, placeholder: "Username", autofocus: true, autocomplete: "off" %>
     </div>
-</div>
+    <div class="input">
+        <div class="icon-container">
+            <div class="icon user"></div>
+        </div>
+        <%= f.text_field :email, placeholder: "Email", autocomplete: "off" %>
+    </div>
+    <div class="input">
+        <div class="icon-container">
+            <div class="icon lock"></div>
+        </div>
+        <%= f.password_field :password, placeholder: "Password", autocomplete: "off" %>
+    </div>
+    <div class="input">
+        <div class="icon-container">
+            <div class="icon lock"></div>
+        </div>
+        <%= f.password_field :password_confirmation, placeholder: "Password (confirm)", autocomplete: "off" %>
+    </div>
+    <div class="input">
+        <div class="icon-container">
+            <div class="icon user"></div>
+        </div>
+        <%= f.text_field :invite_code, placeholder: "Invite code" %>
+    </div>
+    <footer>
+        <%= f.submit "Sign up", { class: "blue left", id: "session_submit" } %>
+        <div class="icon loading left"></div>
+        <%= link_to "Already have an account?", new_sessions_path, class: "right" %>
+    </footer>
+<% end %>
