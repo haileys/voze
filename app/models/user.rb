@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   
   validates :username, length: { in: 2..32 }, format: { with: /\A[a-z0-9_ ]*\z/i, message: "may only contain letters, numbers, spaces and underscores" }, uniqueness: true
   validates :password, length: { minimum: 4 }, if: "password"
-  validates :email, length: { in: 5..100 }, email: true, uniqueness: true
+  validates :email, length: { maximum: 100 }, email: true, uniqueness: true
   
   before_create :set_auth_token
   
