@@ -2,12 +2,12 @@
 @import "variables.css.scss";
 
 h2 {
-    margin-bottom: $h2-margin-bottom;
     font: {
         family: $h2-font-family;
         size: $h2-font-size;
         weight: $h2-font-weight;
     };
+    line-height: $h2-font-size;
 }
 
 strong {
@@ -20,10 +20,9 @@ strong {
 
 a {
     color: $link-color;
-    text-decoration: $link-text-decoration;
+    text-decoration: none;
     @include transition($link-transition);
     &:hover {
-    	color: $link-hover-color;
-    	text-decoration: $link-hover-text-decoration;
+        color: $link-hover-color;
     }
 }

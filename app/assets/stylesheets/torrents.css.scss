@@ -1,2 +1,46 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
+
+section.torrents.new {
+    @include clear-fix;
+    h2 {
+        margin-top: $torrents-new-heading-margin-top;
+        margin-bottom: $torrents-new-heading-margin-bottom;
+    }
+    strong {
+        display: block;
+        margin-bottom: $torrents-new-strong-margin-bottom;
+    }
+    .row {
+        margin-bottom: $torrents-new-row-margin-bottom;
+    }
+    label {
+        width: $torrents-new-label-width;
+    }
+    .input {
+        margin-left: $torrents-new-input-margin-left;
+    }
+    #art {
+        border: $torrents-new-art-border;
+        position: relative;
+        text-align: center;
+        line-height: $torrents-new-art-size;
+        z-index: 1;
+        &, &:after {
+            @include box($torrents-new-art-size);
+            border-radius: $torrents-new-art-border-radius;
+        }
+        &:after {
+            position: absolute;
+            z-index: -1;
+            top: ($torrents-new-art-border-width - $torrents-new-art-after-shadow-width) * -1;
+            right: $torrents-new-art-border-width * -1;
+            display: block;
+            border: $torrents-new-art-after-border;
+            content: '';
+        }
+    }
+    section, aside {
+        float: left;
+    }
+}

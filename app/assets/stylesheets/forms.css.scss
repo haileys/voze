@@ -3,16 +3,6 @@
 
 button, .button, input, textarea {
     font-family: inherit;
-    -webkit-appearance: none;
-}
-
-form {
-    .row {
-        margin-bottom: $form-row-margin-bottom;
-        .input {
-            margin-left: $form-input-margin-left;
-        }
-    }
 }
 
 button, .button, input[type=submit] {
@@ -39,11 +29,16 @@ button, .button, input[type=submit] {
         box-shadow: $button-active-box-shadow;
         border: $button-active-border;
     }
-    &[disabled] {
+    &[disabled], &:disabled {
         background: $button-disabled-back;
-        box-shadow: none;
-        text-shadow: none;
         color: $button-disabled-color;
+    }
+    &, &.blue {
+        &[disabled], &:disabled {
+            box-shadow: none;
+            text-shadow: none;
+            border-radius: $button-border-radius;
+        }
     }
     &.blue {
         color: $button-blue-color;
@@ -62,10 +57,7 @@ button, .button, input[type=submit] {
             border: $button-blue-active-border;
         }
         &[disabled], &:disabled {
-            border-radius: inherit;
             background: $button-blue-disabled-back;
-            box-shadow: none;
-            text-shadow: none;
             color: $button-blue-disabled-color;
         }
     }
@@ -110,5 +102,4 @@ textarea {
 label {
 	float: left;
 	display: block;
-	width: $form-label-width;
 }

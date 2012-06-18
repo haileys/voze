@@ -12,7 +12,6 @@ header {
     height: $header-height;
     line-height: $header-height;
     font-weight: $header-font-weight;
-    // TODO: Fix this abomination //
     h1, h1 a, nav, nav ul li, nav ul li a, .right > div, .right > div > div {
         display: block;
         float: left;
@@ -106,4 +105,5 @@ body > nav {
 
 footer {
     text-align: center;
+    @include clear-fix;
 }

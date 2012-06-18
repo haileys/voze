@@ -89,14 +89,11 @@ a, input, textarea {
 @if $scrollbar-custom {
     ::-webkit-scrollbar {
         width: $scrollbar-width;
-        background-color: $scrollbar-back;
     }
     ::-webkit-scrollbar-track {
         background-color: $scrollbar-track-back;
-        border-radius: $scrollbar-track-border-radius;
     }
     ::-webkit-scrollbar-thumb {
         background-color: $scrollbar-thumb-back;
-        border-radius: $scrollbar-thumb-border-radius;
     }
 }
