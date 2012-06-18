@@ -9,18 +9,18 @@ A torrent tracker software based on Ruby on Rails
 <table>
     <tr>
         <td>Charlie Somerville</td>
-        <td>[@charliesome](https://github.com/charliesome)</td>
-        <td><charlie@voze.org></td>
+        <td><a href="https://github.com/charliesome">@charliesome</a></td>
+        <td><a href="mailto:charlie@voze.org">charlie@voze.org</a></td>
     </tr>
     <tr>
         <td>Gabriele Cirulli</td>
-        <td>[@terabytest](https://github.com/terabytest)</td>
-        <td><gab@voze.org></td>
+        <td><a href="https://github.com/terabytest">@terabytest</a></td>
+        <td><a href="mailto:gab@voze.org">gab@voze.org</a></td>
     </tr>
     <tr>
         <td>Sebastian McKenzie</td>
-        <td>[@sebastianmckenzie](https://github.com/sebastianmckenzie)</td>
-        <td><seb@voze.org></td>
+        <td><a href="https://github.com/sebastianmckenzie">@sebastianmckenzie</a></td>
+        <td><a href="mailto:seb@voze.org">seb@voze.org</a></td>
     </tr>
 </table>
 
