@@ -1,0 +1,19 @@
+development:
+  site_name: Voze
+  mail:
+    from: voze@voze.org
+    smtp:
+      # ...
+  default_url_options:
+    host: 127.0.0.1
+  secret_token: 19d557e11414905954e6e8708a0f375f9a0b4458afec11d502e3127ddf80be9c
+  required_ratio:
+    # new users get 5GB free download:
+    free_download: 5
+    # the required ratio stops increasing after 400GB downloaded:
+    capped_at: 400
+    # the maximum required ratio is 1
+    max: 1
+  
+test:
+  # ...
