@@ -19,3 +19,9 @@ design/public/res/css/*
 *.sublime-project
 *.sublime-workspace
 automatic.sh
+/.bundle
+/log/*.log
+/tmp
+/coverage
+/config/app_config.yml
+/config/database.yml
