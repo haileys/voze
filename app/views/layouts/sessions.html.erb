@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>
             <% if content_for? :title %>
-                <%= content_for :title %> &mdash; Voze
+                <%= content_for :title %> &mdash; <%= AppConfig.site_name %>
             <% else %>
-                Voze
+                <%= AppConfig.site_name %>
             <% end %>
         </title>
         <!--[if lt IE 9]><script src="/scripts/html5shiv-3.6.min.js"></script><![endif]-->
@@ -17,7 +17,7 @@
     <body ontouchstart="">
         <section class="sessions">
             <header>
-                <h1><%= link_to 'VOZE', root_path %></h1>
+                <h1><%= link_to AppConfig.site_name, root_path %></h1>
             </header>
             <section>
                 <%= yield %>
