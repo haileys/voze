@@ -16,15 +16,21 @@ html, body {
 }
 
 .icon {
-    background-image: url($icon-path);
     @include box($icon-size);
-    &.dropdown-arrow { @include sprite(1, 4); }
-    &.download { @include sprite(1, 5); }
-    &.upload { @include sprite(1, 6); }
-    &.current_ratio { @include sprite(1, 7); }
-    &.required_ratio { @include sprite(1, 8); }
-    &.user { @include sprite(1, 10); }
-    &.lock { @include sprite(1, 11); }
+    &.arrow-big-right { background-image: url($icon-arrow-big-right-path); }
+    &.arrow-down { background-image: url($icon-arrow-down-path); }
+    &.download { background-image: url($icon-download-path); }
+    &.home { background-image: url($icon-home-path); }
+    &.lock { background-image: url($icon-lock-path); }
+    &.pencil { background-image: url($icon-pencil-path); }
+    &.ratio { background-image: url($icon-ratio-path); }
+    &.search {
+        background-image: url($icon-search-path);
+        &:hover { background-image: url($icon-search-hover-path); }
+        &:active { background-image: url($icon-search-active-path); }
+    }
+    &.upload { background-image: url($icon-upload-path); }
+    &.user { background-image: url($icon-user-path); }
 }
 
 a, input, textarea {

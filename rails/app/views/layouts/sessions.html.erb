@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>
             <% if content_for? :title %>
                 <%= content_for :title %> &mdash; Voze
@@ -9,12 +10,11 @@
                 Voze
             <% end %>
         </title>
-        <script>document.getElementsByTagName('html')[0].className = 'js';</script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+        <script src="/scripts/html5shiv.js"></script>
         <%= stylesheet_link_tag "application", media: "all" %>
         <%= csrf_meta_tags %>
     </head>
-    <body>
+    <body ontouchstart="">
         <section class="sessions">
             <header>
                 <h1><%= link_to 'VOZE', root_path %></h1>

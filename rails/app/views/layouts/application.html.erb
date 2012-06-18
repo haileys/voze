@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>
             <% if content_for? :title %>
                 <%= content_for :title %> &mdash; Voze
@@ -9,12 +10,11 @@
                 Voze
             <% end %>
         </title>
-        <script>document.getElementsByTagName('html')[0].className = 'js';</script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+        <script src="/scripts/html5shiv.js"></script>
         <%= stylesheet_link_tag "application", media: "all" %>
         <%= csrf_meta_tags %>
     </head>
-    <body>
+    <body ontouchstart="">
         <button id="toggle-grid">Toggle Grid</button>
         <div id="grid"></div>
         <button id="toggle-design">Toggle Design</button>
@@ -47,10 +47,10 @@
                         <!--<div class="upload"><%= number_to_human_size current_user.upload %></div>-->
                     </div>
                     <div class="ratio">
-                        <div class="icon current_ratio"></div>
-                        <div class="bad current_ratio">0.21</div>
+                        <div class="icon ratio"></div>
+                        <div class="bad ratio">0.21</div>
                         <!--<div class="bad current_ratio"><%= number_with_precision current_user.ratio, precision: 2 %></div>-->
-                        <div class="icon required_ratio"></div>
+                        <div class="icon arrow-big-right"></div>
                         <div class="good required_ratio">0.47</div>
                         <!--<div class="good required_ratio"><%= number_with_precision current_user.required_ratio, precision: 2 %></div>-->
                     </div>
