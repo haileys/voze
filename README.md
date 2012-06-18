@@ -6,11 +6,23 @@ A torrent tracker software based on Ruby on Rails
 
 ## Contributors ##
 
-Charlie Somerville - [@charliesome](https://github.com/charliesome) - <charlie@voze.org>
-
-Gabriele Cirulli - [@terabytest](https://github.com/terabytest) - <gab@voze.org>
-
-Sebastian McKenzie - [@sebastianmckenzie](https://github.com/sebastianmckenzie) - <seb@voze.org>
+<table>
+    <tr>
+        <td>Charlie Somerville</td>
+        <td>[@charliesome](https://github.com/charliesome)</td>
+        <td><charlie@voze.org></td>
+    </tr>
+    <tr>
+        <td>Gabriele Cirulli</td>
+        <td>[@terabytest](https://github.com/terabytest)</td>
+        <td><gab@voze.org></td>
+    </tr>
+    <tr>
+        <td>Sebastian McKenzie</td>
+        <td>[@sebastianmckenzie](https://github.com/sebastianmckenzie)</td>
+        <td><seb@voze.org></td>
+    </tr>
+</table>
 
 ## License ##
 
