@@ -57,6 +57,9 @@ Voze::Application.configure do
 
   # Enable threaded mode
   config.threadsafe!
+  
+  # tell rails to load dependencies because it doesn't do that in threadsafe mode for god knows what reason
+  config.dependency_loading = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
