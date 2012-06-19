@@ -2,7 +2,7 @@ return false if not do $('section.sessions').size
 
 flash = (elem, lag=350, opacity=0.5, times=2, time=75) ->
     next = ->
-        elem.stop(true).animate opacity: opacity, time, ->
+        elem.stop(true).delay(lag).animate opacity: opacity, time, ->
             elem.animate opacity: 1, time, ->
                 do next if --times isnt 0
     do next
