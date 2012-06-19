@@ -1,87 +1,49 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
-$width: 299px;
-$margin: 0 auto;
-$margin-top: 15%;
-$box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-$title-margin-bottom: 14px;
-
-$error-margin-top: -11px; // DIRTY HACK (shifts it up and puts it on baseline grid)
-$error-margin-bottom: $title-margin-bottom - 4;
-
-$header-height: 48px;
-$header-back-from: #414141;
-$header-back-to: #232323;
-$header-border-bottom: 1px solid #1b1b1b;
-$header-box-shadow-side-color: rgba(255, 255, 255, 0.05);
-$header-box-shadow: inset 0px 1px $header-box-shadow-side-color, inset 1px 0px $header-box-shadow-side-color, inset -1px 0 $header-box-shadow-side-color, inset 0 -1px #2e2e2e;
-
-$header-logo-margin-left: 19px;
-$header-logo-margin-top: 12px;
-
-$content-back: #1b1b1b;
-$content-padding: 18px;
-$content-border: 1px solid #222222;
-$content-border-radius: 0 0 2px 2px;
-
-$footer-margin-top: 4px;
-$footer-line-height: 27px;
-
-$input-icon-padding: 1px 3px 0 5px;
-$input-icon-border-right: 1px solid #2e2e2e;
-$input-icon-box-shadow: 1px 0 #3d3d3d;
-$input-icon-margin-top: 5.5px;
-
-$input-text-margin-bottom: 13px;
-$input-text-padding-left: 33px;
-
-$loading-icon-margin-top: 5.5px;
-$loading-icon-margin-left: $loading-icon-margin-top;
-
 section.sessions {
-    margin: $margin;
-    margin-top: $margin-top;
-    width: $width;
-    box-shadow: $box-shadow;
+    margin: 0 auto;
+    margin-top: 15%;
+    width: 299px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     header {
-        @include gradient($header-back-from, $header-back-to);
-        box-shadow: $header-box-shadow;
-        border-bottom: $header-border-bottom;
-        height: $header-height;
+        @include gradient(#414141, #232323);
+        box-shadow: inset 0px 1px rgba(255, 255, 255, 0.05), inset 1px 0px rgba(255, 255, 255, 0.05), inset -1px 0 rgba(255, 255, 255, 0.05), inset 0 -1px #2e2e2e;
+        border-bottom: 1px solid #1b1b1b;
+        height: 48px;
         h1 {
-            margin-left: $header-logo-margin-left;
-            margin-top: $header-logo-margin-top;
+            margin-left: 19px;
+            margin-top: 12px;
         }
     }
     strong {
         display: block;
-        margin-bottom: $title-margin-bottom;
+        margin-bottom: 14px;
     }
     .icon.loading {
         display: none;
-        margin-left: $loading-icon-margin-left;
-        margin-top: $loading-icon-margin-top;
+        margin-left: 5.5px;
+        margin-top: 5.5px;
     }
     .error {
-        margin-top: $error-margin-top;
-        margin-bottom: $error-margin-bottom;
+        margin-top: -11px;
+        margin-bottom: 7px;
     }
     .input {
         margin-left: 0;
         position: relative;
     }
     .icon-container {
-        border-right: $input-icon-border-right;
-        box-shadow: $input-icon-box-shadow;
+        border-right: 1px solid #2e2e2e;
+        box-shadow: 1px 0 #3d3d3d;
         position: absolute;
-        padding: $input-icon-padding;
-        margin-top: $input-icon-margin-top;
+        padding: 1px 3px 0 5px;
+        margin-top: 5.5px;
     }
     input[type=text], input[type=password] {
-        padding-left: $input-text-padding-left;
+        padding-left: 33px;
         width: 100%;
-        margin-bottom: $input-text-margin-bottom;
+        margin-bottom: 13px;
         &.actual {
             display: none;
         }
@@ -89,15 +51,15 @@ section.sessions {
     section {
         @include box-sizing;
         width: 100%;
-        padding: $content-padding;
-        background-color: $content-back;
-        border: $content-border;
-        border-radius: $content-border-radius;
+        padding: 18px;
+        background-color: #1b1b1b;
+        border: 1px solid #222222;
+        border-radius: 0 0 2px 2px;
         border-top: none;
     }
     footer {
         @include clear-fix;
-        margin-top: $footer-margin-top;
-        line-height: $footer-line-height;
+        margin-top: 4px;
+        line-height: 27px;
     }
 }

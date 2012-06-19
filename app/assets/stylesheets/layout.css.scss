@@ -1,127 +1,65 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
-$header-height: 48px;
-$header-back-from: #424242;
-$header-back-to: #232323;
-$header-border-bottom: 1px solid #1b1b1b;
-$header-font-weight: $bold-font-weight;
-
-$header-logo-path: image_path('logo.svg');
-$header-logo-width: 80px;
-$header-logo-height: 25px;
-$header-logo-margin-top: 11px;
-$header-logo-margin-right: 20px;
-
-$header-user-icon-margin-top: ($header-height - $icon-size) / 2;
-
-$header-user-color: #a7a7a7;
-$header-user-text-shadow: 0 -1px rgba(0, 0, 0, 0.75);
-
-$header-user-avatar-margin-top: 8px;
-$header-user-avatar-margin-right: 6px;
-$header-user-avatar-size: 28px;
-$header-user-avatar-border: 1px solid #272727;
-$header-user-avatar-border-outer: 1px solid rgba(235, 235, 235, 0.05);
-
-$header-user-ratio-good-color: #6e8467;
-$header-user-ratio-bad-color: #9c4040;
-
-$nav-box-shadow-color: rgba(255, 255, 255, 0.04);
-$nav-box-shadow: -1px 0 $nav-box-shadow-color, 1px 0 $nav-box-shadow-color;
-$nav-color: #cfcfcf;
-$nav-text-shadow: 0 -1px rgba(0, 0, 0, 0.6);
-
-$nav-item-height: $header-height - 1px;
-$nav-item-padding: 20px;
-$nav-item-box-shadow: inset -1px 0 $nav-box-shadow-color, inset 1px 0 $nav-box-shadow-color;
-$nav-item-border: $header-border-bottom;
-
-$nav-item-hover-color: #f3f3f3;
-$nav-item-hover-back-from: #4f4f4f;
-$nav-item-hover-back-to: #2a2a2a;
-$nav-item-hover-shadow-color: rgba(245, 245, 245, 0.09);
-$nav-item-hover-box-shadow: inset 1px 0px 0 $nav-item-hover-shadow-color, inset -1px 0 0 $nav-item-hover-shadow-color;
-
-$nav-item-active-color: #767676;
-$nav-item-active-back-from: #2d2d2d;
-$nav-item-active-back-to: #181818;
-$nav-item-active-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
-
-$breadcrumbs-height: 32px;
-$breadcrumbs-back: #494949;
-$breadcrumbs-box-shadow: inset 0 -1px #232323, inset 0 1px #646464;
-$breadcrumbs-border-bottom: 1px solid #262626;
-
 header, body > nav {
     @include box-sizing;
 }
 
 header {
-    @include gradient($header-back-from, $header-back-to);
+    @include gradient(#424242, #232323);
     @include clear-fix;
-    border-bottom: $header-border-bottom;
-    height: $header-height;
-    line-height: $header-height;
-    font-weight: $header-font-weight;
+    border-bottom: 1px solid #1b1b1b;
+    height: 48px;
+    line-height: 48px;
+    font-weight: $bold-font-weight;
     h1, h1 a, nav, nav ul li, nav ul li a, .right > div, .right > div > div {
         display: block;
         float: left;
     }
-    h1 {
-        text-indent: -9999px;
-        background-image: url($header-logo-path);
-        margin-top: $header-logo-margin-top;
-        margin-right: $header-logo-margin-right;
-        &, a {
-            width: $header-logo-width;
-            height: $header-logo-height;
-        }
-    }
     .right .user .username {
-        color: $nav-color;
+        color: #cfcfcf;
     }
     nav {
-        box-shadow: $nav-box-shadow;
-        line-height: $nav-item-height;
+        box-shadow: -1px 0 rgba(255, 255, 255, 0.04), 1px 0 rgba(255, 255, 255, 0.04);
+        line-height: 47px;
         ul li {
             &:last-child a {
-                border-right: $nav-item-border;
+                border-right: 1px solid #1b1b1b;
             }
             a {
-                color: $nav-color;
-                text-shadow: $nav-text-shadow;
-                padding: 0 $nav-item-padding;
-                border-left: $nav-item-border;
-                box-shadow: $nav-item-box-shadow;
+                color: #cfcfcf;
+                text-shadow: 0 -1px rgba(0, 0, 0, 0.6);
+                padding: 0 20px;
+                border-left: 1px solid #1b1b1b;
+                box-shadow: inset -1px 0 rgba(255, 255, 255, 0.04), inset 1px 0 rgba(255, 255, 255, 0.04);
                 &:hover {
-                    color: $nav-item-hover-color;
-                    box-shadow: $nav-item-hover-box-shadow;
-                    @include gradient($nav-item-hover-back-from, $nav-item-hover-back-to);
+                    color: #f3f3f3;
+                    box-shadow: inset 1px 0px 0 rgba(245, 245, 245, 0.09), inset -1px 0 0 rgba(245, 245, 245, 0.09);
+                    @include gradient(#4f4f4f, #2a2a2a);
                 }
                 &:active {
-                    color: $nav-item-active-color;
-                    box-shadow: $nav-item-active-box-shadow;
-                    @include gradient($nav-item-active-back-from, $nav-item-active-back-to);
+                    color: #767676;
+                    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
+                    @include gradient(#2d2d2d, #181818);
                 }
             }
         }
     }
     .right {
-        color: $header-user-color;
-        text-shadow: $header-user-text-shadow;
+        color: #a7a7a7;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.75);
         .icon {
-            margin-top: $header-user-icon-margin-top;
+            margin-top: 16px;
         }
         .user {
             .avatar {
-                border: $header-user-avatar-border-outer;
-                margin-top: $header-user-avatar-margin-top;
-                margin-right: $header-user-avatar-margin-right;
+                border: 1px solid rgba(235, 235, 235, 0.05);
+                margin-top: 8px;
+                margin-right: 6px;
                 img {
-                    border: $header-user-avatar-border;
+                    border: 1px solid #272727;
                     display: block;
-                    @include box($header-user-avatar-size);
+                    @include box(28px);
                 }
             }
             .username a {
@@ -141,21 +79,21 @@ header {
         }
         .ratio {
             .bad {
-                color: $header-user-ratio-bad-color;
+                color: #9c4040;
             }
             .good {
-                color: $header-user-ratio-good-color;
+                color: #6e8467;
             }
         }
     }
 }
 
 body > nav {
-    background-color: $breadcrumbs-back;
-    height: $breadcrumbs-height;
-    line-height: $breadcrumbs-height;
-    border-bottom: $breadcrumbs-border-bottom;
-    box-shadow: $breadcrumbs-box-shadow;
+    background-color: #494949;
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px solid #262626;
+    box-shadow: inset 0 -1px #232323, inset 0 1px #646464;
 }
 
 footer {

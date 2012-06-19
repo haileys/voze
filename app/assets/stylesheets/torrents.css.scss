@@ -1,67 +1,47 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
-$new-heading-margin-top: 40px;
-$new-heading-margin-bottom: 29px;
-$new-strong-margin-bottom: 17px;
-$new-row-margin-bottom: 13px;
-$new-label-width: 90px;
-$new-label-line-height: 30px;
-$new-input-margin-left: $new-label-width;
-
-$new-art-size: $sidebar-width;
-$new-art-border-radius: 22px;
-$new-art-text-shadow: 0 -1px rgba(0, 0, 0, 0.66);
-$new-art-border-width: 6px;
-$new-art-border: $new-art-border-width dashed #0b0b0b;
-$new-art-after-shadow-width: 1px;
-$new-art-after-border: $new-art-border-width dashed #2b2b2b;
-$new-art-font-weight: $bold-font-weight;
-$new-art-margin-top: 79px;
-$new-art-line-height: $new-art-size - ($new-art-border-width * 2);
-$new-art-selected-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3), inset 1px 1px rgba(245, 245, 245, 0.07), inset -1px -1px rgba(245, 245, 245, 0.07);
-
 section.torrents.new {
     @include clear-fix;
     h2 {
-        margin-top: $new-heading-margin-top;
-        margin-bottom: $new-heading-margin-bottom;
+        margin-top: 40px;
+        margin-bottom: 29px;
     }
     strong {
         display: block;
-        margin-bottom: $new-strong-margin-bottom;
+        margin-bottom: 17px;
     }
     .row {
-        margin-bottom: $new-row-margin-bottom;
+        margin-bottom: 13px;
     }
     label {
-        width: $new-label-width;
-        line-height: $new-label-line-height;
+        width: 90px;
+        line-height: 30px;
     }
     .input {
-        margin-left: $new-input-margin-left;
+        margin-left: 90px;
     }
     #art {
-        margin-top: $new-art-margin-top;
-        border: $new-art-border;
+        margin-top: 79px;
+        border: 6px dashed #0b0b0b;
         position: relative;
         z-index: 1;
         text-align: center;
-        line-height: $new-art-line-height;
-        font-weight: $new-art-font-weight;
-        text-shadow: $new-art-text-shadow;
+        line-height: 288px;
+        font-weight: $bold-font-weight;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.66);
         &, &:after {
             @include box-sizing;
-            @include box($new-art-size);
-            border-radius: $new-art-border-radius;
+            @include box($sidebar-width);
+            border-radius: 22px;
         }
         &:after {
             position: absolute;
             z-index: -1;
-            top: ($new-art-border-width - $new-art-after-shadow-width) * -1;
-            right: $new-art-border-width * -1;
+            top: -5px;
+            right: -6px;
             display: block;
-            border: $new-art-after-border;
+            border: 6px dashed #2b2b2b;
             content: '';
         }
         &.preview {
@@ -78,7 +58,7 @@ section.torrents.new {
         .preview {
             position: relative;
             float: left;
-            box-shadow: $new-art-selected-box-shadow;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3), inset 1px 1px rgba(245, 245, 245, 0.07), inset -1px -1px rgba(245, 245, 245, 0.07);
         }
         .close {
             display: none;
