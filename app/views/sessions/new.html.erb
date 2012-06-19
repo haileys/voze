@@ -21,7 +21,7 @@
         <input type="hidden" name="redirect_to" value="<%= flash[:redirect_to] %>" />
     <% end %>
     <footer>
-        <%= f.submit "Sign in", { class: "blue left", id: "session_submit" } %>
+        <%= f.submit "Sign in", class: "blue left", id: "session_submit" %>
         <div class="icon loading left"></div>
         <%= link_to "Forgot your password?", new_password_reset_path, class: "right" %>
     </footer>
