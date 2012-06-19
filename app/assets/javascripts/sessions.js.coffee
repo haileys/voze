@@ -1,8 +1,8 @@
 return false if not do $('section.sessions').size
 
-flash = (elem, opacity=0.5, times=1, time=200) ->
+flash = (elem, lag=350, opacity=0.5, times=2, time=75) ->
     next = ->
-        elem.animate opacity: opacity, time, ->
+        elem.stop(true).animate opacity: opacity, time, ->
             elem.animate opacity: 1, time, ->
                 do next if --times isnt 0
     do next
@@ -10,7 +10,7 @@ flash = (elem, opacity=0.5, times=1, time=200) ->
 $('form.new').bind 'ajax:before', ->
     $('input[type=submit]').attr 'disabled', true
     do $('.icon.loading').show
-    $('.error').slideUp 250, ->
+    $('.error').slideUp 150, ->
         do $(this).remove
 
 $('form.new').bind 'ajax:success', (ev, response) ->
@@ -24,6 +24,7 @@ $('form.new').bind 'ajax:success', (ev, response) ->
                 Incorrect username or password.
             </div>
         """
-        $(error).hide().insertAfter('strong').slideDown 250
+
+        $(error).hide().insertAfter('strong').delay(150).slideDown 150
         flash $ 'section.sessions'
         do $('form.new div.input:first input').focus
