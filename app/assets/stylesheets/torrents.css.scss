@@ -1,43 +1,102 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
+$new-heading-margin-top: 40px;
+$new-heading-margin-bottom: 29px;
+$new-strong-margin-bottom: 17px;
+$new-row-margin-bottom: 13px;
+$new-label-width: 90px;
+$new-label-line-height: 30px;
+$new-input-margin-left: $new-label-width;
+
+$new-art-size: $sidebar-width;
+$new-art-border-radius: 22px;
+$new-art-text-shadow: 0 -1px rgba(0, 0, 0, 0.66);
+$new-art-border-width: 6px;
+$new-art-border: $new-art-border-width dashed #0b0b0b;
+$new-art-after-shadow-width: 1px;
+$new-art-after-border: $new-art-border-width dashed #2b2b2b;
+$new-art-font-weight: $bold-font-weight;
+$new-art-margin-top: 79px;
+$new-art-line-height: $new-art-size - ($new-art-border-width * 2);
+
 section.torrents.new {
     @include clear-fix;
     h2 {
-        margin-top: $torrents-new-heading-margin-top;
-        margin-bottom: $torrents-new-heading-margin-bottom;
+        margin-top: $new-heading-margin-top;
+        margin-bottom: $new-heading-margin-bottom;
     }
     strong {
         display: block;
-        margin-bottom: $torrents-new-strong-margin-bottom;
+        margin-bottom: $new-strong-margin-bottom;
     }
     .row {
-        margin-bottom: $torrents-new-row-margin-bottom;
+        margin-bottom: $new-row-margin-bottom;
     }
     label {
-        width: $torrents-new-label-width;
+        width: $new-label-width;
+        line-height: $new-label-line-height;
     }
     .input {
-        margin-left: $torrents-new-input-margin-left;
+        margin-left: $new-input-margin-left;
     }
     #art {
-        border: $torrents-new-art-border;
+        margin-top: $new-art-margin-top;
+        border: $new-art-border;
         position: relative;
         text-align: center;
-        line-height: $torrents-new-art-size;
+        line-height: $new-art-line-height;
         z-index: 1;
+        font-weight: $new-art-font-weight;
+        text-shadow: $new-art-text-shadow;
         &, &:after {
-            @include box($torrents-new-art-size);
-            border-radius: $torrents-new-art-border-radius;
+            @include box-sizing;
+            @include box($new-art-size);
+            border-radius: $new-art-border-radius;
         }
         &:after {
             position: absolute;
             z-index: -1;
-            top: ($torrents-new-art-border-width - $torrents-new-art-after-shadow-width) * -1;
-            right: $torrents-new-art-border-width * -1;
+            top: ($new-art-border-width - $new-art-after-shadow-width) * -1;
+            right: $new-art-border-width * -1;
             display: block;
-            border: $torrents-new-art-after-border;
+            border: $new-art-after-border;
             content: '';
+        }
+        &.image {
+            &, &:after {
+                border: none;
+            }
+            .close {
+                display: block;
+            }
+            .select {
+                display: none;
+            }
+            img {
+                display: block;
+            }
+        }
+        .close {
+            //display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+        }
+        img {
+            margin: 0 auto;
+            display: none;
+            max-width: 100%;
+            height: 100%;
+        }
+        .select {
+            input {
+                width: 100px;
+            }
+            button {
+                display: none;
+            }
         }
     }
     section, aside {

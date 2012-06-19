@@ -1,6 +1,26 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
+$focus-outline-color: rgba(63, 119, 168, 0.9);
+
+$icon-arrow-big-right-path: image_path('icons/arrow-big-right.svg');
+$icon-arrow-down-path: image_path('icons/arrow-down.svg');
+$icon-download-path: image_path('icons/download.svg');
+$icon-home-path: image_path('icons/home.svg');
+$icon-lock-path: image_path('icons/lock.svg');
+$icon-pencil-path: image_path('icons/pencil.svg');
+$icon-ratio-path: image_path('icons/ratio.svg');
+$icon-search-active-path: image_path('icons/search-active.svg');
+$icon-search-hover-path: image_path('icons/search-hove.svg');
+$icon-search-path: image_path('icons/search.svg');
+$icon-upload-path: image_path('icons/upload.svg');
+$icon-user-path: image_path('icons/user.svg');
+
+$scrollbar-custom: true;
+$scrollbar-width: 8px;
+$scrollbar-track-back: rgba(255, 255, 255, 0.1);
+$scrollbar-thumb-back: rgba(255, 255, 255, 0.4);
+
 html, body {
     background-color: $body-back;
     font: {
@@ -13,6 +33,15 @@ html, body {
 .container {
     margin: 0 auto;
     width: $container-width;
+}
+
+aside {
+    width: $sidebar-width;
+    margin-left: $sidebar-margin-left;
+}
+
+section section {
+    width: $content-width;
 }
 
 .icon {

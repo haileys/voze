@@ -1,6 +1,16 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
+$link-color: #3f77a8;
+$link-transition: color 200ms ease;
+$link-hover-color: #5094D0;
+
+$error-color: #b12d2d;
+
+$h2-font-family: 'Open Sans';
+$h2-font-size: 23px;
+$h2-font-weight: $bold-font-weight;
+
 h2 {
     font: {
         family: $h2-font-family;

@@ -1,9 +1,8 @@
 <section class="torrents new">
     <div class="container">
-        <h2>Upload a torrent</h2>
-        
         <%= form_for @torrent do |f| %>
             <section>
+                <h2>Upload a torrent</h2>
                 <strong>About the torrent</strong>
                 <div class="row">
                     <label>Name</label>
@@ -32,7 +31,13 @@
             </section>
             <aside>
                 <div id="art">
-                    Drop torrent art here or <button>Browse</button>
+                    <img>
+                    <span class="select">
+                        <span>Drop torrent art here or</span>
+                        <button>Browse</button>
+                        <input type="file">
+                    </span>
+                    <div class="close"></div>
                 </div>
             </aside>
         <% end %>
