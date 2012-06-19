@@ -124,7 +124,10 @@ header {
                     @include box($header-user-avatar-size);
                 }
             }
-            .dropdown-arrow {
+            .username a {
+                color: inherit;
+            }
+            .arrow-down {
                 cursor: pointer;
             }
         }

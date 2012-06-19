@@ -12,11 +12,15 @@ $('#art input[type=file]').change (e) ->
 	reader = new FileReader
 	reader.onloadend = (e) ->
 		data = e.target.result
-		$('#art').addClass 'image'
 		$('#art img').attr 'src', data
+		$('#art').fadeOut 250, ->
+			do $('#art img').show
+			do $('#art').addClass('preview').show
+			$('#art .preview').fadeIn 250
 	reader.readAsDataURL file
 
 $('#art .close').click ->
-	$('#art img').attr 'src', ''
-	$('#art').removeClass 'image'
 	$('#art input[type=file]').val ''
+	$('#art .preview').fadeOut 250, ->
+		$('#art img').attr 'src', ''
+		$('#art').hide().removeClass('preview').fadeIn 250
