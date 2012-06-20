@@ -16,9 +16,6 @@ Voze::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
-  
-  # temporarily compile the 'light' theme for the logged out pages because they look shit otherwise
-  config.assets.precompile << "light.css"
 
   # Generate digests for assets URLs
   config.assets.digest = true
