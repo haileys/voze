@@ -1,5 +1,5 @@
 $('#toggle-grid').click ->
-	do $('#grid').toggle
+    do $('#grid').toggle
 
 $('#toggle-design').click ->
-	do $('#design').toggle
+    do $('#design').toggle

@@ -12,7 +12,7 @@
         </title>
         <!--[if lt IE 9]><script src="/scripts/html5shiv-3.6.min.js"></script><![endif]-->
         <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700|Open+Sans:400,700" media="all" rel="stylesheet" type="text/css" />
-        <%= stylesheet_link_tag "application", media: "all" %>
+        <%= stylesheet_link_tag "application", media: "all", debug: false %>
         <%= csrf_meta_tags %>
     </head>
     <body>
@@ -66,6 +66,6 @@
                  <p>Powered by <a href="#">Voze</a></p>
             </div>
         </footer>
-        <%= javascript_include_tag "application" %>
+        <%= javascript_include_tag "application", debug: false %>
     </body>
 </html>
