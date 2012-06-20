@@ -8,14 +8,14 @@ flash = (elem, lag=350, opacity=0.5, times=2, time=75) ->
     do next
 
 $('form.new').bind 'ajax:before', ->
-    $('input[type=submit]').attr 'disabled', true
+    $('input').attr 'disabled', true
     do $('.icon.loading').show
     $('.error').slideUp 150, ->
         do $(this).remove
 
 $('form.new').bind 'ajax:success', (ev, response) ->
     do $('.icon.loading').hide
-    $('input[type=submit]').attr 'disabled', false
+    $('input').attr 'disabled', false
     if response.success
         location.href = "/"
     else
