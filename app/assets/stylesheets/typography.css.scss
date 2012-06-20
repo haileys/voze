@@ -1,23 +1,13 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
-$link-color: #3f77a8;
-$link-transition: color 200ms ease;
-$link-hover-color: #5094D0;
-
-$error-color: #b12d2d;
-
-$h2-font-family: 'Open Sans';
-$h2-font-size: 23px;
-$h2-font-weight: $bold-font-weight;
-
 h2 {
     font: {
-        family: $h2-font-family;
-        size: $h2-font-size;
-        weight: $h2-font-weight;
+        family: 'Open Sans';
+        size: 23px;
+        weight: $bold-font-weight;
     };
-    line-height: $h2-font-size;
+    line-height: 23px;
 }
 
 strong {
@@ -25,14 +15,14 @@ strong {
 }
 
 .error {
-    color: $error-color;
+    color: #b12d2d;
 }
 
 a {
-    color: $link-color;
+    color: #3f77a8;
     text-decoration: none;
-    @include transition($link-transition);
+    @include transition(color 200ms ease);
     &:hover {
-        color: $link-hover-color;
+        color: #5094D0;
     }
 }

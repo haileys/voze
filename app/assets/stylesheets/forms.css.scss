@@ -1,174 +1,100 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
-$button-color: #9c9c9c;
-$button-text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
-$button-back-from: #393939;
-$button-back-to: #2e2e2e;
-$button-border-width: 1px;
-$button-border: $button-border-width solid rgba(0, 0, 0, 0.8);
-$button-border-radius: 3px;
-$button-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
-$button-transition: all 75ms ease;
-$button-line-height: 25px;
-$button-height: $button-line-height + ($button-border-width * 2);
-$button-padding: 0 10px;
-$button-font-weight: $bold-font-weight;
-
-$button-hover-color: #e1e1e1;
-$button-hover-back-from: #444444;
-$button-hover-back-to: #373737;
-$button-hover-border: 1px solid rgba(0, 0, 0, 0.7);
-$button-hover-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), inset 0 0 3px rgba(255, 255, 255, 0.15);
-
-$button-active-color: #868686;
-$button-active-back-from: #2e2e2e;
-$button-active-back-to: #252525;
-$button-active-border: $button-border;
-$button-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
-
-$button-disabled-color: #616161;
-$button-disabled-back: #333333;
-
-$button-blue-color: #a0abb4;
-$button-blue-back-from: #1f405c;
-$button-blue-back-to: #143551;
-$button-blue-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
-
-$button-blue-hover-color: #cedbe5;
-$button-blue-hover-back-from: #254d6e;
-$button-blue-hover-back-to: #184061;
-$button-blue-hover-border: 1px solid rgba(0, 0, 0, 0.7);
-$button-blue-hover-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), inset 0 0 3px rgba(255, 255, 255, 0.15);
-
-$button-blue-active-color: #798289;
-$button-blue-active-back-from: #213f59;
-$button-blue-active-back-to: #16344e;
-$button-blue-active-border: $button-border;
-$button-blue-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
-
-$button-blue-disabled-color: #5a656d;
-$button-blue-disabled-back: #233748;
-
-$input-text-text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
-$input-text-color: #a7a7a7;
-$input-text-padding: 0 9px;
-$input-text-line-height: 10px;
-$input-text-back: #363636;
-$input-text-border-radius: 3px;
-$input-text-border: 1px solid #111111;
-$input-text-height: 27px;
-$input-text-box-shadow: inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
-$input-text-transition: all 90ms ease;
-$input-text-focus-box-shadow-color: #255F91;
-$input-text-focus-box-shadow: inset -1px -1px $input-text-focus-box-shadow-color, inset 1px 1px $input-text-focus-box-shadow-color, $input-text-box-shadow;
-$input-text-focus-error-box-shadow-color: #7a2828;
-$input-text-focus-error-box-shadow: inset -1px -1px $input-text-focus-error-box-shadow-color, inset 1px 1px $input-text-focus-error-box-shadow-color;
-
-$input-text-placeholder-text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
-$input-text-placeholder-color: #5d5d5d;
-$input-text-placeholder-line-height: $input-text-height / 1.5;
-
-$input-textarea-padding: 7px 9px;
-$input-textarea-line-height: 20px;
-$input-textarea-height: 85px;
-
 button, .button, input, textarea {
     font-family: inherit;
 }
 
 button, .button, input[type=submit] {
-    @include gradient($button-back-from, $button-back-to);
-    border: $button-border;
-    border-radius: $button-border-radius;
-    box-shadow: $button-box-shadow;
-    color: $button-color;
-    text-shadow: $button-text-shadow;
-    line-height: $button-line-height;
-    padding: $button-padding;
+    @include gradient(#393939, #2e2e2e);
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
+    color: #9c9c9c;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
+    line-height: 25px;
+    padding: 0 10px;
     cursor: pointer;
-    font-weight: $button-font-weight;
-    @include transition($button-transition);
+    font-weight: $bold-font-weight;
+    @include transition(all 75ms ease);
     &:hover {
-        @include gradient($button-hover-back-from, $button-hover-back-to);
-        color: $button-hover-color;
-        box-shadow: $button-hover-box-shadow;
-        border: $button-hover-border;
+        @include gradient(#444444, #373737);
+        color: #e1e1e1;
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), inset 0 0 3px rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.7);
     }
     &:active {
-        @include gradient($button-active-back-from, $button-active-back-to);
-        color: $button-active-color;
-        box-shadow: $button-active-box-shadow;
-        border: $button-active-border;
+        @include gradient(#2e2e2e, #252525);
+        color: #868686;
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
     }
     &[disabled], &:disabled {
-        background: $button-disabled-back;
-        color: $button-disabled-color;
+        background: #333333;
+        color: #616161;
     }
     &, &.blue {
         &[disabled], &:disabled {
             box-shadow: none;
             text-shadow: none;
-            border-radius: $button-border-radius;
         }
     }
     &.blue {
-        color: $button-blue-color;
-        @include gradient($button-blue-back-from, $button-blue-back-to);
-        box-shadow: $button-blue-box-shadow;
+        color: #a0abb4;
+        @include gradient(#1f405c, #143551);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
         &:hover {
-            @include gradient($button-blue-hover-back-from, $button-blue-hover-back-to);
-            color: $button-blue-hover-color;
-            box-shadow: $button-blue-hover-box-shadow;
-            border: $button-blue-hover-border;
+            @include gradient(#254d6e, #184061);
+            color: #cedbe5;
+            box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), inset 0 0 3px rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.7);
         }
         &:active {
-            @include gradient($button-blue-active-back-from, $button-blue-active-back-to);
-            color: $button-blue-active-color;
-            box-shadow: $button-blue-active-box-shadow;
-            border: $button-blue-active-border;
+            @include gradient(#213f59, #16344e);
+            color: #798289;
+            box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
         }
         &[disabled], &:disabled {
-            background: $button-blue-disabled-back;
-            color: $button-blue-disabled-color;
+            background: #233748;
+            color: #5a656d;
         }
     }
 }
 
 input[type=text], input[type=password], textarea {
     @include box-sizing;
-	color: $input-text-color;
-	border: $input-text-border;
-	background-color: $input-text-back;
-	border-radius: $input-text-border-radius;
-	text-shadow: $input-text-text-shadow;
-    box-shadow: $input-text-box-shadow;
+	color: #a7a7a7;
+	border: 1px solid #111111;
+	background-color: #363636;
+	border-radius: 3px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
+    box-shadow: inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
 	resize: none;
-    @include transition($input-text-transition);
+    @include transition(all 90ms ease);
 	&:focus {
 		outline: none;
-		box-shadow: $input-text-focus-box-shadow;
+		box-shadow: inset -1px -1px #255F91, inset 1px 1px #255F91, inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
 	}
 	&.error &:focus {
-		box-shadow: $input-text-focus-error-box-shadow;
+		box-shadow: inset -1px -1px #7a2828, inset 1px 1px #7a2828;
 	}
 }
 
 input[type=text], input[type=password] {
-	line-height: $input-text-line-height;
-	padding: $input-text-padding;
-    height: $input-text-height;
+	line-height: 10px;
+	padding: 0 9px;
+    height: 27px;
     &::-webkit-input-placeholder, &::-moz-placeholder {
-        line-height: $input-text-placeholder-line-height;
-        text-shadow: $input-text-placeholder-text-shadow;
-        color: $input-text-placeholder-color;
+        line-height: 20px;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+        color: #5d5d5d;
     }
 }
 
 textarea {
-	padding: $input-textarea-padding;
-	line-height: $input-textarea-line-height;
-	height: $input-textarea-height;
+	padding: 7px 9px;
+	line-height: 20px;
+	height: 85px;
 }
 
 label {

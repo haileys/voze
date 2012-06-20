@@ -1,38 +1,30 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
-$focus-outline-color: rgba(63, 119, 168, 0.9);
-
-$icon-arrow-big-right-path: image_path('icons/arrow-big-right.svg');
-$icon-arrow-down-path: image_path('icons/arrow-down.svg');
-$icon-download-path: image_path('icons/download.svg');
-$icon-home-path: image_path('icons/home.svg');
-$icon-lock-path: image_path('icons/lock.svg');
-$icon-pencil-path: image_path('icons/pencil.svg');
-$icon-ratio-path: image_path('icons/ratio.svg');
-$icon-search-active-path: image_path('icons/search-active.svg');
-$icon-search-hover-path: image_path('icons/search-hove.svg');
-$icon-search-path: image_path('icons/search.svg');
-$icon-upload-path: image_path('icons/upload.svg');
-$icon-user-path: image_path('icons/user.svg');
-
-$scrollbar-custom: true;
-$scrollbar-width: 8px;
-$scrollbar-track-back: rgba(255, 255, 255, 0.1);
-$scrollbar-thumb-back: rgba(255, 255, 255, 0.4);
-
 html, body {
-    background-color: $body-back;
+    background-color: #1a1a1a;
     font: {
-        family: $body-font-family;
-        size: $body-font-size;
+        family: 'PT Sans';
+        size: 13px;
     };
-    color: $body-color;
+    color: #acacac;
 }
 
 .container {
     margin: 0 auto;
     width: $container-width;
+}
+
+h1 {
+    text-indent: -9999px;
+    background-image: url(image_path('logo.png'));
+    background-image: url(image_path('logo.svg'));
+    margin-top: 11px;
+    margin-right: 20px;
+    &, a {
+        width: 80px;
+        height: 25px;
+    }
 }
 
 aside {
@@ -46,25 +38,60 @@ section section {
 
 .icon {
     @include box($icon-size);
-    &.arrow-big-right { background-image: url($icon-arrow-big-right-path); }
-    &.arrow-down { background-image: url($icon-arrow-down-path); }
-    &.download { background-image: url($icon-download-path); }
-    &.home { background-image: url($icon-home-path); }
-    &.lock { background-image: url($icon-lock-path); }
-    &.pencil { background-image: url($icon-pencil-path); }
-    &.ratio { background-image: url($icon-ratio-path); }
-    &.search {
-        background-image: url($icon-search-path);
-        &:hover { background-image: url($icon-search-hover-path); }
-        &:active { background-image: url($icon-search-active-path); }
+    &.arrow-big-right {
+        background-image: url(image_path('icons/arrow-big-right.png'));
+        background-image: url(image_path('icons/arrow-big-right.svg'));
     }
-    &.upload { background-image: url($icon-upload-path); }
-    &.user { background-image: url($icon-user-path); }
+    &.arrow-down {
+        background-image: url(image_path('icons/arrow-down.png'));
+        background-image: url(image_path('icons/arrow-down.svg'));
+    }
+    &.download {
+        background-image: url(image_path('icons/download.png'));
+        background-image: url(image_path('icons/download.svg'));
+    }
+    &.home {
+        background-image: url(image_path('icons/home.png'));
+        background-image: url(image_path('icons/home.svg'));
+    }
+    &.lock {
+        background-image: url(image_path('icons/lock.png'));
+        background-image: url(image_path('icons/lock.svg'));
+    }
+    &.pencil {
+        background-image: url(mage_path('icons/pencil.png'));
+        background-image: url(mage_path('icons/pencil.svg'));
+    }
+    &.ratio {
+        background-image: url(image_path('icons/ratio.png'));
+        background-image: url(image_path('icons/ratio.svg'));
+    }
+    &.search {
+        background-image: url(image_path('icons/search.png'));
+        background-image: url(image_path('icons/search.svg'));
+        &:hover {
+            background-image: url(image_path('icons/search-hover.png'));
+            background-image: url(image_path('icons/search-hover.svg'));
+        }
+        &:active {
+            background-image: url(image_path('icons/search-active.png'));
+            background-image: url(image_path('icons/search-active.svg'));
+        }
+    }
+    &.upload {
+        background-image: url(image_path('icons/upload.png'));
+        background-image: url(image_path('icons/upload.svg'));
+    }
+    &.user {
+        background-image: url(image_path('icons/user.png'));
+        background-image: url(image_path('icons/user.svg'));
+    }
 }
+
 
 a, input, textarea {
     &:focus {
-        outline-color: $focus-outline-color;
+        outline-color: rgba(63, 119, 168, 0.9);
     }
 }
 
@@ -115,6 +142,7 @@ a, input, textarea {
     right: 0;
 }
 
+/*
 @if $scrollbar-custom {
     ::-webkit-scrollbar {
         width: $scrollbar-width;
@@ -126,3 +154,4 @@ a, input, textarea {
         background-color: $scrollbar-thumb-back;
     }
 }
+*/

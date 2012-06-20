@@ -8,6 +8,7 @@ $('#art button').click (e) ->
 	do $('#art input[type=file]').click
 
 $('#art input[type=file]').change (e) ->
+	return unless window.FileReader
 	file = e.target.files[0]
 	reader = new FileReader
 	reader.onloadend = (e) ->
