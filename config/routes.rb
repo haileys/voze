@@ -11,5 +11,5 @@ Voze::Application.routes.draw do
   end
   resources :categories, only: [:index, :show]
   
-  match "/announce", to: "announces#announce", as: :announce
+  get "/announce", to: "announces#announce", as: :announce
 end
