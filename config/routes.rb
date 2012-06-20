@@ -1,7 +1,7 @@
 Voze::Application.routes.draw do
   root to: "home#index"
   
-  resource :sessions, only: [:new, :create, :destroy]
+  resource :sessions, only: [:new, :create, :destroy, :show]
   get "/login" => "sessions#new", as: :new_sessions
   
   resources :users, only: [:show, :new, :create]

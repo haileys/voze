@@ -3,10 +3,6 @@ class SessionsController < ApplicationController
   
   layout "sessions"
   
-  def new
-    
-  end
-  
   def create
     authorize! :create, :session
     if user = User.find_by_username(params[:session][:username]).try(:authenticate, params[:session][:password])
@@ -28,5 +24,9 @@ class SessionsController < ApplicationController
     authorize! :destroy, :session
     self.current_user = nil
     redirect_to root_path
+  end
+  
+  def show
+    authorize! :show, :session
   end
 end

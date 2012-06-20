@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     if user
       can :index, :home
-      can :destroy, :session
+      can [:show, :destroy], :session
       can :read, User
       can :edit, User, id: user.id
       can :announce, :announces
