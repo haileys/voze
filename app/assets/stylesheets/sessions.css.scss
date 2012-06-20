@@ -21,6 +21,7 @@ section.sessions {
         margin-bottom: 14px;
     }
     .icon.loading {
+        float: left;
         display: none;
         margin-left: 5.5px;
         margin-top: 5.5px;
@@ -57,9 +58,17 @@ section.sessions {
         border-radius: 0 0 2px 2px;
         border-top: none;
     }
-    footer {
-        @include clear-fix;
-        margin-top: 4px;
+    .button-array, footer {
         line-height: 27px;
+        @include clear-fix;
+        input {
+            float: left;
+        }
+        a {
+            float: right;
+        }
+    }
+    footer {
+        margin-top: 4px;
     }
 }

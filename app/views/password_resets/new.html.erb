@@ -7,8 +7,7 @@
         <%= f.text_field :username, placeholder: "Username or email" %>
     </div>
     <footer>
-        <%= f.submit "Reset", class: "blue left", id: "session_submit" %>
-        <div class="icon loading left"></div>
-        <%= link_to "Cancel", new_sessions_path, class: "right" %>
+        <%= f.submit "Reset", class: "blue", id: "session_submit" %>
+        <%= link_to "Cancel", new_sessions_path %>
     </footer>
 <% end %>
