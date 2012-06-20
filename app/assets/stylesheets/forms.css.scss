@@ -63,26 +63,26 @@ button, .button, input[type=submit] {
 
 input[type=text], input[type=password], textarea {
     @include box-sizing;
-	color: #a7a7a7;
-	border: 1px solid #111111;
-	background-color: #363636;
-	border-radius: 3px;
-	text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
+    color: #a7a7a7;
+    border: 1px solid #111111;
+    background-color: #363636;
+    border-radius: 3px;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.84);
     box-shadow: inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
-	resize: none;
+    resize: none;
     @include transition(all 90ms ease);
-	&:focus {
-		outline: none;
-		box-shadow: inset -1px -1px #255F91, inset 1px 1px #255F91, inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
-	}
-	&.error &:focus {
-		box-shadow: inset -1px -1px #7a2828, inset 1px 1px #7a2828;
-	}
+    &:focus {
+        outline: none;
+        box-shadow: inset -1px -1px #255F91, inset 1px 1px #255F91, inset 0 -1px #424242, inset 0 0 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.25);
+    }
+    &.error &:focus {
+        box-shadow: inset -1px -1px #7a2828, inset 1px 1px #7a2828;
+    }
 }
 
 input[type=text], input[type=password] {
-	line-height: 10px;
-	padding: 0 9px;
+    line-height: 10px;
+    padding: 0 9px;
     height: 27px;
     &::-webkit-input-placeholder, &::-moz-placeholder {
         line-height: 20px;
@@ -92,12 +92,12 @@ input[type=text], input[type=password] {
 }
 
 textarea {
-	padding: 7px 9px;
-	line-height: 20px;
-	height: 85px;
+    padding: 7px 9px;
+    line-height: 20px;
+    height: 85px;
 }
 
 label {
-	float: left;
-	display: block;
+    float: left;
+    display: block;
 }

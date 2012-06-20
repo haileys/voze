@@ -1,8 +1,9 @@
-return false if not do $('section.torrents').size
+return false if not do $('section.torrents.new').size
 
 $('a.preview-markdown').click (e) ->
     do e.preventDefault
-    do $('.preview-markdown').toggle
+    do $('a.preview-markdown').toggle
+    $('div.preview-markdown').slideToggle 250
 
 $('textarea').keyup ->
     $('div.preview-markdown').html marked do $(this).val
