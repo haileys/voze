@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails",          "=  3.2.3"
+gem "rails",          "=  3.2.6"
 gem "mysql2",         "~> 0.3.11"
 gem "jquery-rails",   "~> 2.0.2"
 gem "bcrypt-ruby"
