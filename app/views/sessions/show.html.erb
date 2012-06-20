@@ -1,4 +1,3 @@
-<footer>
-    <%= button_to "Sign out", sessions_path, class: "blue left", method: :delete %>
-    <%= link_to "Do you want to go back?", root_path, class: "right" %>
-</footer>
+<%= form_for :sessions, method: :delete do |f| %>
+    <%= f.submit "Sign out" %> or <%= link_to "go back", root_path %>
+<% end %>
