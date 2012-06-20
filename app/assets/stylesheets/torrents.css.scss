@@ -7,10 +7,6 @@ section.torrents.new {
         margin-top: 40px;
         margin-bottom: 29px;
     }
-    strong {
-        display: block;
-        margin-bottom: 17px;
-    }
     .row {
         margin-bottom: 13px;
     }
@@ -44,7 +40,7 @@ section.torrents.new {
             border: 6px dashed #2b2b2b;
             content: '';
         }
-        &.preview {
+        &.preview-art {
             &, &:after {
                 border: none;
             }
@@ -55,7 +51,7 @@ section.torrents.new {
                 display: none;
             }
         }
-        .preview {
+        .preview-art {
             position: relative;
             float: left;
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.3), inset 1px 1px rgba(245, 245, 245, 0.07), inset -1px -1px rgba(245, 245, 245, 0.07);
@@ -80,12 +76,24 @@ section.torrents.new {
             input {
                 width: 100px;
             }
-            button {
-                display: none;
-            }
         }
     }
     section, aside {
         float: left;
+    }
+    .full {
+        width: 504px;
+    }
+    a.preview-markdown {
+        &.close {
+            display: none;
+        }
+    }
+    div.preview-markdown {
+        @include box-sizing;
+        margin-top: 13px;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px;
     }
 }

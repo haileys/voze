@@ -1,17 +1,20 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
+h1, h2, h3, strong {
+    font-weight: $bold-font-weight;
+}
+
 h2 {
     font: {
         family: 'Open Sans';
         size: 23px;
-        weight: $bold-font-weight;
     };
     line-height: 23px;
 }
 
-strong {
-    font-weight: $bold-font-weight;
+h3 {
+    margin-bottom: 17px;
 }
 
 .error {
@@ -25,4 +28,8 @@ a {
     &:hover {
         color: #5094D0;
     }
+}
+
+em {
+    font-style: italic;
 }

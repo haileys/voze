@@ -3,26 +3,31 @@
         <%= form_for @torrent do |f| %>
             <section>
                 <h2>Upload a torrent</h2>
-                <strong>About the torrent</strong>
-                <div class="row">
+                <h3>About the torrent</h3>
+                <div class="row name">
                     <label>Name</label>
                     <div class="input">
-                        <input type="text">
+                        <input class="full" type="text">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row description">
                     <label>Description</label>
                     <div class="input">
-                        <textarea></textarea>
-                        <p><a href="#">Markdown</a> is supported. <a href="#">Display preview</a></p>
+                        <textarea class="full" ></textarea>
+                        <p><a href="#">Markdown</a> is supported. <span class="js-show"><a class="preview-markdown show" href="#">Display preview</a><a class="preview-markdown close" href="#">Close preview</a></span></p>
+                        <div class="preview-markdown full user-input"></div>
                     </div>
                 </div>
-                <strong>Torrent file</strong>
+                <h3>Torrent file</h3>
                 <p>Your announce URL is <%= link_to personal_announce_url, personal_announce_url %></p>
-                <div class="row">
+                <div class="row torrent-file">
                     <label>Torrent file</label>
                     <div class="input">
-                        <input type="file">
+                        <span class="js-show">
+                            <input type="text" disabled>
+                            <button>Browse</button>
+                        </span>
+                        <input class="js-invisible" type="file">
                     </div>
                 </div>
                 <div class="row">
@@ -31,14 +36,14 @@
             </section>
             <aside>
                 <div id="art">
-                    <div class="preview">
+                    <div class="preview-art">
                         <img>
                         <div class="close"></div>
                     </div>
                     <span class="select">
                         <span>Drop torrent art here or</span>
-                        <button>Browse</button>
-                        <input type="file">
+                        <button class="js-show">Browse</button>
+                        <input class="js-invisible" type="file">
                     </span>
                 </div>
             </aside>

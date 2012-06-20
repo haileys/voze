@@ -15,7 +15,23 @@ html, body {
     width: $container-width;
 }
 
-h1 {
+
+html.no-js {
+    .js-show {
+        display: none;
+    }
+}
+
+html.js {
+    .js-invisible {
+        opacity: 0;
+    }
+    .js-hide {
+        display: none;
+    }
+}
+
+h1.logo {
     text-indent: -9999px;
     background-image: url(image_path('logo.png'));
     background-image: url(image_path('logo.svg'));
@@ -25,6 +41,11 @@ h1 {
         width: 80px;
         height: 25px;
     }
+}
+
+
+[disabled], :disabled {
+    cursor: cross;
 }
 
 aside {

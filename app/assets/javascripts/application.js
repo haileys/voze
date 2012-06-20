@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require marked
+//= require global
 //= require_tree .
-
-// dud links
-$('a[href=#]').click(function(){ return false; });
