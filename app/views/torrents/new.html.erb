@@ -7,19 +7,24 @@
                 <div class="row name">
                     <label>Name</label>
                     <div class="input">
-                        <input class="full" type="text">
+                        <input type="text">
+                        <div class="icon help"></div>
                     </div>
                 </div>
                 <div class="row description">
                     <label>Description</label>
                     <div class="input">
-                        <textarea class="full" ></textarea>
-                        <p><a href="#">Markdown</a> is supported. <span class="js-show"><a class="preview-markdown show" href="#">Display preview</a><a class="preview-markdown close" href="#">Close preview</a></span></p>
+                        <textarea></textarea>
+                        <p><a href="#">Markdown</a> is supported. <span class="js-show"><a class="preview-markdown show" href="#">Display preview</a><a class="preview-markdown close" href="#">Hide preview</a></span></p>
                         <div class="preview-markdown full user-input"></div>
+                        <div class="icon help"></div>
                     </div>
                 </div>
                 <h3>Torrent file</h3>
-                <p>Your announce URL is <%= link_to personal_announce_url, personal_announce_url %></p>
+                <div class="row announce-url">
+                    <p>Your announce URL is <%= link_to personal_announce_url, personal_announce_url %></p>
+                    <div class="icon help"></div>
+                </div>
                 <div class="row torrent-file">
                     <label>Torrent file</label>
                     <div class="input">
@@ -28,6 +33,7 @@
                             <button>Browse</button>
                         </span>
                         <input class="js-invisible" type="file">
+                        <div class="icon help"></div>
                     </div>
                 </div>
                 <div class="row">

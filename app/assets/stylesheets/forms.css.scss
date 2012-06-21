@@ -1,6 +1,12 @@
 @import "helpers.css.scss";
 @import "variables.css.scss";
 
+html.ie {
+    button, .button, input, textarea {
+        border-radius: 0;
+    }
+}
+
 button, .button, input, textarea {
     font-family: inherit;
 }
