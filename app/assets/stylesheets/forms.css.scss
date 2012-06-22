@@ -85,9 +85,7 @@ input[type=text], input[type=password], textarea {
 
 .field_with_errors {
     input[type=text], input[type=password], textarea {
-        &.error {
-            box-shadow: inset -1px -1px #7a2828, inset 1px 1px #7a2828;
-        }
+        box-shadow: inset -1px -1px #7a2828, inset 1px 1px #7a2828;
     }
 }
 
