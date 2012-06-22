@@ -110,6 +110,25 @@ section section {
     }
 }
 
+.help {
+    &:hover {
+        z-index: 10;
+        .message {
+            display: block;
+
+        }
+    }
+    .message {
+        background-color: blue;
+        position: absolute;
+        padding: 10px;
+        margin-left: (200px / 2) * -1;
+        top: 19px;
+        width: 200px;
+        display: none;
+    }
+}
+
 
 a, input, textarea {
     &:focus {
