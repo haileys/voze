@@ -109,8 +109,14 @@ section.torrents.new {
         @include box(19px);
         background-color: red;
     }
-    .torrent-file input[type=text] {
-        width: 432px;
+    .torrent-file {
+        button {
+            margin: 0;
+            float: right;
+        }
+        input[type=text] {
+            width: 432px;
+        }
     }
     a.preview-markdown.close {
         display: none;
