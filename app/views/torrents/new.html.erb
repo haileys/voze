@@ -5,18 +5,18 @@
                 <h2>Upload a torrent</h2>
                 <h3>About the torrent</h3>
                 <div class="row name">
-                    <label>Name</label>
+                    <%= f.label :name %>
                     <div class="input">
-                        <input type="text">
+                        <%= f.text_field :name %>
                         <div class="icon help">
                             <div class="message">Help here. <a href="#">Learn more</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="row description">
-                    <label>Description</label>
+                    <%= f.label :description %>
                     <div class="input">
-                        <textarea></textarea>
+                        <%= f.text_area :description %>
                         <p><a href="#">Markdown</a> is supported. <span class="js-show"><a class="preview-markdown show" href="#">Display preview</a><a class="preview-markdown close" href="#">Hide preview</a></span></p>
                         <div class="preview-markdown full user-input"></div>
                         <div class="icon help">
@@ -28,8 +28,8 @@
                 <div class="row announce-url">
                     <p>Your announce URL is <%= link_to personal_announce_url, personal_announce_url %></p>
                     <div class="icon help">
-                            <div class="message">Help here. <a href="#">Learn more</a></div>
-                        </div>
+                        <div class="message">Help here. <a href="#">Learn more</a></div>
+                    </div>
                 </div>
                 <div class="row torrent-file">
                     <label>Torrent file</label>
