@@ -84,6 +84,12 @@ section.torrents.new {
     section, aside {
         float: left;
     }
+    .select-set {
+        .left, .right {
+            position: relative;
+            //width: 50%;
+        }
+    }
     .announce-url {
         margin-bottom: 10px;
         p {
