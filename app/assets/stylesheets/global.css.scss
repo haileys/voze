@@ -49,6 +49,10 @@ h1.logo {
     cursor: not-allowed !important;
 }
 
+aside, section section {
+    float: left;
+}
+
 aside {
     width: $sidebar-width;
     margin-left: $sidebar-margin-left;

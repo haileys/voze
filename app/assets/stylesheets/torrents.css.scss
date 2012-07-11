@@ -84,6 +84,21 @@ section.torrents.new {
     section, aside {
         float: left;
     }
+    .tags {
+        .tag {
+            float: left;
+            div {
+                float: left;
+            }
+            .name {
+
+            }
+            .close {
+                @include box(16px);
+                background-color: red;
+            }
+        }
+    }
     .select-set {
         .left, .right {
             position: relative;
@@ -99,10 +114,11 @@ section.torrents.new {
             overflow: hidden;
         }
     }
-    .name input, .description textarea {
+    .name input, .description textarea, .artist input {
         width: 504px;
     }
     .icon.help {
+        display: none;
         position: absolute;
         top: 0;
         right: 0;

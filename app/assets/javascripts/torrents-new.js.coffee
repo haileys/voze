@@ -1,5 +1,28 @@
 return false if not do $('section.torrents.new').size
 
+tags = []
+
+setActual = ->
+    $('.tags input.js-invisible').val tags.join ','
+
+$('.tags input.js-show').keydown (e) ->
+    if e.keyCode is 13
+        val = do $(@).val
+        $(@).val ''
+        do e.preventDefault
+        return if not val or val in tags
+        id = tags.push(val) - 1
+        tag = $('<div>').addClass 'tag'
+        name = $('<div>').text val
+        close = $('<div>').addClass('close').click ->
+            do tag.remove
+            tags = tags.splice id, 1
+            do setActual
+        tag.append name
+        tag.append close
+        $('.tags .input').prepend tag
+        do setActual
+
 $('a.preview-markdown').click (e) ->
     do e.preventDefault
     do $('a.preview-markdown').toggle
